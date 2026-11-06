@@ -1,0 +1,989 @@
+{
+ "version": 1,
+ "created_utc": "2026-11-06T18:55:20Z",
+ "data_sha256": "74d222e32c38aa27980e1adf2febe572cb931b0f7a7b748c804a9d2effa812ab",
+ "description": "Two-stage ridge logistic audience model fit on creative_performance.csv (see py/audience/fit.py).",
+ "layers": {
+  "background": [
+   "cozy_cafe",
+   "moonlit_temple",
+   "neon_city",
+   "storm_battlefield",
+   "sunlit_meadow",
+   "throne_room"
+  ],
+  "character": [
+   "Kael",
+   "Luna",
+   "Mira",
+   "Rex"
+  ],
+  "action": [
+   "casts_spell",
+   "close_up_smile",
+   "draws_blade",
+   "opens_treasure",
+   "waves_to_camera"
+  ],
+  "hook": [
+   "Can you beat level 3?",
+   "Free gems every day",
+   "She remembers everything.",
+   "The ruins are calling",
+   "Your party is waiting."
+  ],
+  "cta": [
+   "Claim Bonus",
+   "Install Now",
+   "Join Luna",
+   "Play Free"
+  ],
+  "audio": [
+   "low_drums",
+   "none",
+   "upbeat_synth",
+   "warm_piano"
+  ]
+ },
+ "columns": {
+  "background": "background",
+  "character": "subject_character",
+  "action": "subject_action",
+  "hook": "hook_text",
+  "cta": "cta_text",
+  "audio": "audio_style"
+ },
+ "aspects": [
+  "1:1",
+  "9:16"
+ ],
+ "durations": [
+  "15",
+  "30",
+  "6"
+ ],
+ "segments": [
+  "rpg",
+  "companion",
+  "casual"
+ ],
+ "os": [
+  "android",
+  "ios"
+ ],
+ "expo_cap": 50,
+ "click": {
+  "lambda_main": 100,
+  "lambda_interaction": 30.0,
+  "weights": {
+   "(intercept)": -3.223258,
+   "background=cozy_cafe": -0.058488,
+   "background=moonlit_temple": 0.039417,
+   "background=neon_city": 0.011503,
+   "background=storm_battlefield": -0.011669,
+   "background=sunlit_meadow": 0.049008,
+   "background=throne_room": -0.029771,
+   "character=Kael": 0.018308,
+   "character=Luna": 0.007942,
+   "character=Mira": 0.003759,
+   "character=Rex": -0.030008,
+   "action=casts_spell": -0.044052,
+   "action=close_up_smile": 0.00032,
+   "action=draws_blade": 0.056731,
+   "action=opens_treasure": -0.000372,
+   "action=waves_to_camera": -0.012627,
+   "hook=Can you beat level 3?": -0.016761,
+   "hook=Free gems every day": -0.035771,
+   "hook=She remembers everything.": 0.005625,
+   "hook=The ruins are calling": 0.017757,
+   "hook=Your party is waiting.": 0.029149,
+   "cta=Claim Bonus": 0.029985,
+   "cta=Install Now": -0.009096,
+   "cta=Join Luna": -0.029843,
+   "cta=Play Free": 0.008954,
+   "audio=low_drums": 0.012979,
+   "audio=none": -0.043249,
+   "audio=upbeat_synth": 0.002441,
+   "audio=warm_piano": 0.027829,
+   "aspect=1:1": -0.09802,
+   "aspect=9:16": 0.09802,
+   "duration=15": 0.06632,
+   "duration=30": -0.108946,
+   "duration=6": 0.042626,
+   "os=android": 0.029791,
+   "os=ios": -0.029791,
+   "segment=casual": -0.018631,
+   "segment=companion": 0.003826,
+   "segment=rpg": 0.014805,
+   "segment=rpg|background=cozy_cafe": -0.49527,
+   "segment=rpg|background=moonlit_temple": 0.306668,
+   "segment=rpg|background=neon_city": -0.055555,
+   "segment=rpg|background=storm_battlefield": 0.31862,
+   "segment=rpg|background=sunlit_meadow": -0.118661,
+   "segment=rpg|background=throne_room": 0.093548,
+   "segment=rpg|character=Kael": 0.036377,
+   "segment=rpg|character=Luna": -0.209399,
+   "segment=rpg|character=Mira": 0.122102,
+   "segment=rpg|character=Rex": 0.100269,
+   "segment=rpg|action=casts_spell": 0.190329,
+   "segment=rpg|action=close_up_smile": -0.18412,
+   "segment=rpg|action=draws_blade": 0.199173,
+   "segment=rpg|action=opens_treasure": -0.167578,
+   "segment=rpg|action=waves_to_camera": 0.011546,
+   "segment=rpg|hook=Can you beat level 3?": -0.076046,
+   "segment=rpg|hook=Free gems every day": -0.293899,
+   "segment=rpg|hook=She remembers everything.": -0.133374,
+   "segment=rpg|hook=The ruins are calling": 0.310175,
+   "segment=rpg|hook=Your party is waiting.": 0.242493,
+   "segment=rpg|cta=Claim Bonus": -0.051504,
+   "segment=rpg|cta=Install Now": -0.13446,
+   "segment=rpg|cta=Join Luna": 0.134986,
+   "segment=rpg|cta=Play Free": 0.100327,
+   "segment=rpg|audio=low_drums": 0.008479,
+   "segment=rpg|audio=none": 0.05737,
+   "segment=rpg|audio=upbeat_synth": 0.079623,
+   "segment=rpg|audio=warm_piano": -0.096122,
+   "segment=companion|background=cozy_cafe": 0.445195,
+   "segment=companion|background=moonlit_temple": -0.101826,
+   "segment=companion|background=neon_city": 0.016837,
+   "segment=companion|background=storm_battlefield": -0.351419,
+   "segment=companion|background=sunlit_meadow": 0.080643,
+   "segment=companion|background=throne_room": -0.076675,
+   "segment=companion|character=Kael": -0.084355,
+   "segment=companion|character=Luna": 0.262416,
+   "segment=companion|character=Mira": -0.054389,
+   "segment=companion|character=Rex": -0.110918,
+   "segment=companion|action=casts_spell": -0.189283,
+   "segment=companion|action=close_up_smile": 0.182638,
+   "segment=companion|action=draws_blade": -0.102496,
+   "segment=companion|action=opens_treasure": -0.025098,
+   "segment=companion|action=waves_to_camera": 0.146993,
+   "segment=companion|hook=Can you beat level 3?": -0.095781,
+   "segment=companion|hook=Free gems every day": 0.058315,
+   "segment=companion|hook=She remembers everything.": 0.387528,
+   "segment=companion|hook=The ruins are calling": -0.220742,
+   "segment=companion|hook=Your party is waiting.": -0.116565,
+   "segment=companion|cta=Claim Bonus": 0.039176,
+   "segment=companion|cta=Install Now": 0.041365,
+   "segment=companion|cta=Join Luna": -0.095491,
+   "segment=companion|cta=Play Free": 0.027704,
+   "segment=companion|audio=low_drums": 0.054661,
+   "segment=companion|audio=none": -0.132532,
+   "segment=companion|audio=upbeat_synth": -0.159193,
+   "segment=companion|audio=warm_piano": 0.249817,
+   "segment=casual|background=cozy_cafe": -0.144884,
+   "segment=casual|background=moonlit_temple": -0.073451,
+   "segment=casual|background=neon_city": 0.077062,
+   "segment=casual|background=storm_battlefield": -0.006099,
+   "segment=casual|background=sunlit_meadow": 0.201379,
+   "segment=casual|background=throne_room": -0.11611,
+   "segment=casual|character=Kael": 0.109005,
+   "segment=casual|character=Luna": -0.026545,
+   "segment=casual|character=Mira": -0.055184,
+   "segment=casual|character=Rex": -0.08938,
+   "segment=casual|action=casts_spell": -0.147887,
+   "segment=casual|action=close_up_smile": 0.00255,
+   "segment=casual|action=draws_blade": 0.092428,
+   "segment=casual|action=opens_treasure": 0.191434,
+   "segment=casual|action=waves_to_camera": -0.200629,
+   "segment=casual|hook=Can you beat level 3?": 0.115959,
+   "segment=casual|hook=Free gems every day": 0.116349,
+   "segment=casual|hook=She remembers everything.": -0.235406,
+   "segment=casual|hook=The ruins are calling": -0.030242,
+   "segment=casual|hook=Your party is waiting.": -0.028764,
+   "segment=casual|cta=Claim Bonus": 0.112278,
+   "segment=casual|cta=Install Now": 0.062775,
+   "segment=casual|cta=Join Luna": -0.138971,
+   "segment=casual|cta=Play Free": -0.098186,
+   "segment=casual|audio=low_drums": -0.019877,
+   "segment=casual|audio=none": -0.069002,
+   "segment=casual|audio=upbeat_synth": 0.087706,
+   "segment=casual|audio=warm_piano": -0.060931,
+   "expo": -0.216015,
+   "segment=rpg|expo": -0.092346,
+   "segment=companion|expo": -0.097227,
+   "segment=casual|expo": -0.026441
+  }
+ },
+ "install_given_click": {
+  "lambda_main": 30,
+  "lambda_interaction": 900,
+  "weights": {
+   "(intercept)": -2.185458,
+   "background=cozy_cafe": -0.038602,
+   "background=moonlit_temple": 0.060365,
+   "background=neon_city": 0.093921,
+   "background=storm_battlefield": -0.018388,
+   "background=sunlit_meadow": -0.043681,
+   "background=throne_room": -0.053616,
+   "character=Kael": -0.119808,
+   "character=Luna": -0.001754,
+   "character=Mira": 0.083682,
+   "character=Rex": 0.03788,
+   "action=casts_spell": -0.097492,
+   "action=close_up_smile": -0.051246,
+   "action=draws_blade": 0.02817,
+   "action=opens_treasure": 0.098085,
+   "action=waves_to_camera": 0.022484,
+   "hook=Can you beat level 3?": 0.012502,
+   "hook=Free gems every day": -0.332895,
+   "hook=She remembers everything.": 0.153588,
+   "hook=The ruins are calling": 0.046155,
+   "hook=Your party is waiting.": 0.12065,
+   "cta=Claim Bonus": -0.305444,
+   "cta=Install Now": 0.147574,
+   "cta=Join Luna": -0.083515,
+   "cta=Play Free": 0.241385,
+   "audio=low_drums": 0.039802,
+   "audio=none": 0.037737,
+   "audio=upbeat_synth": 0.034231,
+   "audio=warm_piano": -0.111771,
+   "aspect=1:1": 0.044063,
+   "aspect=9:16": -0.044063,
+   "duration=15": -0.03986,
+   "duration=30": 0.122593,
+   "duration=6": -0.082733,
+   "os=android": 0.110965,
+   "os=ios": -0.110965,
+   "segment=casual": -0.112965,
+   "segment=companion": -0.034009,
+   "segment=rpg": 0.146974,
+   "segment=rpg|background=cozy_cafe": -0.001385,
+   "segment=rpg|background=moonlit_temple": -0.001902,
+   "segment=rpg|background=neon_city": 0.003922,
+   "segment=rpg|background=storm_battlefield": 0.003494,
+   "segment=rpg|background=sunlit_meadow": 0.003349,
+   "segment=rpg|background=throne_room": -0.002578,
+   "segment=rpg|character=Kael": -0.001386,
+   "segment=rpg|character=Luna": -0.000788,
+   "segment=rpg|character=Mira": 0.007296,
+   "segment=rpg|character=Rex": -0.000222,
+   "segment=rpg|action=casts_spell": -0.002199,
+   "segment=rpg|action=close_up_smile": 0.00168,
+   "segment=rpg|action=draws_blade": -0.002291,
+   "segment=rpg|action=opens_treasure": 0.004336,
+   "segment=rpg|action=waves_to_camera": 0.003374,
+   "segment=rpg|hook=Can you beat level 3?": 0.000424,
+   "segment=rpg|hook=Free gems every day": -0.003932,
+   "segment=rpg|hook=She remembers everything.": 0.001759,
+   "segment=rpg|hook=The ruins are calling": -0.000764,
+   "segment=rpg|hook=Your party is waiting.": 0.007412,
+   "segment=rpg|cta=Claim Bonus": -0.004128,
+   "segment=rpg|cta=Install Now": 0.004759,
+   "segment=rpg|cta=Join Luna": -0.000366,
+   "segment=rpg|cta=Play Free": 0.004635,
+   "segment=rpg|audio=low_drums": 0.000299,
+   "segment=rpg|audio=none": -0.002484,
+   "segment=rpg|audio=upbeat_synth": 0.004217,
+   "segment=rpg|audio=warm_piano": 0.002867,
+   "segment=companion|background=cozy_cafe": -0.000896,
+   "segment=companion|background=moonlit_temple": 0.004236,
+   "segment=companion|background=neon_city": -0.001886,
+   "segment=companion|background=storm_battlefield": 0.000549,
+   "segment=companion|background=sunlit_meadow": -0.006167,
+   "segment=companion|background=throne_room": 0.00303,
+   "segment=companion|character=Kael": -0.000838,
+   "segment=companion|character=Luna": -0.000161,
+   "segment=companion|character=Mira": -0.003364,
+   "segment=companion|character=Rex": 0.003229,
+   "segment=companion|action=casts_spell": 0.001008,
+   "segment=companion|action=close_up_smile": -0.0011,
+   "segment=companion|action=draws_blade": 0.006583,
+   "segment=companion|action=opens_treasure": -0.005622,
+   "segment=companion|action=waves_to_camera": -0.002003,
+   "segment=companion|hook=Can you beat level 3?": 0.000316,
+   "segment=companion|hook=Free gems every day": 0.001748,
+   "segment=companion|hook=She remembers everything.": 0.004318,
+   "segment=companion|hook=The ruins are calling": 0.000169,
+   "segment=companion|hook=Your party is waiting.": -0.007685,
+   "segment=companion|cta=Claim Bonus": 0.001408,
+   "segment=companion|cta=Install Now": -0.001035,
+   "segment=companion|cta=Join Luna": -0.0016,
+   "segment=companion|cta=Play Free": 9.3e-05,
+   "segment=companion|audio=low_drums": -0.003221,
+   "segment=companion|audio=none": 0.00195,
+   "segment=companion|audio=upbeat_synth": -0.00019,
+   "segment=companion|audio=warm_piano": 0.000327,
+   "segment=casual|background=cozy_cafe": 0.000994,
+   "segment=casual|background=moonlit_temple": -0.000322,
+   "segment=casual|background=neon_city": 0.001095,
+   "segment=casual|background=storm_battlefield": -0.004656,
+   "segment=casual|background=sunlit_meadow": 0.001362,
+   "segment=casual|background=throne_room": -0.002239,
+   "segment=casual|character=Kael": -0.001769,
+   "segment=casual|character=Luna": 0.00089,
+   "segment=casual|character=Mira": -0.001143,
+   "segment=casual|character=Rex": -0.001744,
+   "segment=casual|action=casts_spell": -0.002059,
+   "segment=casual|action=close_up_smile": -0.002288,
+   "segment=casual|action=draws_blade": -0.003353,
+   "segment=casual|action=opens_treasure": 0.004555,
+   "segment=casual|action=waves_to_camera": -0.000621,
+   "segment=casual|hook=Can you beat level 3?": -0.000324,
+   "segment=casual|hook=Free gems every day": -0.008913,
+   "segment=casual|hook=She remembers everything.": -0.000957,
+   "segment=casual|hook=The ruins are calling": 0.002134,
+   "segment=casual|hook=Your party is waiting.": 0.004295,
+   "segment=casual|cta=Claim Bonus": -0.007461,
+   "segment=casual|cta=Install Now": 0.001195,
+   "segment=casual|cta=Join Luna": -0.000817,
+   "segment=casual|cta=Play Free": 0.003318,
+   "segment=casual|audio=low_drums": 0.004248,
+   "segment=casual|audio=none": 0.001792,
+   "segment=casual|audio=upbeat_synth": -0.002886,
+   "segment=casual|audio=warm_piano": -0.00692
+  }
+ },
+ "install_given_no_click": {
+  "rpg": 0.000531,
+  "companion": 0.0005386,
+  "casual": 0.0008864
+ },
+ "segment_mix": {
+  "rpg": 0.44717,
+  "companion": 0.3551,
+  "casual": 0.19773
+ },
+ "os_mix": {
+  "rpg": {
+   "ios": 0.57628,
+   "android": 0.42372
+  },
+  "companion": {
+   "ios": 0.57705,
+   "android": 0.42295
+  },
+  "casual": {
+   "ios": 0.57587,
+   "android": 0.42413
+  }
+ },
+ "impressions_per_user": {
+  "rpg": {
+   "1": 0.783378,
+   "2": 0.118155,
+   "3": 0.041176,
+   "4": 0.018234,
+   "5": 0.009638,
+   "6": 0.005593,
+   "7": 0.003855,
+   "8": 0.003065,
+   "9": 0.002654,
+   "10": 0.014252
+  },
+  "companion": {
+   "1": 0.790784,
+   "2": 0.117174,
+   "3": 0.038155,
+   "4": 0.017325,
+   "5": 0.010076,
+   "6": 0.005895,
+   "7": 0.003624,
+   "8": 0.003266,
+   "9": 0.002111,
+   "10": 0.01159
+  },
+  "casual": {
+   "1": 0.7885,
+   "2": 0.118357,
+   "3": 0.037429,
+   "4": 0.017143,
+   "5": 0.01,
+   "6": 0.0075,
+   "7": 0.004357,
+   "8": 0.003357,
+   "9": 0.002214,
+   "10": 0.011143
+  }
+ },
+ "cv": {
+  "click": [
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 0.8999999999999999,
+    "cv_deviance": 36806.07
+   },
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 3,
+    "cv_deviance": 36796.49
+   },
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 9,
+    "cv_deviance": 36787.97
+   },
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 30,
+    "cv_deviance": 36789.54
+   },
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 90,
+    "cv_deviance": 36824.03
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 3.0,
+    "cv_deviance": 36794.6
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 10,
+    "cv_deviance": 36784.88
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 30,
+    "cv_deviance": 36786.68
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 100,
+    "cv_deviance": 36827.39
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 300,
+    "cv_deviance": 36933.12
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 9.0,
+    "cv_deviance": 36782.74
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 30,
+    "cv_deviance": 36783.04
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 90,
+    "cv_deviance": 36817.22
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 300,
+    "cv_deviance": 36929.96
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 900,
+    "cv_deviance": 37084.9
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 30.0,
+    "cv_deviance": 36779.83
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 100,
+    "cv_deviance": 36819.65
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 300,
+    "cv_deviance": 36926.86
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 1000,
+    "cv_deviance": 37098.49
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 3000,
+    "cv_deviance": 37224.24
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 90.0,
+    "cv_deviance": 36813.36
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 300,
+    "cv_deviance": 36927.57
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 900,
+    "cv_deviance": 37087.29
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 3000,
+    "cv_deviance": 37230.53
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 9000,
+    "cv_deviance": 37297.19
+   }
+  ],
+  "install_given_click": [
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 0.8999999999999999,
+    "cv_deviance": 2502.17
+   },
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 3,
+    "cv_deviance": 2483.64
+   },
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 9,
+    "cv_deviance": 2472.35
+   },
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 30,
+    "cv_deviance": 2466.5
+   },
+   {
+    "lambda_main": 3,
+    "lambda_interaction": 90,
+    "cv_deviance": 2464.74
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 3.0,
+    "cv_deviance": 2480.25
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 10,
+    "cv_deviance": 2467.89
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 30,
+    "cv_deviance": 2462.26
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 100,
+    "cv_deviance": 2459.88
+   },
+   {
+    "lambda_main": 10,
+    "lambda_interaction": 300,
+    "cv_deviance": 2459.18
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 9.0,
+    "cv_deviance": 2466.7
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 30,
+    "cv_deviance": 2460.44
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 90,
+    "cv_deviance": 2458.03
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 300,
+    "cv_deviance": 2457.02
+   },
+   {
+    "lambda_main": 30,
+    "lambda_interaction": 900,
+    "cv_deviance": 2456.71
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 30.0,
+    "cv_deviance": 2462.12
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 100,
+    "cv_deviance": 2461.99
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 300,
+    "cv_deviance": 2462.61
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 1000,
+    "cv_deviance": 2463.14
+   },
+   {
+    "lambda_main": 100,
+    "lambda_interaction": 3000,
+    "cv_deviance": 2463.36
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 90.0,
+    "cv_deviance": 2470.22
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 300,
+    "cv_deviance": 2476.5
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 900,
+    "cv_deviance": 2480.15
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 3000,
+    "cv_deviance": 2481.91
+   },
+   {
+    "lambda_main": 300,
+    "lambda_interaction": 9000,
+    "cv_deviance": 2482.48
+   }
+  ]
+ },
+ "diagnostics": {
+  "holdout_rows": 23915,
+  "click_auc": 0.6548,
+  "install_auc": 0.6504,
+  "click_logloss": 0.14654,
+  "click_logloss_base": 0.15138,
+  "install_logloss": 0.021871,
+  "install_logloss_base": 0.022427,
+  "variant_ctr_corr_weighted": 0.9611,
+  "variant_install_corr_weighted": 0.8838,
+  "calibration_by_variant": [
+   {
+    "variant_id": "v_000",
+    "n": 693,
+    "ctr": 0.03608,
+    "ctr_hat": 0.04001,
+    "ipm": 4.329,
+    "ipm_hat": 4.889
+   },
+   {
+    "variant_id": "v_001",
+    "n": 274,
+    "ctr": 0.07664,
+    "ctr_hat": 0.05154,
+    "ipm": 3.65,
+    "ipm_hat": 7.075
+   },
+   {
+    "variant_id": "v_002",
+    "n": 1011,
+    "ctr": 0.03858,
+    "ctr_hat": 0.03771,
+    "ipm": 2.967,
+    "ipm_hat": 2.168
+   },
+   {
+    "variant_id": "v_003",
+    "n": 279,
+    "ctr": 0.03584,
+    "ctr_hat": 0.03444,
+    "ipm": 10.753,
+    "ipm_hat": 3.47
+   },
+   {
+    "variant_id": "v_004",
+    "n": 267,
+    "ctr": 0.04494,
+    "ctr_hat": 0.04862,
+    "ipm": 3.745,
+    "ipm_hat": 4.441
+   },
+   {
+    "variant_id": "v_005",
+    "n": 930,
+    "ctr": 0.05376,
+    "ctr_hat": 0.05318,
+    "ipm": 8.602,
+    "ipm_hat": 7.117
+   },
+   {
+    "variant_id": "v_006",
+    "n": 1851,
+    "ctr": 0.01837,
+    "ctr_hat": 0.02173,
+    "ipm": 0.0,
+    "ipm_hat": 1.985
+   },
+   {
+    "variant_id": "v_007",
+    "n": 2576,
+    "ctr": 0.05784,
+    "ctr_hat": 0.0574,
+    "ipm": 10.87,
+    "ipm_hat": 9.321
+   },
+   {
+    "variant_id": "v_008",
+    "n": 2714,
+    "ctr": 0.03869,
+    "ctr_hat": 0.04003,
+    "ipm": 6.632,
+    "ipm_hat": 5.13
+   },
+   {
+    "variant_id": "v_009",
+    "n": 5798,
+    "ctr": 0.0307,
+    "ctr_hat": 0.03051,
+    "ipm": 1.552,
+    "ipm_hat": 2.667
+   },
+   {
+    "variant_id": "v_010",
+    "n": 237,
+    "ctr": 0.05485,
+    "ctr_hat": 0.04529,
+    "ipm": 8.439,
+    "ipm_hat": 6.525
+   },
+   {
+    "variant_id": "v_011",
+    "n": 1880,
+    "ctr": 0.01968,
+    "ctr_hat": 0.02405,
+    "ipm": 2.128,
+    "ipm_hat": 2.779
+   },
+   {
+    "variant_id": "v_012",
+    "n": 199,
+    "ctr": 0.0402,
+    "ctr_hat": 0.05228,
+    "ipm": 10.05,
+    "ipm_hat": 9.898
+   },
+   {
+    "variant_id": "v_013",
+    "n": 4561,
+    "ctr": 0.04495,
+    "ctr_hat": 0.04481,
+    "ipm": 5.043,
+    "ipm_hat": 4.586
+   },
+   {
+    "variant_id": "v_014",
+    "n": 3345,
+    "ctr": 0.0284,
+    "ctr_hat": 0.02635,
+    "ipm": 1.495,
+    "ipm_hat": 2.418
+   },
+   {
+    "variant_id": "v_015",
+    "n": 162,
+    "ctr": 0.04321,
+    "ctr_hat": 0.04059,
+    "ipm": 12.346,
+    "ipm_hat": 5.092
+   },
+   {
+    "variant_id": "v_016",
+    "n": 4626,
+    "ctr": 0.02767,
+    "ctr_hat": 0.02882,
+    "ipm": 5.62,
+    "ipm_hat": 5.053
+   },
+   {
+    "variant_id": "v_017",
+    "n": 723,
+    "ctr": 0.04011,
+    "ctr_hat": 0.03536,
+    "ipm": 6.916,
+    "ipm_hat": 3.284
+   },
+   {
+    "variant_id": "v_018",
+    "n": 2122,
+    "ctr": 0.04194,
+    "ctr_hat": 0.04062,
+    "ipm": 3.77,
+    "ipm_hat": 3.978
+   },
+   {
+    "variant_id": "v_019",
+    "n": 88,
+    "ctr": 0.03409,
+    "ctr_hat": 0.03822,
+    "ipm": 11.364,
+    "ipm_hat": 3.861
+   },
+   {
+    "variant_id": "v_020",
+    "n": 64,
+    "ctr": 0.01562,
+    "ctr_hat": 0.03219,
+    "ipm": 15.625,
+    "ipm_hat": 4.567
+   },
+   {
+    "variant_id": "v_021",
+    "n": 213,
+    "ctr": 0.04225,
+    "ctr_hat": 0.04506,
+    "ipm": 0.0,
+    "ipm_hat": 6.109
+   },
+   {
+    "variant_id": "v_022",
+    "n": 642,
+    "ctr": 0.03583,
+    "ctr_hat": 0.04146,
+    "ipm": 4.673,
+    "ipm_hat": 7.217
+   },
+   {
+    "variant_id": "v_023",
+    "n": 1911,
+    "ctr": 0.04396,
+    "ctr_hat": 0.04255,
+    "ipm": 1.57,
+    "ipm_hat": 3.185
+   },
+   {
+    "variant_id": "v_024",
+    "n": 712,
+    "ctr": 0.05197,
+    "ctr_hat": 0.05298,
+    "ipm": 2.809,
+    "ipm_hat": 4.283
+   },
+   {
+    "variant_id": "v_025",
+    "n": 783,
+    "ctr": 0.08812,
+    "ctr_hat": 0.07338,
+    "ipm": 7.663,
+    "ipm_hat": 7.122
+   },
+   {
+    "variant_id": "v_026",
+    "n": 2702,
+    "ctr": 0.0322,
+    "ctr_hat": 0.03587,
+    "ipm": 4.811,
+    "ipm_hat": 4.853
+   },
+   {
+    "variant_id": "v_027",
+    "n": 5377,
+    "ctr": 0.05821,
+    "ctr_hat": 0.05693,
+    "ipm": 5.951,
+    "ipm_hat": 5.563
+   },
+   {
+    "variant_id": "v_028",
+    "n": 14214,
+    "ctr": 0.03771,
+    "ctr_hat": 0.03771,
+    "ipm": 4.01,
+    "ipm_hat": 4.321
+   },
+   {
+    "variant_id": "v_029",
+    "n": 770,
+    "ctr": 0.04416,
+    "ctr_hat": 0.04372,
+    "ipm": 5.195,
+    "ipm_hat": 5.582
+   },
+   {
+    "variant_id": "v_030",
+    "n": 4739,
+    "ctr": 0.03545,
+    "ctr_hat": 0.03409,
+    "ipm": 5.486,
+    "ipm_hat": 4.221
+   },
+   {
+    "variant_id": "v_031",
+    "n": 977,
+    "ctr": 0.04094,
+    "ctr_hat": 0.03754,
+    "ipm": 9.212,
+    "ipm_hat": 4.865
+   },
+   {
+    "variant_id": "v_032",
+    "n": 898,
+    "ctr": 0.04343,
+    "ctr_hat": 0.05297,
+    "ipm": 2.227,
+    "ipm_hat": 4.756
+   },
+   {
+    "variant_id": "v_033",
+    "n": 691,
+    "ctr": 0.03184,
+    "ctr_hat": 0.03034,
+    "ipm": 7.236,
+    "ipm_hat": 5.129
+   },
+   {
+    "variant_id": "v_034",
+    "n": 779,
+    "ctr": 0.04365,
+    "ctr_hat": 0.04295,
+    "ipm": 0.0,
+    "ipm_hat": 3.001
+   },
+   {
+    "variant_id": "v_035",
+    "n": 3575,
+    "ctr": 0.04112,
+    "ctr_hat": 0.04143,
+    "ipm": 7.273,
+    "ipm_hat": 7.128
+   },
+   {
+    "variant_id": "v_036",
+    "n": 45313,
+    "ctr": 0.03282,
+    "ctr_hat": 0.03296,
+    "ipm": 1.964,
+    "ipm_hat": 2.094
+   },
+   {
+    "variant_id": "v_037",
+    "n": 575,
+    "ctr": 0.03304,
+    "ctr_hat": 0.03083,
+    "ipm": 3.478,
+    "ipm_hat": 4.26
+   },
+   {
+    "variant_id": "v_038",
+    "n": 198,
+    "ctr": 0.0202,
+    "ctr_hat": 0.04149,
+    "ipm": 0.0,
+    "ipm_hat": 5.338
+   },
+   {
+    "variant_id": "v_039",
+    "n": 531,
+    "ctr": 0.04896,
+    "ctr_hat": 0.04017,
+    "ipm": 9.416,
+    "ipm_hat": 6.822
+   }
+  ]
+ },
+ "fit_seconds": 9.8
+}

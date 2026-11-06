@@ -1,0 +1,51 @@
+{
+  "_doc": "Layer catalog. Values are exactly the CSV vocabulary, so the audience model can score any manifest built from them. Each value carries what the renderer needs (visual prompt fragments, style, audio preset) and EN/ZH localization. Edit descriptors freely; never rename values without refitting the audience model.",
+  "brand": {
+    "game": { "en": "Rune Keepers", "zh": "符文守护者" },
+    "tagline": { "en": "Recruit your party · Adventure together", "zh": "招募伙伴 · 并肩冒险" },
+    "tone": "Warm and a little dramatic. No gore, no blood, no injuries, no sexual content, modest outfits. Every ad ends on an install call to action.",
+    "art_style": "Vertical 9:16 cinematic fantasy game key art, painterly premium mobile RPG style, rich lighting, clean silhouette, darker space at the top and bottom for text. No text, no letters, no logos, no watermark, no blood."
+  },
+  "layers": {
+    "background": {
+      "cozy_cafe": { "en": "cozy café", "zh": "温馨咖啡馆", "style": "warm", "visual": "a cozy fantasy tavern-café interior at dusk: warm lantern light, wooden beams, steaming mugs on the counter, rain streaking the window" },
+      "moonlit_temple": { "en": "moonlit temple", "zh": "月光神殿", "style": "rune", "visual": "ancient moonlit temple ruins at night: broken stone arches, glowing cyan runes carved in the pillars, a full moon, drifting mist" },
+      "neon_city": { "en": "neon city", "zh": "霓虹城市", "style": "rune", "visual": "a rain-slick fantasy city street at night lit by glowing magenta and cyan arcane signs (shapes only, no readable letters), floating lanterns, reflections on wet cobblestones" },
+      "storm_battlefield": { "en": "storm battlefield", "zh": "风暴战场", "style": "rune", "visual": "a storm-lashed battlefield on a high ridge: dark thunderclouds, forks of lightning, torn banners snapping in the wind, a distant army silhouette (no gore, no bodies)" },
+      "sunlit_meadow": { "en": "sunlit meadow", "zh": "阳光草地", "style": "warm", "visual": "a bright sunlit meadow of wildflowers with rolling hills and a distant white castle, soft clouds, golden-hour light" },
+      "throne_room": { "en": "throne room", "zh": "王座大殿", "style": "warm", "visual": "a grand throne room: tall stained-glass windows, golden light beams, a long red carpet, marble pillars, an ornate empty throne" }
+    },
+    "character": {
+      "Luna": { "en": "Luna", "zh": "露娜", "pronoun": "she", "magic": "cyan rune light", "visual": "Luna, a young woman rogue with long silver hair under a dark hood, a charcoal-and-violet hooded cloak over fitted leather armor, a short blade whose edge glows with cyan runes, calm eyes and a faint dry half-smile", "voice": "quiet, dry humor, few words" },
+      "Rex": { "en": "Rex", "zh": "雷克斯", "pronoun": "he", "magic": "red-gold battle fire", "visual": "Rex, a broad-shouldered young knight in heavy polished steel plate armor, a tall red plume on his helmet with the visor up, a red cape, a big confident grin", "voice": "loud, loyal, first into every fight" },
+      "Mira": { "en": "Mira", "zh": "米拉", "pronoun": "she", "magic": "soft golden healing light", "visual": "Mira, a young woman healer in flowing white and gold robes, freckles across her nose, wavy auburn hair with a thin gold circlet, a warm smile, holding a slender staff that glows softly gold", "voice": "warm, attentive, remembers everything you tell her" },
+      "Kael": { "en": "Kael", "zh": "凯尔", "pronoun": "he", "magic": "violet arcane magic", "visual": "Kael, a lean young dark mage in black hooded robes with silver embroidery, short black hair, sharp features, a wry sardonic smirk, violet magic flickering around his fingers", "voice": "sardonic, secretly kind" }
+    },
+    "action": {
+      "casts_spell": { "en": "casts a spell", "zh": "施放法术", "visual": "{name} casts a spell toward the viewer, both hands raised, a swirling burst of {magic} and glowing rune circles filling the air" },
+      "close_up_smile": { "en": "close-up smile", "zh": "特写微笑", "visual": "a close-up portrait of {name} looking straight at the viewer with a warm, inviting smile, soft rim light on the face" },
+      "draws_blade": { "en": "draws a blade", "zh": "拔出利刃", "visual": "{name} draws a gleaming weapon in one fluid motion, {magic} flaring along the edge, wind lifting hair and cloth, determined but friendly expression toward the viewer" },
+      "opens_treasure": { "en": "opens a treasure chest", "zh": "打开宝箱", "visual": "{name} opens an ornate treasure chest, golden light and sparkling gems spilling out and lighting the face with wonder" },
+      "waves_to_camera": { "en": "waves to camera", "zh": "向镜头挥手", "visual": "{name} turns to the viewer and waves in a friendly greeting, as if inviting the viewer to join the party" }
+    },
+    "hook": {
+      "Can you beat level 3?": { "en": "Can you beat level 3?", "zh": "你能通过第 3 关吗？", "kind": "challenge" },
+      "Free gems every day": { "en": "Free gems every day", "zh": "每天免费领宝石", "kind": "reward" },
+      "She remembers everything.": { "en": "She remembers everything.", "zh": "她记得你说过的一切。", "kind": "companion" },
+      "The ruins are calling": { "en": "The ruins are calling", "zh": "遗迹在呼唤你", "kind": "adventure" },
+      "Your party is waiting.": { "en": "Your party is waiting.", "zh": "你的队伍在等你。", "kind": "social" }
+    },
+    "cta": {
+      "Claim Bonus": { "en": "Claim Bonus", "zh": "领取福利" },
+      "Install Now": { "en": "Install Now", "zh": "立即安装" },
+      "Join Luna": { "en": "Join Luna", "zh": "加入露娜" },
+      "Play Free": { "en": "Play Free", "zh": "免费畅玩" }
+    },
+    "audio": {
+      "low_drums": { "en": "low drums", "zh": "低沉鼓点", "preset": "low_drums" },
+      "none": { "en": "no music (room tone + SFX)", "zh": "无配乐（环境音+音效）", "preset": "none" },
+      "upbeat_synth": { "en": "upbeat synth", "zh": "轻快电子", "preset": "upbeat_synth" },
+      "warm_piano": { "en": "warm piano", "zh": "温暖钢琴", "preset": "warm_piano" }
+    }
+  }
+}

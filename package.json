@@ -1,0 +1,36 @@
+{
+  "name": "simula-creative-loop-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Autonomous creative loop for video ads: manifests -> renders -> Statsig A/B tests on a simulated audience -> LLM agent writes the next generation. Harness: Pi Durable.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "setup": "node src/cli.ts setup",
+    "doctor": "node src/cli.ts doctor",
+    "fit": "node src/cli.ts fit",
+    "loop": "node src/cli.ts loop",
+    "round": "node src/cli.ts round",
+    "render": "node src/cli.ts render",
+    "report": "node src/cli.ts report",
+    "eval": "node src/cli.ts eval",
+    "pulse": "node src/cli.ts pulse",
+    "export": "node src/cli.ts export",
+    "typecheck": "tsc --noEmit -p .",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@earendil-works/chord": "^1.5.0",
+    "@earendil-works/pi-ai": "^1.5.0",
+    "@earendil-works/pi-durable": "^1.5.0",
+    "@earendil-works/pi-schema": "^1.5.0",
+    "@statsig/statsig-node-core": "^0.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  },
+  "license": "UNLICENSED"
+}

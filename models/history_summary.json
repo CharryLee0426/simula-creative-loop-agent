@@ -1,0 +1,2153 @@
+{
+ "note": "Raw historical rates from 2 weeks of serving. Observational: variants were not randomized, so marginal rates are confounded by which combinations were served to whom. Use as a prior, not as truth. ipm = installs per 1000 impressions.",
+ "totals": {
+  "all": {
+   "impressions": 120000,
+   "clicks": 4416,
+   "installs": 437,
+   "ctr": 0.0368,
+   "ipm": 3.642,
+   "ipm_ci95": [
+    3.316,
+    3.999
+   ]
+  },
+  "rpg": {
+   "impressions": 55719,
+   "clicks": 2047,
+   "installs": 231,
+   "ctr": 0.03674,
+   "ipm": 4.146,
+   "ipm_ci95": [
+    3.645,
+    4.715
+   ]
+  },
+  "companion": {
+   "impressions": 41438,
+   "clicks": 1523,
+   "installs": 133,
+   "ctr": 0.03675,
+   "ipm": 3.21,
+   "ipm_ci95": [
+    2.709,
+    3.802
+   ]
+  },
+  "casual": {
+   "impressions": 22843,
+   "clicks": 846,
+   "installs": 73,
+   "ctr": 0.03704,
+   "ipm": 3.196,
+   "ipm_ci95": [
+    2.543,
+    4.016
+   ]
+  }
+ },
+ "layers": {
+  "background": {
+   "cozy_cafe": {
+    "all": {
+     "impressions": 16165,
+     "clicks": 504,
+     "installs": 58,
+     "ctr": 0.03118,
+     "ipm": 3.588,
+     "ipm_ci95": [
+      2.777,
+      4.635
+     ]
+    },
+    "rpg": {
+     "impressions": 7497,
+     "clicks": 162,
+     "installs": 20,
+     "ctr": 0.02161,
+     "ipm": 2.668,
+     "ipm_ci95": [
+      1.728,
+      4.117
+     ]
+    },
+    "companion": {
+     "impressions": 5609,
+     "clicks": 262,
+     "installs": 25,
+     "ctr": 0.04671,
+     "ipm": 4.457,
+     "ipm_ci95": [
+      3.021,
+      6.572
+     ]
+    },
+    "casual": {
+     "impressions": 3059,
+     "clicks": 80,
+     "installs": 13,
+     "ctr": 0.02615,
+     "ipm": 4.25,
+     "ipm_ci95": [
+      2.485,
+      7.258
+     ]
+    }
+   },
+   "moonlit_temple": {
+    "all": {
+     "impressions": 2773,
+     "clicks": 165,
+     "installs": 18,
+     "ctr": 0.0595,
+     "ipm": 6.491,
+     "ipm_ci95": [
+      4.11,
+      10.238
+     ]
+    },
+    "rpg": {
+     "impressions": 1287,
+     "clicks": 115,
+     "installs": 10,
+     "ctr": 0.08936,
+     "ipm": 7.77,
+     "ipm_ci95": [
+      4.226,
+      14.244
+     ]
+    },
+    "companion": {
+     "impressions": 948,
+     "clicks": 33,
+     "installs": 7,
+     "ctr": 0.03481,
+     "ipm": 7.384,
+     "ipm_ci95": [
+      3.581,
+      15.163
+     ]
+    },
+    "casual": {
+     "impressions": 538,
+     "clicks": 17,
+     "installs": 1,
+     "ctr": 0.0316,
+     "ipm": 1.859,
+     "ipm_ci95": [
+      0.328,
+      10.453
+     ]
+    }
+   },
+   "neon_city": {
+    "all": {
+     "impressions": 13970,
+     "clicks": 509,
+     "installs": 69,
+     "ctr": 0.03644,
+     "ipm": 4.939,
+     "ipm_ci95": [
+      3.905,
+      6.246
+     ]
+    },
+    "rpg": {
+     "impressions": 6523,
+     "clicks": 205,
+     "installs": 34,
+     "ctr": 0.03143,
+     "ipm": 5.212,
+     "ipm_ci95": [
+      3.732,
+      7.275
+     ]
+    },
+    "companion": {
+     "impressions": 4804,
+     "clicks": 199,
+     "installs": 23,
+     "ctr": 0.04142,
+     "ipm": 4.788,
+     "ipm_ci95": [
+      3.192,
+      7.174
+     ]
+    },
+    "casual": {
+     "impressions": 2643,
+     "clicks": 105,
+     "installs": 12,
+     "ctr": 0.03973,
+     "ipm": 4.54,
+     "ipm_ci95": [
+      2.599,
+      7.92
+     ]
+    }
+   },
+   "storm_battlefield": {
+    "all": {
+     "impressions": 63332,
+     "clicks": 2299,
+     "installs": 187,
+     "ctr": 0.0363,
+     "ipm": 2.953,
+     "ipm_ci95": [
+      2.559,
+      3.406
+     ]
+    },
+    "rpg": {
+     "impressions": 29425,
+     "clicks": 1123,
+     "installs": 110,
+     "ctr": 0.03816,
+     "ipm": 3.738,
+     "ipm_ci95": [
+      3.103,
+      4.503
+     ]
+    },
+    "companion": {
+     "impressions": 21820,
+     "clicks": 745,
+     "installs": 50,
+     "ctr": 0.03414,
+     "ipm": 2.291,
+     "ipm_ci95": [
+      1.739,
+      3.019
+     ]
+    },
+    "casual": {
+     "impressions": 12087,
+     "clicks": 431,
+     "installs": 27,
+     "ctr": 0.03566,
+     "ipm": 2.234,
+     "ipm_ci95": [
+      1.536,
+      3.248
+     ]
+    }
+   },
+   "sunlit_meadow": {
+    "all": {
+     "impressions": 17426,
+     "clicks": 672,
+     "installs": 73,
+     "ctr": 0.03856,
+     "ipm": 4.189,
+     "ipm_ci95": [
+      3.333,
+      5.263
+     ]
+    },
+    "rpg": {
+     "impressions": 8114,
+     "clicks": 266,
+     "installs": 37,
+     "ctr": 0.03278,
+     "ipm": 4.56,
+     "ipm_ci95": [
+      3.31,
+      6.279
+     ]
+    },
+    "companion": {
+     "impressions": 5993,
+     "clicks": 229,
+     "installs": 18,
+     "ctr": 0.03821,
+     "ipm": 3.004,
+     "ipm_ci95": [
+      1.901,
+      4.743
+     ]
+    },
+    "casual": {
+     "impressions": 3319,
+     "clicks": 177,
+     "installs": 18,
+     "ctr": 0.05333,
+     "ipm": 5.423,
+     "ipm_ci95": [
+      3.433,
+      8.557
+     ]
+    }
+   },
+   "throne_room": {
+    "all": {
+     "impressions": 6334,
+     "clicks": 267,
+     "installs": 32,
+     "ctr": 0.04215,
+     "ipm": 5.052,
+     "ipm_ci95": [
+      3.581,
+      7.123
+     ]
+    },
+    "rpg": {
+     "impressions": 2873,
+     "clicks": 176,
+     "installs": 20,
+     "ctr": 0.06126,
+     "ipm": 6.961,
+     "ipm_ci95": [
+      4.511,
+      10.729
+     ]
+    },
+    "companion": {
+     "impressions": 2264,
+     "clicks": 55,
+     "installs": 10,
+     "ctr": 0.02429,
+     "ipm": 4.417,
+     "ipm_ci95": [
+      2.401,
+      8.112
+     ]
+    },
+    "casual": {
+     "impressions": 1197,
+     "clicks": 36,
+     "installs": 2,
+     "ctr": 0.03008,
+     "ipm": 1.671,
+     "ipm_ci95": [
+      0.458,
+      6.072
+     ]
+    }
+   }
+  },
+  "character": {
+   "Kael": {
+    "all": {
+     "impressions": 16781,
+     "clicks": 588,
+     "installs": 64,
+     "ctr": 0.03504,
+     "ipm": 3.814,
+     "ipm_ci95": [
+      2.988,
+      4.867
+     ]
+    },
+    "rpg": {
+     "impressions": 7768,
+     "clicks": 260,
+     "installs": 32,
+     "ctr": 0.03347,
+     "ipm": 4.119,
+     "ipm_ci95": [
+      2.92,
+      5.81
+     ]
+    },
+    "companion": {
+     "impressions": 5756,
+     "clicks": 207,
+     "installs": 20,
+     "ctr": 0.03596,
+     "ipm": 3.475,
+     "ipm_ci95": [
+      2.25,
+      5.361
+     ]
+    },
+    "casual": {
+     "impressions": 3257,
+     "clicks": 121,
+     "installs": 12,
+     "ctr": 0.03715,
+     "ipm": 3.684,
+     "ipm_ci95": [
+      2.109,
+      6.429
+     ]
+    }
+   },
+   "Luna": {
+    "all": {
+     "impressions": 7381,
+     "clicks": 306,
+     "installs": 33,
+     "ctr": 0.04146,
+     "ipm": 4.471,
+     "ipm_ci95": [
+      3.185,
+      6.272
+     ]
+    },
+    "rpg": {
+     "impressions": 3443,
+     "clicks": 94,
+     "installs": 9,
+     "ctr": 0.0273,
+     "ipm": 2.614,
+     "ipm_ci95": [
+      1.376,
+      4.961
+     ]
+    },
+    "companion": {
+     "impressions": 2581,
+     "clicks": 156,
+     "installs": 16,
+     "ctr": 0.06044,
+     "ipm": 6.199,
+     "ipm_ci95": [
+      3.819,
+      10.047
+     ]
+    },
+    "casual": {
+     "impressions": 1357,
+     "clicks": 56,
+     "installs": 8,
+     "ctr": 0.04127,
+     "ipm": 5.895,
+     "ipm_ci95": [
+      2.99,
+      11.59
+     ]
+    }
+   },
+   "Mira": {
+    "all": {
+     "impressions": 78471,
+     "clicks": 2886,
+     "installs": 265,
+     "ctr": 0.03678,
+     "ipm": 3.377,
+     "ipm_ci95": [
+      2.995,
+      3.808
+     ]
+    },
+    "rpg": {
+     "impressions": 36497,
+     "clicks": 1361,
+     "installs": 149,
+     "ctr": 0.03729,
+     "ipm": 4.083,
+     "ipm_ci95": [
+      3.478,
+      4.791
+     ]
+    },
+    "companion": {
+     "impressions": 27063,
+     "clicks": 960,
+     "installs": 74,
+     "ctr": 0.03547,
+     "ipm": 2.734,
+     "ipm_ci95": [
+      2.179,
+      3.431
+     ]
+    },
+    "casual": {
+     "impressions": 14911,
+     "clicks": 565,
+     "installs": 42,
+     "ctr": 0.03789,
+     "ipm": 2.817,
+     "ipm_ci95": [
+      2.085,
+      3.805
+     ]
+    }
+   },
+   "Rex": {
+    "all": {
+     "impressions": 17367,
+     "clicks": 636,
+     "installs": 75,
+     "ctr": 0.03662,
+     "ipm": 4.319,
+     "ipm_ci95": [
+      3.447,
+      5.409
+     ]
+    },
+    "rpg": {
+     "impressions": 8011,
+     "clicks": 332,
+     "installs": 41,
+     "ctr": 0.04144,
+     "ipm": 5.118,
+     "ipm_ci95": [
+      3.775,
+      6.935
+     ]
+    },
+    "companion": {
+     "impressions": 6038,
+     "clicks": 200,
+     "installs": 23,
+     "ctr": 0.03312,
+     "ipm": 3.809,
+     "ipm_ci95": [
+      2.54,
+      5.71
+     ]
+    },
+    "casual": {
+     "impressions": 3318,
+     "clicks": 104,
+     "installs": 11,
+     "ctr": 0.03134,
+     "ipm": 3.315,
+     "ipm_ci95": [
+      1.852,
+      5.927
+     ]
+    }
+   }
+  },
+  "action": {
+   "casts_spell": {
+    "all": {
+     "impressions": 13823,
+     "clicks": 583,
+     "installs": 50,
+     "ctr": 0.04218,
+     "ipm": 3.617,
+     "ipm_ci95": [
+      2.745,
+      4.765
+     ]
+    },
+    "rpg": {
+     "impressions": 6407,
+     "clicks": 379,
+     "installs": 35,
+     "ctr": 0.05915,
+     "ipm": 5.463,
+     "ipm_ci95": [
+      3.931,
+      7.588
+     ]
+    },
+    "companion": {
+     "impressions": 4842,
+     "clicks": 144,
+     "installs": 11,
+     "ctr": 0.02974,
+     "ipm": 2.272,
+     "ipm_ci95": [
+      1.269,
+      4.064
+     ]
+    },
+    "casual": {
+     "impressions": 2574,
+     "clicks": 60,
+     "installs": 4,
+     "ctr": 0.02331,
+     "ipm": 1.554,
+     "ipm_ci95": [
+      0.604,
+      3.989
+     ]
+    }
+   },
+   "close_up_smile": {
+    "all": {
+     "impressions": 58014,
+     "clicks": 1981,
+     "installs": 152,
+     "ctr": 0.03415,
+     "ipm": 2.62,
+     "ipm_ci95": [
+      2.236,
+      3.07
+     ]
+    },
+    "rpg": {
+     "impressions": 27021,
+     "clicks": 779,
+     "installs": 71,
+     "ctr": 0.02883,
+     "ipm": 2.628,
+     "ipm_ci95": [
+      2.084,
+      3.313
+     ]
+    },
+    "companion": {
+     "impressions": 20044,
+     "clicks": 792,
+     "installs": 54,
+     "ctr": 0.03951,
+     "ipm": 2.694,
+     "ipm_ci95": [
+      2.066,
+      3.513
+     ]
+    },
+    "casual": {
+     "impressions": 10949,
+     "clicks": 410,
+     "installs": 27,
+     "ctr": 0.03745,
+     "ipm": 2.466,
+     "ipm_ci95": [
+      1.695,
+      3.586
+     ]
+    }
+   },
+   "draws_blade": {
+    "all": {
+     "impressions": 11193,
+     "clicks": 513,
+     "installs": 62,
+     "ctr": 0.04583,
+     "ipm": 5.539,
+     "ipm_ci95": [
+      4.324,
+      7.094
+     ]
+    },
+    "rpg": {
+     "impressions": 5131,
+     "clicks": 282,
+     "installs": 32,
+     "ctr": 0.05496,
+     "ipm": 6.237,
+     "ipm_ci95": [
+      4.421,
+      8.791
+     ]
+    },
+    "companion": {
+     "impressions": 3921,
+     "clicks": 149,
+     "installs": 25,
+     "ctr": 0.038,
+     "ipm": 6.376,
+     "ipm_ci95": [
+      4.322,
+      9.396
+     ]
+    },
+    "casual": {
+     "impressions": 2141,
+     "clicks": 82,
+     "installs": 5,
+     "ctr": 0.0383,
+     "ipm": 2.335,
+     "ipm_ci95": [
+      0.998,
+      5.456
+     ]
+    }
+   },
+   "opens_treasure": {
+    "all": {
+     "impressions": 21155,
+     "clicks": 757,
+     "installs": 97,
+     "ctr": 0.03578,
+     "ipm": 4.585,
+     "ipm_ci95": [
+      3.76,
+      5.59
+     ]
+    },
+    "rpg": {
+     "impressions": 9818,
+     "clicks": 301,
+     "installs": 47,
+     "ctr": 0.03066,
+     "ipm": 4.787,
+     "ipm_ci95": [
+      3.602,
+      6.36
+     ]
+    },
+    "companion": {
+     "impressions": 7254,
+     "clicks": 253,
+     "installs": 25,
+     "ctr": 0.03488,
+     "ipm": 3.446,
+     "ipm_ci95": [
+      2.336,
+      5.083
+     ]
+    },
+    "casual": {
+     "impressions": 4083,
+     "clicks": 203,
+     "installs": 25,
+     "ctr": 0.04972,
+     "ipm": 6.123,
+     "ipm_ci95": [
+      4.151,
+      9.024
+     ]
+    }
+   },
+   "waves_to_camera": {
+    "all": {
+     "impressions": 15815,
+     "clicks": 582,
+     "installs": 76,
+     "ctr": 0.0368,
+     "ipm": 4.806,
+     "ipm_ci95": [
+      3.841,
+      6.01
+     ]
+    },
+    "rpg": {
+     "impressions": 7342,
+     "clicks": 306,
+     "installs": 46,
+     "ctr": 0.04168,
+     "ipm": 6.265,
+     "ipm_ci95": [
+      4.701,
+      8.346
+     ]
+    },
+    "companion": {
+     "impressions": 5377,
+     "clicks": 185,
+     "installs": 18,
+     "ctr": 0.03441,
+     "ipm": 3.348,
+     "ipm_ci95": [
+      2.119,
+      5.286
+     ]
+    },
+    "casual": {
+     "impressions": 3096,
+     "clicks": 91,
+     "installs": 12,
+     "ctr": 0.02939,
+     "ipm": 3.876,
+     "ipm_ci95": [
+      2.219,
+      6.763
+     ]
+    }
+   }
+  },
+  "hook": {
+   "Can you beat level 3?": {
+    "all": {
+     "impressions": 1346,
+     "clicks": 62,
+     "installs": 7,
+     "ctr": 0.04606,
+     "ipm": 5.201,
+     "ipm_ci95": [
+      2.521,
+      10.696
+     ]
+    },
+    "rpg": {
+     "impressions": 615,
+     "clicks": 19,
+     "installs": 3,
+     "ctr": 0.03089,
+     "ipm": 4.878,
+     "ipm_ci95": [
+      1.66,
+      14.243
+     ]
+    },
+    "companion": {
+     "impressions": 484,
+     "clicks": 24,
+     "installs": 3,
+     "ctr": 0.04959,
+     "ipm": 6.198,
+     "ipm_ci95": [
+      2.11,
+      18.064
+     ]
+    },
+    "casual": {
+     "impressions": 247,
+     "clicks": 19,
+     "installs": 1,
+     "ctr": 0.07692,
+     "ipm": 4.049,
+     "ipm_ci95": [
+      0.715,
+      22.573
+     ]
+    }
+   },
+   "Free gems every day": {
+    "all": {
+     "impressions": 63559,
+     "clicks": 2048,
+     "installs": 127,
+     "ctr": 0.03222,
+     "ipm": 1.998,
+     "ipm_ci95": [
+      1.68,
+      2.377
+     ]
+    },
+    "rpg": {
+     "impressions": 29527,
+     "clicks": 757,
+     "installs": 52,
+     "ctr": 0.02564,
+     "ipm": 1.761,
+     "ipm_ci95": [
+      1.343,
+      2.309
+     ]
+    },
+    "companion": {
+     "impressions": 21957,
+     "clicks": 844,
+     "installs": 55,
+     "ctr": 0.03844,
+     "ipm": 2.505,
+     "ipm_ci95": [
+      1.925,
+      3.259
+     ]
+    },
+    "casual": {
+     "impressions": 12075,
+     "clicks": 447,
+     "installs": 20,
+     "ctr": 0.03702,
+     "ipm": 1.656,
+     "ipm_ci95": [
+      1.072,
+      2.557
+     ]
+    }
+   },
+   "She remembers everything.": {
+    "all": {
+     "impressions": 5824,
+     "clicks": 251,
+     "installs": 40,
+     "ctr": 0.0431,
+     "ipm": 6.868,
+     "ipm_ci95": [
+      5.048,
+      9.338
+     ]
+    },
+    "rpg": {
+     "impressions": 2672,
+     "clicks": 96,
+     "installs": 16,
+     "ctr": 0.03593,
+     "ipm": 5.988,
+     "ipm_ci95": [
+      3.689,
+      9.705
+     ]
+    },
+    "companion": {
+     "impressions": 2035,
+     "clicks": 128,
+     "installs": 22,
+     "ctr": 0.0629,
+     "ipm": 10.811,
+     "ipm_ci95": [
+      7.15,
+      16.315
+     ]
+    },
+    "casual": {
+     "impressions": 1117,
+     "clicks": 27,
+     "installs": 2,
+     "ctr": 0.02417,
+     "ipm": 1.791,
+     "ipm_ci95": [
+      0.491,
+      6.505
+     ]
+    }
+   },
+   "The ruins are calling": {
+    "all": {
+     "impressions": 18375,
+     "clicks": 873,
+     "installs": 94,
+     "ctr": 0.04751,
+     "ipm": 5.116,
+     "ipm_ci95": [
+      4.182,
+      6.256
+     ]
+    },
+    "rpg": {
+     "impressions": 8520,
+     "clicks": 565,
+     "installs": 59,
+     "ctr": 0.06631,
+     "ipm": 6.925,
+     "ipm_ci95": [
+      5.373,
+      8.922
+     ]
+    },
+    "companion": {
+     "impressions": 6368,
+     "clicks": 198,
+     "installs": 18,
+     "ctr": 0.03109,
+     "ipm": 2.827,
+     "ipm_ci95": [
+      1.789,
+      4.464
+     ]
+    },
+    "casual": {
+     "impressions": 3487,
+     "clicks": 110,
+     "installs": 17,
+     "ctr": 0.03155,
+     "ipm": 4.875,
+     "ipm_ci95": [
+      3.046,
+      7.794
+     ]
+    }
+   },
+   "Your party is waiting.": {
+    "all": {
+     "impressions": 30896,
+     "clicks": 1182,
+     "installs": 169,
+     "ctr": 0.03826,
+     "ipm": 5.47,
+     "ipm_ci95": [
+      4.707,
+      6.356
+     ]
+    },
+    "rpg": {
+     "impressions": 14385,
+     "clicks": 610,
+     "installs": 101,
+     "ctr": 0.04241,
+     "ipm": 7.021,
+     "ipm_ci95": [
+      5.782,
+      8.523
+     ]
+    },
+    "companion": {
+     "impressions": 10594,
+     "clicks": 329,
+     "installs": 35,
+     "ctr": 0.03106,
+     "ipm": 3.304,
+     "ipm_ci95": [
+      2.377,
+      4.591
+     ]
+    },
+    "casual": {
+     "impressions": 5917,
+     "clicks": 243,
+     "installs": 33,
+     "ctr": 0.04107,
+     "ipm": 5.577,
+     "ipm_ci95": [
+      3.974,
+      7.822
+     ]
+    }
+   }
+  },
+  "cta": {
+   "Claim Bonus": {
+    "all": {
+     "impressions": 77723,
+     "clicks": 2806,
+     "installs": 230,
+     "ctr": 0.0361,
+     "ipm": 2.959,
+     "ipm_ci95": [
+      2.601,
+      3.366
+     ]
+    },
+    "rpg": {
+     "impressions": 36184,
+     "clicks": 1201,
+     "installs": 115,
+     "ctr": 0.03319,
+     "ipm": 3.178,
+     "ipm_ci95": [
+      2.649,
+      3.813
+     ]
+    },
+    "companion": {
+     "impressions": 26779,
+     "clicks": 995,
+     "installs": 75,
+     "ctr": 0.03716,
+     "ipm": 2.801,
+     "ipm_ci95": [
+      2.235,
+      3.509
+     ]
+    },
+    "casual": {
+     "impressions": 14760,
+     "clicks": 610,
+     "installs": 40,
+     "ctr": 0.04133,
+     "ipm": 2.71,
+     "ipm_ci95": [
+      1.991,
+      3.688
+     ]
+    }
+   },
+   "Install Now": {
+    "all": {
+     "impressions": 17115,
+     "clicks": 573,
+     "installs": 73,
+     "ctr": 0.03348,
+     "ipm": 4.265,
+     "ipm_ci95": [
+      3.394,
+      5.359
+     ]
+    },
+    "rpg": {
+     "impressions": 7860,
+     "clicks": 190,
+     "installs": 29,
+     "ctr": 0.02417,
+     "ipm": 3.69,
+     "ipm_ci95": [
+      2.57,
+      5.294
+     ]
+    },
+    "companion": {
+     "impressions": 5869,
+     "clicks": 259,
+     "installs": 29,
+     "ctr": 0.04413,
+     "ipm": 4.941,
+     "ipm_ci95": [
+      3.443,
+      7.087
+     ]
+    },
+    "casual": {
+     "impressions": 3386,
+     "clicks": 124,
+     "installs": 15,
+     "ctr": 0.03662,
+     "ipm": 4.43,
+     "ipm_ci95": [
+      2.687,
+      7.297
+     ]
+    }
+   },
+   "Join Luna": {
+    "all": {
+     "impressions": 13425,
+     "clicks": 514,
+     "installs": 47,
+     "ctr": 0.03829,
+     "ipm": 3.501,
+     "ipm_ci95": [
+      2.634,
+      4.652
+     ]
+    },
+    "rpg": {
+     "impressions": 6229,
+     "clicks": 335,
+     "installs": 33,
+     "ctr": 0.05378,
+     "ipm": 5.298,
+     "ipm_ci95": [
+      3.775,
+      7.431
+     ]
+    },
+    "companion": {
+     "impressions": 4744,
+     "clicks": 125,
+     "installs": 9,
+     "ctr": 0.02635,
+     "ipm": 1.897,
+     "ipm_ci95": [
+      0.998,
+      3.602
+     ]
+    },
+    "casual": {
+     "impressions": 2452,
+     "clicks": 54,
+     "installs": 5,
+     "ctr": 0.02202,
+     "ipm": 2.039,
+     "ipm_ci95": [
+      0.871,
+      4.765
+     ]
+    }
+   },
+   "Play Free": {
+    "all": {
+     "impressions": 11737,
+     "clicks": 523,
+     "installs": 87,
+     "ctr": 0.04456,
+     "ipm": 7.412,
+     "ipm_ci95": [
+      6.014,
+      9.134
+     ]
+    },
+    "rpg": {
+     "impressions": 5446,
+     "clicks": 321,
+     "installs": 54,
+     "ctr": 0.05894,
+     "ipm": 9.916,
+     "ipm_ci95": [
+      7.608,
+      12.914
+     ]
+    },
+    "companion": {
+     "impressions": 4046,
+     "clicks": 144,
+     "installs": 20,
+     "ctr": 0.03559,
+     "ipm": 4.943,
+     "ipm_ci95": [
+      3.202,
+      7.623
+     ]
+    },
+    "casual": {
+     "impressions": 2245,
+     "clicks": 58,
+     "installs": 13,
+     "ctr": 0.02584,
+     "ipm": 5.791,
+     "ipm_ci95": [
+      3.387,
+      9.883
+     ]
+    }
+   }
+  },
+  "audio": {
+   "low_drums": {
+    "all": {
+     "impressions": 30252,
+     "clicks": 1199,
+     "installs": 141,
+     "ctr": 0.03963,
+     "ipm": 4.661,
+     "ipm_ci95": [
+      3.954,
+      5.494
+     ]
+    },
+    "rpg": {
+     "impressions": 14062,
+     "clicks": 604,
+     "installs": 77,
+     "ctr": 0.04295,
+     "ipm": 5.476,
+     "ipm_ci95": [
+      4.384,
+      6.838
+     ]
+    },
+    "companion": {
+     "impressions": 10465,
+     "clicks": 362,
+     "installs": 35,
+     "ctr": 0.03459,
+     "ipm": 3.344,
+     "ipm_ci95": [
+      2.406,
+      4.648
+     ]
+    },
+    "casual": {
+     "impressions": 5725,
+     "clicks": 233,
+     "installs": 29,
+     "ctr": 0.0407,
+     "ipm": 5.066,
+     "ipm_ci95": [
+      3.529,
+      7.265
+     ]
+    }
+   },
+   "none": {
+    "all": {
+     "impressions": 9651,
+     "clicks": 360,
+     "installs": 51,
+     "ctr": 0.0373,
+     "ipm": 5.284,
+     "ipm_ci95": [
+      4.022,
+      6.941
+     ]
+    },
+    "rpg": {
+     "impressions": 4393,
+     "clicks": 192,
+     "installs": 25,
+     "ctr": 0.04371,
+     "ipm": 5.691,
+     "ipm_ci95": [
+      3.858,
+      8.388
+     ]
+    },
+    "companion": {
+     "impressions": 3454,
+     "clicks": 119,
+     "installs": 18,
+     "ctr": 0.03445,
+     "ipm": 5.211,
+     "ipm_ci95": [
+      3.299,
+      8.223
+     ]
+    },
+    "casual": {
+     "impressions": 1804,
+     "clicks": 49,
+     "installs": 8,
+     "ctr": 0.02716,
+     "ipm": 4.435,
+     "ipm_ci95": [
+      2.249,
+      8.727
+     ]
+    }
+   },
+   "upbeat_synth": {
+    "all": {
+     "impressions": 14223,
+     "clicks": 486,
+     "installs": 69,
+     "ctr": 0.03417,
+     "ipm": 4.851,
+     "ipm_ci95": [
+      3.835,
+      6.135
+     ]
+    },
+    "rpg": {
+     "impressions": 6616,
+     "clicks": 239,
+     "installs": 41,
+     "ctr": 0.03612,
+     "ipm": 6.197,
+     "ipm_ci95": [
+      4.572,
+      8.396
+     ]
+    },
+    "companion": {
+     "impressions": 4855,
+     "clicks": 140,
+     "installs": 17,
+     "ctr": 0.02884,
+     "ipm": 3.502,
+     "ipm_ci95": [
+      2.187,
+      5.601
+     ]
+    },
+    "casual": {
+     "impressions": 2752,
+     "clicks": 107,
+     "installs": 11,
+     "ctr": 0.03888,
+     "ipm": 3.997,
+     "ipm_ci95": [
+      2.233,
+      7.144
+     ]
+    }
+   },
+   "warm_piano": {
+    "all": {
+     "impressions": 65874,
+     "clicks": 2371,
+     "installs": 176,
+     "ctr": 0.03599,
+     "ipm": 2.672,
+     "ipm_ci95": [
+      2.306,
+      3.096
+     ]
+    },
+    "rpg": {
+     "impressions": 30648,
+     "clicks": 1012,
+     "installs": 88,
+     "ctr": 0.03302,
+     "ipm": 2.871,
+     "ipm_ci95": [
+      2.331,
+      3.536
+     ]
+    },
+    "companion": {
+     "impressions": 22664,
+     "clicks": 902,
+     "installs": 63,
+     "ctr": 0.0398,
+     "ipm": 2.78,
+     "ipm_ci95": [
+      2.173,
+      3.555
+     ]
+    },
+    "casual": {
+     "impressions": 12562,
+     "clicks": 457,
+     "installs": 25,
+     "ctr": 0.03638,
+     "ipm": 1.99,
+     "ipm_ci95": [
+      1.348,
+      2.936
+     ]
+    }
+   }
+  }
+ },
+ "variants": [
+  {
+   "variant_id": "v_036",
+   "background": "storm_battlefield",
+   "character": "Mira",
+   "action": "close_up_smile",
+   "hook": "Free gems every day",
+   "cta": "Claim Bonus",
+   "audio": "warm_piano",
+   "aspect": "9:16",
+   "duration_s": 6,
+   "impressions": 45313,
+   "clicks": 1487,
+   "installs": 89,
+   "ctr": 0.03282,
+   "ipm": 1.964,
+   "ipm_ci95": [
+    1.597,
+    2.416
+   ]
+  },
+  {
+   "variant_id": "v_028",
+   "background": "sunlit_meadow",
+   "character": "Mira",
+   "action": "opens_treasure",
+   "hook": "Your party is waiting.",
+   "cta": "Claim Bonus",
+   "audio": "low_drums",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 14214,
+   "clicks": 536,
+   "installs": 57,
+   "ctr": 0.03771,
+   "ipm": 4.01,
+   "ipm_ci95": [
+    3.097,
+    5.192
+   ]
+  },
+  {
+   "variant_id": "v_009",
+   "background": "storm_battlefield",
+   "character": "Kael",
+   "action": "waves_to_camera",
+   "hook": "Free gems every day",
+   "cta": "Install Now",
+   "audio": "warm_piano",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 5798,
+   "clicks": 178,
+   "installs": 9,
+   "ctr": 0.0307,
+   "ipm": 1.552,
+   "ipm_ci95": [
+    0.817,
+    2.948
+   ]
+  },
+  {
+   "variant_id": "v_027",
+   "background": "storm_battlefield",
+   "character": "Mira",
+   "action": "casts_spell",
+   "hook": "The ruins are calling",
+   "cta": "Join Luna",
+   "audio": "warm_piano",
+   "aspect": "9:16",
+   "duration_s": 15,
+   "impressions": 5377,
+   "clicks": 313,
+   "installs": 32,
+   "ctr": 0.05821,
+   "ipm": 5.951,
+   "ipm_ci95": [
+    4.219,
+    8.389
+   ]
+  },
+  {
+   "variant_id": "v_030",
+   "background": "neon_city",
+   "character": "Kael",
+   "action": "waves_to_camera",
+   "hook": "Your party is waiting.",
+   "cta": "Claim Bonus",
+   "audio": "upbeat_synth",
+   "aspect": "1:1",
+   "duration_s": 30,
+   "impressions": 4739,
+   "clicks": 168,
+   "installs": 26,
+   "ctr": 0.03545,
+   "ipm": 5.486,
+   "ipm_ci95": [
+    3.747,
+    8.027
+   ]
+  },
+  {
+   "variant_id": "v_016",
+   "background": "cozy_cafe",
+   "character": "Rex",
+   "action": "opens_treasure",
+   "hook": "Your party is waiting.",
+   "cta": "Install Now",
+   "audio": "upbeat_synth",
+   "aspect": "9:16",
+   "duration_s": 30,
+   "impressions": 4626,
+   "clicks": 128,
+   "installs": 26,
+   "ctr": 0.02767,
+   "ipm": 5.62,
+   "ipm_ci95": [
+    3.838,
+    8.223
+   ]
+  },
+  {
+   "variant_id": "v_013",
+   "background": "throne_room",
+   "character": "Rex",
+   "action": "draws_blade",
+   "hook": "The ruins are calling",
+   "cta": "Claim Bonus",
+   "audio": "low_drums",
+   "aspect": "1:1",
+   "duration_s": 15,
+   "impressions": 4561,
+   "clicks": 205,
+   "installs": 23,
+   "ctr": 0.04495,
+   "ipm": 5.043,
+   "ipm_ci95": [
+    3.363,
+    7.556
+   ]
+  },
+  {
+   "variant_id": "v_035",
+   "background": "storm_battlefield",
+   "character": "Mira",
+   "action": "close_up_smile",
+   "hook": "Your party is waiting.",
+   "cta": "Play Free",
+   "audio": "none",
+   "aspect": "1:1",
+   "duration_s": 15,
+   "impressions": 3575,
+   "clicks": 147,
+   "installs": 26,
+   "ctr": 0.04112,
+   "ipm": 7.273,
+   "ipm_ci95": [
+    4.968,
+    10.635
+   ]
+  },
+  {
+   "variant_id": "v_014",
+   "background": "cozy_cafe",
+   "character": "Mira",
+   "action": "casts_spell",
+   "hook": "Free gems every day",
+   "cta": "Join Luna",
+   "audio": "low_drums",
+   "aspect": "1:1",
+   "duration_s": 15,
+   "impressions": 3345,
+   "clicks": 95,
+   "installs": 5,
+   "ctr": 0.0284,
+   "ipm": 1.495,
+   "ipm_ci95": [
+    0.639,
+    3.495
+   ]
+  },
+  {
+   "variant_id": "v_008",
+   "background": "neon_city",
+   "character": "Mira",
+   "action": "draws_blade",
+   "hook": "She remembers everything.",
+   "cta": "Claim Bonus",
+   "audio": "warm_piano",
+   "aspect": "1:1",
+   "duration_s": 30,
+   "impressions": 2714,
+   "clicks": 105,
+   "installs": 18,
+   "ctr": 0.03869,
+   "ipm": 6.632,
+   "ipm_ci95": [
+    4.199,
+    10.46
+   ]
+  },
+  {
+   "variant_id": "v_026",
+   "background": "cozy_cafe",
+   "character": "Kael",
+   "action": "waves_to_camera",
+   "hook": "The ruins are calling",
+   "cta": "Play Free",
+   "audio": "low_drums",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 2702,
+   "clicks": 87,
+   "installs": 13,
+   "ctr": 0.0322,
+   "ipm": 4.811,
+   "ipm_ci95": [
+    2.814,
+    8.215
+   ]
+  },
+  {
+   "variant_id": "v_007",
+   "background": "storm_battlefield",
+   "character": "Mira",
+   "action": "waves_to_camera",
+   "hook": "Your party is waiting.",
+   "cta": "Play Free",
+   "audio": "low_drums",
+   "aspect": "9:16",
+   "duration_s": 6,
+   "impressions": 2576,
+   "clicks": 149,
+   "installs": 28,
+   "ctr": 0.05784,
+   "ipm": 10.87,
+   "ipm_ci95": [
+    7.531,
+    15.665
+   ]
+  },
+  {
+   "variant_id": "v_018",
+   "background": "neon_city",
+   "character": "Luna",
+   "action": "close_up_smile",
+   "hook": "Free gems every day",
+   "cta": "Install Now",
+   "audio": "warm_piano",
+   "aspect": "9:16",
+   "duration_s": 30,
+   "impressions": 2122,
+   "clicks": 89,
+   "installs": 8,
+   "ctr": 0.04194,
+   "ipm": 3.77,
+   "ipm_ci95": [
+    1.912,
+    7.422
+   ]
+  },
+  {
+   "variant_id": "v_023",
+   "background": "cozy_cafe",
+   "character": "Rex",
+   "action": "close_up_smile",
+   "hook": "The ruins are calling",
+   "cta": "Claim Bonus",
+   "audio": "warm_piano",
+   "aspect": "9:16",
+   "duration_s": 6,
+   "impressions": 1911,
+   "clicks": 84,
+   "installs": 3,
+   "ctr": 0.04396,
+   "ipm": 1.57,
+   "ipm_ci95": [
+    0.534,
+    4.606
+   ]
+  },
+  {
+   "variant_id": "v_011",
+   "background": "neon_city",
+   "character": "Rex",
+   "action": "close_up_smile",
+   "hook": "Free gems every day",
+   "cta": "Join Luna",
+   "audio": "upbeat_synth",
+   "aspect": "1:1",
+   "duration_s": 30,
+   "impressions": 1880,
+   "clicks": 37,
+   "installs": 4,
+   "ctr": 0.01968,
+   "ipm": 2.128,
+   "ipm_ci95": [
+    0.828,
+    5.458
+   ]
+  },
+  {
+   "variant_id": "v_006",
+   "background": "cozy_cafe",
+   "character": "Rex",
+   "action": "casts_spell",
+   "hook": "Free gems every day",
+   "cta": "Join Luna",
+   "audio": "none",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 1851,
+   "clicks": 34,
+   "installs": 0,
+   "ctr": 0.01837,
+   "ipm": 0.0,
+   "ipm_ci95": [
+    0.0,
+    2.071
+   ]
+  },
+  {
+   "variant_id": "v_002",
+   "background": "sunlit_meadow",
+   "character": "Luna",
+   "action": "casts_spell",
+   "hook": "Free gems every day",
+   "cta": "Claim Bonus",
+   "audio": "warm_piano",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 1011,
+   "clicks": 39,
+   "installs": 3,
+   "ctr": 0.03858,
+   "ipm": 2.967,
+   "ipm_ci95": [
+    1.01,
+    8.688
+   ]
+  },
+  {
+   "variant_id": "v_031",
+   "background": "neon_city",
+   "character": "Kael",
+   "action": "close_up_smile",
+   "hook": "The ruins are calling",
+   "cta": "Install Now",
+   "audio": "low_drums",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 977,
+   "clicks": 40,
+   "installs": 9,
+   "ctr": 0.04094,
+   "ipm": 9.212,
+   "ipm_ci95": [
+    4.854,
+    17.414
+   ]
+  },
+  {
+   "variant_id": "v_005",
+   "background": "moonlit_temple",
+   "character": "Rex",
+   "action": "casts_spell",
+   "hook": "She remembers everything.",
+   "cta": "Play Free",
+   "audio": "warm_piano",
+   "aspect": "9:16",
+   "duration_s": 6,
+   "impressions": 930,
+   "clicks": 50,
+   "installs": 8,
+   "ctr": 0.05376,
+   "ipm": 8.602,
+   "ipm_ci95": [
+    4.365,
+    16.882
+   ]
+  },
+  {
+   "variant_id": "v_032",
+   "background": "moonlit_temple",
+   "character": "Luna",
+   "action": "casts_spell",
+   "hook": "The ruins are calling",
+   "cta": "Claim Bonus",
+   "audio": "none",
+   "aspect": "9:16",
+   "duration_s": 15,
+   "impressions": 898,
+   "clicks": 39,
+   "installs": 2,
+   "ctr": 0.04343,
+   "ipm": 2.227,
+   "ipm_ci95": [
+    0.611,
+    8.084
+   ]
+  },
+  {
+   "variant_id": "v_025",
+   "background": "moonlit_temple",
+   "character": "Rex",
+   "action": "draws_blade",
+   "hook": "The ruins are calling",
+   "cta": "Claim Bonus",
+   "audio": "upbeat_synth",
+   "aspect": "9:16",
+   "duration_s": 6,
+   "impressions": 783,
+   "clicks": 69,
+   "installs": 6,
+   "ctr": 0.08812,
+   "ipm": 7.663,
+   "ipm_ci95": [
+    3.516,
+    16.617
+   ]
+  },
+  {
+   "variant_id": "v_034",
+   "background": "neon_city",
+   "character": "Kael",
+   "action": "opens_treasure",
+   "hook": "Free gems every day",
+   "cta": "Claim Bonus",
+   "audio": "upbeat_synth",
+   "aspect": "9:16",
+   "duration_s": 15,
+   "impressions": 779,
+   "clicks": 34,
+   "installs": 0,
+   "ctr": 0.04365,
+   "ipm": 0.0,
+   "ipm_ci95": [
+    0.0,
+    4.907
+   ]
+  },
+  {
+   "variant_id": "v_029",
+   "background": "cozy_cafe",
+   "character": "Kael",
+   "action": "draws_blade",
+   "hook": "She remembers everything.",
+   "cta": "Install Now",
+   "audio": "none",
+   "aspect": "9:16",
+   "duration_s": 15,
+   "impressions": 770,
+   "clicks": 34,
+   "installs": 4,
+   "ctr": 0.04416,
+   "ipm": 5.195,
+   "ipm_ci95": [
+    2.022,
+    13.28
+   ]
+  },
+  {
+   "variant_id": "v_017",
+   "background": "cozy_cafe",
+   "character": "Luna",
+   "action": "close_up_smile",
+   "hook": "Free gems every day",
+   "cta": "Install Now",
+   "audio": "none",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 723,
+   "clicks": 29,
+   "installs": 5,
+   "ctr": 0.04011,
+   "ipm": 6.916,
+   "ipm_ci95": [
+    2.957,
+    16.086
+   ]
+  },
+  {
+   "variant_id": "v_024",
+   "background": "sunlit_meadow",
+   "character": "Luna",
+   "action": "draws_blade",
+   "hook": "Can you beat level 3?",
+   "cta": "Claim Bonus",
+   "audio": "low_drums",
+   "aspect": "9:16",
+   "duration_s": 6,
+   "impressions": 712,
+   "clicks": 37,
+   "installs": 2,
+   "ctr": 0.05197,
+   "ipm": 2.809,
+   "ipm_ci95": [
+    0.771,
+    10.184
+   ]
+  },
+  {
+   "variant_id": "v_000",
+   "background": "storm_battlefield",
+   "character": "Luna",
+   "action": "close_up_smile",
+   "hook": "Your party is waiting.",
+   "cta": "Join Luna",
+   "audio": "low_drums",
+   "aspect": "1:1",
+   "duration_s": 15,
+   "impressions": 693,
+   "clicks": 25,
+   "installs": 3,
+   "ctr": 0.03608,
+   "ipm": 4.329,
+   "ipm_ci95": [
+    1.473,
+    12.65
+   ]
+  },
+  {
+   "variant_id": "v_033",
+   "background": "sunlit_meadow",
+   "character": "Luna",
+   "action": "opens_treasure",
+   "hook": "The ruins are calling",
+   "cta": "Install Now",
+   "audio": "none",
+   "aspect": "1:1",
+   "duration_s": 30,
+   "impressions": 691,
+   "clicks": 22,
+   "installs": 5,
+   "ctr": 0.03184,
+   "ipm": 7.236,
+   "ipm_ci95": [
+    3.095,
+    16.826
+   ]
+  },
+  {
+   "variant_id": "v_022",
+   "background": "throne_room",
+   "character": "Mira",
+   "action": "draws_blade",
+   "hook": "She remembers everything.",
+   "cta": "Install Now",
+   "audio": "upbeat_synth",
+   "aspect": "9:16",
+   "duration_s": 30,
+   "impressions": 642,
+   "clicks": 23,
+   "installs": 3,
+   "ctr": 0.03583,
+   "ipm": 4.673,
+   "ipm_ci95": [
+    1.59,
+    13.648
+   ]
+  },
+  {
+   "variant_id": "v_037",
+   "background": "throne_room",
+   "character": "Rex",
+   "action": "draws_blade",
+   "hook": "Free gems every day",
+   "cta": "Play Free",
+   "audio": "upbeat_synth",
+   "aspect": "1:1",
+   "duration_s": 30,
+   "impressions": 575,
+   "clicks": 19,
+   "installs": 2,
+   "ctr": 0.03304,
+   "ipm": 3.478,
+   "ipm_ci95": [
+    0.954,
+    12.593
+   ]
+  },
+  {
+   "variant_id": "v_039",
+   "background": "sunlit_meadow",
+   "character": "Luna",
+   "action": "opens_treasure",
+   "hook": "She remembers everything.",
+   "cta": "Play Free",
+   "audio": "none",
+   "aspect": "1:1",
+   "duration_s": 15,
+   "impressions": 531,
+   "clicks": 26,
+   "installs": 5,
+   "ctr": 0.04896,
+   "ipm": 9.416,
+   "ipm_ci95": [
+    4.028,
+    21.851
+   ]
+  },
+  {
+   "variant_id": "v_003",
+   "background": "throne_room",
+   "character": "Mira",
+   "action": "close_up_smile",
+   "hook": "Can you beat level 3?",
+   "cta": "Join Luna",
+   "audio": "warm_piano",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 279,
+   "clicks": 10,
+   "installs": 3,
+   "ctr": 0.03584,
+   "ipm": 10.753,
+   "ipm_ci95": [
+    3.663,
+    31.132
+   ]
+  },
+  {
+   "variant_id": "v_001",
+   "background": "neon_city",
+   "character": "Kael",
+   "action": "close_up_smile",
+   "hook": "Your party is waiting.",
+   "cta": "Play Free",
+   "audio": "low_drums",
+   "aspect": "9:16",
+   "duration_s": 6,
+   "impressions": 274,
+   "clicks": 21,
+   "installs": 1,
+   "ctr": 0.07664,
+   "ipm": 3.65,
+   "ipm_ci95": [
+    0.645,
+    20.38
+   ]
+  },
+  {
+   "variant_id": "v_004",
+   "background": "sunlit_meadow",
+   "character": "Kael",
+   "action": "close_up_smile",
+   "hook": "Can you beat level 3?",
+   "cta": "Install Now",
+   "audio": "warm_piano",
+   "aspect": "9:16",
+   "duration_s": 15,
+   "impressions": 267,
+   "clicks": 12,
+   "installs": 1,
+   "ctr": 0.04494,
+   "ipm": 3.745,
+   "ipm_ci95": [
+    0.661,
+    20.907
+   ]
+  },
+  {
+   "variant_id": "v_010",
+   "background": "cozy_cafe",
+   "character": "Mira",
+   "action": "draws_blade",
+   "hook": "She remembers everything.",
+   "cta": "Install Now",
+   "audio": "none",
+   "aspect": "9:16",
+   "duration_s": 6,
+   "impressions": 237,
+   "clicks": 13,
+   "installs": 2,
+   "ctr": 0.05485,
+   "ipm": 8.439,
+   "ipm_ci95": [
+    2.317,
+    30.242
+   ]
+  },
+  {
+   "variant_id": "v_021",
+   "background": "throne_room",
+   "character": "Kael",
+   "action": "casts_spell",
+   "hook": "The ruins are calling",
+   "cta": "Play Free",
+   "audio": "none",
+   "aspect": "9:16",
+   "duration_s": 30,
+   "impressions": 213,
+   "clicks": 9,
+   "installs": 0,
+   "ctr": 0.04225,
+   "ipm": 0.0,
+   "ipm_ci95": [
+    0.0,
+    17.716
+   ]
+  },
+  {
+   "variant_id": "v_012",
+   "background": "neon_city",
+   "character": "Mira",
+   "action": "draws_blade",
+   "hook": "Your party is waiting.",
+   "cta": "Play Free",
+   "audio": "upbeat_synth",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 199,
+   "clicks": 8,
+   "installs": 2,
+   "ctr": 0.0402,
+   "ipm": 10.05,
+   "ipm_ci95": [
+    2.76,
+    35.898
+   ]
+  },
+  {
+   "variant_id": "v_038",
+   "background": "neon_city",
+   "character": "Kael",
+   "action": "casts_spell",
+   "hook": "The ruins are calling",
+   "cta": "Install Now",
+   "audio": "low_drums",
+   "aspect": "1:1",
+   "duration_s": 6,
+   "impressions": 198,
+   "clicks": 4,
+   "installs": 0,
+   "ctr": 0.0202,
+   "ipm": 0.0,
+   "ipm_ci95": [
+    0.0,
+    19.033
+   ]
+  },
+  {
+   "variant_id": "v_015",
+   "background": "moonlit_temple",
+   "character": "Rex",
+   "action": "opens_treasure",
+   "hook": "Free gems every day",
+   "cta": "Play Free",
+   "audio": "none",
+   "aspect": "9:16",
+   "duration_s": 15,
+   "impressions": 162,
+   "clicks": 7,
+   "installs": 2,
+   "ctr": 0.04321,
+   "ipm": 12.346,
+   "ipm_ci95": [
+    3.392,
+    43.892
+   ]
+  },
+  {
+   "variant_id": "v_019",
+   "background": "neon_city",
+   "character": "Rex",
+   "action": "opens_treasure",
+   "hook": "Can you beat level 3?",
+   "cta": "Claim Bonus",
+   "audio": "warm_piano",
+   "aspect": "1:1",
+   "duration_s": 15,
+   "impressions": 88,
+   "clicks": 3,
+   "installs": 1,
+   "ctr": 0.03409,
+   "ipm": 11.364,
+   "ipm_ci95": [
+    2.009,
+    61.596
+   ]
+  },
+  {
+   "variant_id": "v_020",
+   "background": "throne_room",
+   "character": "Kael",
+   "action": "opens_treasure",
+   "hook": "The ruins are calling",
+   "cta": "Install Now",
+   "audio": "warm_piano",
+   "aspect": "1:1",
+   "duration_s": 30,
+   "impressions": 64,
+   "clicks": 1,
+   "installs": 1,
+   "ctr": 0.01562,
+   "ipm": 15.625,
+   "ipm_ci95": [
+    2.763,
+    83.343
+   ]
+  }
+ ]
+}

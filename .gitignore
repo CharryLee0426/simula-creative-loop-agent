@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+config/local.json
+runs/
+cache/
+spike/
+py/.venv/
+py/renderer/assets/fonts/*.otf
+__pycache__/
+*.pyc
+.DS_Store
+*.tmp-*
+memory/*.json
