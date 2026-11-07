@@ -263,6 +263,29 @@ export class StatsigPlatform implements Platform {
 		return out;
 	}
 
+	/** Planned horizon = the simulated traffic (replaces Statsig's default 14-day duration). */
+	async setTarget(exp: CreatedExperiment, targetExposures: number): Promise<boolean> {
+		const r = await this.api("PATCH", `/experiments/${encodeURIComponent(exp.id)}`, { targetExposures: Math.max(1, Math.round(targetExposures)) });
+		return r.status < 300;
+	}
+
+	/** Ask Statsig to (re)compute Pulse now. Best effort: availability depends on the plan. */
+	async loadPulse(exp: CreatedExperiment): Promise<string> {
+		const r = await this.api("POST", `/experiments/${encodeURIComponent(exp.id)}/load_pulse`, { refresh: "full" });
+		return r.status < 300 ? "loading" : `HTTP ${r.status}: ${JSON.stringify(r.json).slice(0, 160)}`;
+	}
+
+	/** Write the round's readout back as the experiment decision (ship the winning group). */
+	async conclude(exp: CreatedExperiment, winnerVariant: string, reason: string): Promise<string> {
+		const cur = await this.api("GET", `/experiments/${encodeURIComponent(exp.id)}`);
+		const d = cur.json?.data;
+		if (d && ["decision_made", "abandoned", "archived"].includes(d.status)) return `already ${d.status}`;
+		const g = (d?.groups ?? []).find((x: any) => String(x.parameterValues?.variant_id) === winnerVariant || x.name === winnerVariant);
+		if (!g?.id) return `winner group ${winnerVariant} not found`;
+		const r = await this.api("PUT", `/experiments/${encodeURIComponent(exp.id)}/make_decision`, { id: g.id, decisionReason: reason.slice(0, 1000) });
+		return r.status < 300 ? "decision_made" : `HTTP ${r.status}: ${JSON.stringify(r.json).slice(0, 200)}`;
+	}
+
 	/** Attach event metrics once events exist (they are created by Statsig on first ingestion). */
 	async attachMetrics(exp: CreatedExperiment): Promise<boolean> {
 		const r = await this.api("PATCH", `/experiments/${encodeURIComponent(exp.id)}`, {

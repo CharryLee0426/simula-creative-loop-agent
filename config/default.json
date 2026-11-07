@@ -36,7 +36,8 @@
     "looks": 4,
     "early_stop": true,
     "guardrail_ctr_drop": 0.15,
-    "statsig_event_mode": "per_user"
+    "statsig_event_mode": "per_user",
+    "conclude_on_platform": true
   },
   "review": {
     "mode": "auto",

@@ -17,6 +17,7 @@
     "report": "node src/cli.ts report",
     "eval": "node src/cli.ts eval",
     "pulse": "node src/cli.ts pulse",
+    "conclude": "node src/cli.ts conclude",
     "export": "node src/cli.ts export",
     "typecheck": "tsc --noEmit -p .",
     "test": "node --test test/*.test.ts"

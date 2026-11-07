@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Single entry point. `npm run loop` runs everything end to end; see README for the other commands.
 import { cpSync, existsSync, readdirSync } from "node:fs";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 import { createInterface } from "node:readline/promises";
 import { loadConfig, loadDotEnv, PATHS, runPaths, secrets, type Config } from "./config.ts";
 import { ctx, ensureStrategist, openHarness } from "./durable/harness.ts";
@@ -9,7 +9,7 @@ import { LoopTask, RoundTask, VideoTask } from "./durable/tasks.ts";
 import { LocalPlatform, StatsigPlatform, type CreatedExperiment, type Platform } from "./experiment/platform.ts";
 import { writeReport } from "./report/html.ts";
 import { loadState, makeRunContext, rc, saveState, setRun } from "./runtime.ts";
-import { ensureDir, errMsg, fmtUsd, log, readJson, readJsonIf, run, writeJson } from "./util/core.ts";
+import { ensureDir, errMsg, fmtUsd, log, readJson, readJsonIf, readJsonl, run, writeJson, writeText } from "./util/core.ts";
 
 type Flags = { _: string[]; [k: string]: string | boolean | string[] };
 function parseArgs(argv: string[]): Flags {
@@ -213,6 +213,29 @@ async function cmdPulse(f: Flags): Promise<void> {
 	}
 }
 
+/** Backfill: for every Statsig experiment of a run, set the target to the simulated traffic, trigger a Pulse load and
+ *  record the round's readout as the decision (ship the winner). Idempotent. */
+async function cmdConclude(f: Flags): Promise<void> {
+	loadDotEnv();
+	const { decisionReason } = await import("./experiment/analyze.ts");
+	const runId = String(f.run ?? latestRun());
+	const paths = runPaths(runId);
+	const s = secrets();
+	if (!s.statsigServer || !s.statsigConsole) throw new Error("Statsig keys missing");
+	const p = new StatsigPlatform(s.statsigServer, s.statsigConsole);
+	for (let n = 0; existsSync(join(paths.round(n), "results.json")); n++) {
+		const exp = readJson<CreatedExperiment>(join(paths.round(n), "experiment.json"));
+		if (exp.platform !== "statsig") continue;
+		const res = readJson<any>(join(paths.round(n), "results.json"));
+		const metrics = await p.attachMetrics(exp).catch(() => false);
+		const target = await p.setTarget(exp, res.total_users).catch(() => false);
+		const pulse = await p.loadPulse(exp).catch((e) => errMsg(e));
+		const status = await p.conclude(exp, res.winner, decisionReason(res, res.total_users, res.looks_used)).catch((e) => errMsg(e));
+		writeJson(join(paths.round(n), "experiment.json"), { ...exp, status, decision: { winner: res.winner, status, pulse_load: pulse, at: new Date().toISOString() } });
+		log.info(`round ${n} ${exp.name}: metrics ${metrics ? "ok" : "—"} · target ${target ? res.total_users.toLocaleString() + " exposures" : "not set"} · pulse ${pulse} · decision ${status} (ship ${res.winner})`);
+	}
+}
+
 async function cmdEval(f: Flags): Promise<void> {
 	const { runEval } = await import("./eval/offline.ts");
 	loadDotEnv();
@@ -232,16 +255,62 @@ async function cmdExport(f: Flags): Promise<void> {
 		if (existsSync(join(paths.dir, name))) cpSync(join(paths.dir, name), join(out, name));
 	}
 	cpSync(join(paths.dir, "manifests"), join(out, "manifests"), { recursive: true });
-	cpSync(join(paths.dir, "rounds"), join(out, "rounds"), { recursive: true, filter: (src) => !src.includes(`${"/"}sim${"/"}`) || src.endsWith("sim") });
+	cpSync(join(paths.dir, "rounds"), join(out, "rounds"), { recursive: true });
 	const vdir = join(paths.dir, "variants");
 	if (existsSync(vdir)) for (const id of readdirSync(vdir)) {
 		const sd = join(vdir, id);
 		ensureDir(join(out, "variants", id));
 		for (const file of readdirSync(sd)) if (file.endsWith(".mp4") || file === "summary.json") cpSync(join(sd, file), join(out, "variants", id, file));
-		for (const a of readdirSync(sd).filter((x) => /^a\d+$/.test(x))) for (const file of readdirSync(join(sd, a)).filter((x) => x.endsWith(".json")))
-			cpSync(join(sd, a, file), join(out, "variants", id, a, file), { recursive: true });
+		for (const a of readdirSync(sd).filter((x) => /^a\d+$/.test(x))) {
+			ensureDir(join(out, "variants", id, a));
+			for (const file of readdirSync(join(sd, a)).filter((x) => x.endsWith(".json") && !x.endsWith(".job.json"))) cpSync(join(sd, a, file), join(out, "variants", id, a, file));
+		}
 	}
+	writeText(join(out, "README.md"), deliverablesReadme(runId));
 	log.ok(`exported deliverables → ${out}`);
+}
+
+/** Landing page for a exported run: what to open first, and links to every video, manifest and experiment. */
+function deliverablesReadme(runId: string): string {
+	const paths = runPaths(runId);
+	const st = loadState(paths);
+	const cfg = readJson<Config>(paths.config);
+	const ledger = readJsonIf<any>(join(paths.dir, "eval.json"));
+	const lines: string[] = [`# Deliverables — run \`${runId}\``, "",
+		"Open **[trace.html](trace.html)** in a browser (EN/中文 toggle) for the full trajectory with embedded videos; [trajectory.md](trajectory.md) is the same in Markdown.", "",
+		`Platform: ${cfg.experiment.platform} · rounds 0..${cfg.rounds} · languages ${cfg.languages.join(", ")} · models: strategist ${cfg.models.strategist}, images ${cfg.models.image} (${cfg.models.image_quality}), video review ${cfg.models.verifier}`, ""];
+	const total = readJsonl<{ usd: number }>(paths.ledger).reduce((s, e) => s + e.usd, 0);
+	lines.push(`Total API spend: **$${total.toFixed(2)}** (every call in [ledger.jsonl](ledger.jsonl)).`, "");
+	if (st.final) {
+		const m = readJsonIf<any>(paths.manifest(st.final.variant_id));
+		lines.push("## Final creative", "", `**${st.final.variant_id}** — ${st.final.verified ? "verified by the video model" : "best effort (not verified after max redos)"}, score ${st.final.score}`, "");
+		for (const [lang, p] of Object.entries(st.final.videos)) lines.push(`- ${lang}: [variants/${st.final.variant_id}/${basename(p)}](variants/${st.final.variant_id}/${basename(p)})`);
+		if (m) lines.push("", "```json", JSON.stringify(m, null, 2), "```");
+		lines.push("");
+	}
+	lines.push("## Generation 0 (seed) videos", "", "| variant | layers | verified | en | zh |", "|---|---|---|---|---|");
+	const p0 = readJsonIf<{ variant_ids: string[] }>(join(paths.round(0), "proposal.json"));
+	for (const id of p0?.variant_ids ?? []) {
+		const s = readJsonIf<any>(join(paths.variantDir(id), "summary.json"));
+		const m = readJsonIf<any>(paths.manifest(id));
+		const v = (l: string) => (s?.videos?.[l] ? `[mp4](variants/${id}/${id}_${l}.mp4)` : "—");
+		lines.push(`| [${id}](manifests/${id}.json) | ${m ? Object.values(m.layers).join(" / ") : ""} | ${s ? (s.passed ? `✓ (a${s.best_attempt})` : `best effort (a${s.best_attempt})`) : "—"} | ${v("en")} | ${v("zh")} |`);
+	}
+	lines.push("", "## Experiments", "", "| round | experiment | arms | users | decision |", "|---|---|---|---|---|");
+	for (let n = 0; existsSync(join(paths.round(n), "results.json")); n++) {
+		const exp = readJsonIf<any>(join(paths.round(n), "experiment.json"));
+		const r = readJson<any>(join(paths.round(n), "results.json"));
+		lines.push(`| ${n} | ${exp?.console_url ? `[${exp.name}](${exp.console_url})` : exp?.name} (${exp?.platform}) | ${r.arms.length} | ${r.total_users.toLocaleString()} | ${r.decision} |`);
+	}
+	if (ledger?.rows) {
+		lines.push("", "## Offline evaluation (ground truth = audience model, never shown to the agent)", "", "| policy | final true ipm | % of optimum |", "|---|---|---|");
+		for (const x of ledger.rows) lines.push(`| ${x.label} | ${x.final_true_ipm.toFixed(2)}${x.sd ? ` ± ${x.sd.toFixed(2)}` : ""} | ${Math.round(100 * x.pct_of_optimum)}% |`);
+		lines.push("", `Catalog optimum: ${ledger.optimum_label} (true ipm ${ledger.optimum_ipm.toFixed(2)}).`);
+	}
+	const shots = join(PATHS.deliverables, runId, "statsig_screenshots");
+	if (existsSync(shots)) lines.push("", "Statsig console screenshots: " + readdirSync(shots).filter((x) => /\.(png|jpe?g)$/.test(x)).map((x) => `[${x}](statsig_screenshots/${x})`).join(" · "));
+	lines.push("", "Layout: `manifests/` every variant · `rounds/r<N>/` prompt, proposal, validation attempts, experiment, sample size, simulated looks, results, Pulse · `variants/<id>/` videos, per-attempt plan / keyframes / verdicts.");
+	return lines.join("\n") + "\n";
 }
 
 function latestRun(): string {
@@ -269,6 +338,7 @@ const HELP = `simula creative loop
   npm run report -- [--run ID]      rebuild trace.html / trajectory.md
   npm run eval -- [--run ID]        offline evaluation vs baselines (uses the audience model's ground truth)
   npm run pulse -- [--run ID]       fetch Statsig Pulse results for the run's experiments
+  npm run conclude -- [--run ID]    Statsig: target = simulated traffic, load Pulse, write readout as decision (ship winner)
   npm run export -- [--run ID]      copy deliverables (videos, manifests, trace) to deliverables/<run>
 
 loop/round options:
@@ -292,6 +362,7 @@ async function main(): Promise<void> {
 		case "report": return cmdReport(f);
 		case "pulse": return cmdPulse(f);
 		case "eval": return cmdEval(f);
+		case "conclude": return cmdConclude(f);
 		case "export": return cmdExport(f);
 		case "fit": return cmdFit();
 		case "setup": return (await import("./setup.ts")).setup();

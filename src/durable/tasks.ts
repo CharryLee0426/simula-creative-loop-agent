@@ -11,7 +11,7 @@ import { join } from "node:path";
 import type { Lang } from "../config.ts";
 import { takeHumanFeedback, roundMessage } from "../agent/context.ts";
 import type { Proposal } from "../agent/validator.ts";
-import { analyze, shouldStopEarly, type RoundResult } from "../experiment/analyze.ts";
+import { analyze, decisionReason, shouldStopEarly, type RoundResult } from "../experiment/analyze.ts";
 import type { CreatedExperiment, ExperimentSpec } from "../experiment/platform.ts";
 import { StatsigPlatform } from "../experiment/platform.ts";
 import { mergeBatches, simulateBatch, type BatchAgg } from "../experiment/simulate.ts";
@@ -332,6 +332,7 @@ export const RoundTask = defineTask<RoundInput, RoundState, RoundOutput>({
 				const mde = achievableMde(pUser, perArm, e.alpha, e.power, exp.groups.length - 1);
 				const plan = { base_install_per_user: pUser, base_source: prev ? `control ${p.control} in round ${n - 1}` : "historical average", target_mde: e.mde_relative, users_needed_per_arm: need, users_per_arm: perArm, achievable_mde: mde, arms: exp.groups.length, total_users: perArm * exp.groups.length, looks: e.looks, alpha: e.alpha, power: e.power };
 				writeJson(join(dir, "sample_size.json"), plan);
+				if (r.platform instanceof StatsigPlatform) await r.platform.setTarget(exp, plan.total_users).catch(() => false);
 				r.trace.emit(n, "sample_size", `sample size: ${perArm} users/arm (needed ${need} for ${Math.round(100 * e.mde_relative)}% MDE at p=${(100 * pUser).toFixed(2)}%/user; achievable MDE ${Math.round(100 * mde)}%), ${e.looks} looks`, plan);
 			}
 			await rt.commit(() => running({ phase: "simulate" as const, look: 1 }), c);
@@ -376,7 +377,15 @@ export const RoundTask = defineTask<RoundInput, RoundState, RoundOutput>({
 			const p = readJson<{ control: string }>(proposalPath(n));
 			const res = analyze({ round: n, arms: mergeBatches(looks, [...manifests.keys()]), manifests, parents: allManifests(r.paths), control: p.control, alpha: r.cfg.experiment.alpha, guardrailDrop: r.cfg.experiment.guardrail_ctr_drop, seed: `${r.cfg.seed}|${n}|final`, looksUsed: k, stoppedEarly: early });
 			writeJson(join(dir, "results.json"), res);
-			if (r.platform instanceof StatsigPlatform) await r.platform.attachMetrics(exp).catch(() => false);
+			if (r.platform instanceof StatsigPlatform && r.cfg.experiment.conclude_on_platform !== false) {
+				// Close the loop on Statsig too: metrics attached, horizon = simulated traffic, readout written as the decision.
+				await r.platform.attachMetrics(exp).catch(() => false);
+				await r.platform.setTarget(exp, res.total_users).catch(() => false);
+				const pulse = await r.platform.loadPulse(exp).catch((e) => errMsg(e));
+				const status = await r.platform.conclude(exp, res.winner, decisionReason(res, res.total_users, k)).catch((e) => errMsg(e));
+				writeJson(join(dir, "experiment.json"), { ...exp, status, decision: { winner: res.winner, status, pulse_load: pulse, at: new Date().toISOString() } });
+				r.trace.emit(n, "note", `statsig: decision written for ${exp.name} → ship ${res.winner} (${status}); pulse load: ${pulse}`);
+			}
 			const w = res.arms.find((a) => a.variant_id === res.winner)!;
 			r.trace.emit(n, "analysis", `winner ${res.winner} ipm ${w.ipm.toFixed(2)} [${w.ipm_ci[0].toFixed(2)}, ${w.ipm_ci[1].toFixed(2)}], P(best) ${w.p_best.toFixed(2)} — ${res.decision}`, { winner: res.winner, decision: res.decision, significant: res.winner_significant });
 			await rt.commit(() => running({ phase: "record" as const }), c);

@@ -48,6 +48,7 @@ Requirements: Node ≥ 22.19 (runs the TypeScript directly), `ffmpeg`/`ffprobe`,
 | `npm run report -- --run <id>` | rebuild `trace.html` and `trajectory.md` |
 | `npm run eval -- --run <id>` | offline evaluation vs. baselines and the catalog optimum |
 | `npm run pulse -- --run <id>` | attach metrics and pull Statsig Pulse results once Statsig has computed them |
+| `npm run conclude -- --run <id>` | write each round's readout back to Statsig: horizon = simulated traffic, decision = ship the winner |
 | `npm run export -- --run <id>` | copy videos, manifests and the trace to `deliverables/<id>/` |
 | `npm run doctor` | check tools, keys, model ids, and Statsig access |
 
@@ -121,6 +122,12 @@ Hold-out AUC is 0.65 for clicks and 0.65 for installs. Variant-level weighted co
 - **When to stop:** 4 looks with an O'Brien–Fleming boundary on leader vs control, plus P(best) ≥ 0.95. Otherwise the experiment stops at the full horizon.
 - **Decision:** the champion is the guardrail-passing arm with the highest P(best). It is labeled *significant* only when it beats control after Holm correction; otherwise *directional*.
 - **Pulse lag:** Statsig computes Pulse on its own schedule. The loop's decisions use the same events, read out locally, and `npm run pulse` attaches the metrics and stores Pulse results next to each round once they exist.
+- **Closing the loop on Statsig:** after each readout the round writes back to its Statsig experiment:
+  - The primary metric (`app_install`) and secondary metrics (`ad_click`, `ad_impression`) are attached once Statsig has ingested the events.
+  - The planned horizon becomes the simulated traffic (`targetExposures`), replacing Statsig's 14-day default.
+  - The readout is recorded as the experiment **decision**: ship the winning group, with IPM, CI, lift, Holm p and P(best) in the decision reason.
+
+  The console then shows every round as a finished experiment. This is `experiment.conclude_on_platform`, on by default, and `npm run conclude -- --run <id>` backfills older runs.
 
 ### Agent (Goal 4)
 

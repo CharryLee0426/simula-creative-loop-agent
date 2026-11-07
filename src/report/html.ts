@@ -44,7 +44,7 @@ ${pts.map((p, i) => `<circle cx="${x(i)}" cy="${y(p.win)}" r="4" class="dot"/><t
 function videoCard(r: RunContext, id: string, m: Manifest | undefined): string {
 	const s = readJsonIf<any>(join(r.paths.variantDir(id), "summary.json"));
 	if (!s || !m) return "";
-	const vids = Object.entries<string>(s.videos ?? {}).map(([lang, p]) => `<video class="v-${lang}" src="${esc(relative(r.paths.dir, p))}" controls preload="metadata" playsinline></video>`).join("");
+	const vids = Object.entries<string>(s.videos ?? {}).map(([lang, p]) => `<video class="v-${lang}" src="${esc(relative(r.paths.dir, p))}#t=1.2" controls preload="metadata" playsinline></video>`).join("");
 	const attempts = (s.attempts ?? []).map((a: any) => `<li class="${a.pass ? "pass" : "fail"}">a${a.attempt}: ${a.pass ? "PASS" : "FAIL"} · ${a.score}${a.reused ? ` · kf ${a.reused.map((x: boolean) => (x ? "♻" : "★")).join("")}` : ""}${a.issues?.length ? `<br><small>${esc(a.issues.slice(0, 3).join(" | "))}</small>` : ""}</li>`).join("");
 	return `<figure class="vcard">${vids}<figcaption><b>${esc(id)}</b> <span class="badge ${s.passed ? "pass" : "fail"}">${s.passed ? t("verified", "已通过校验") : t("best effort", "未通过·取最佳")}</span><div class="layers">${layerCell(m, [])}</div><ul class="att">${attempts}</ul></figcaption></figure>`;
 }
@@ -98,6 +98,13 @@ export function buildReport(r: RunContext): string {
 <td><small>${SEGMENTS.map((s) => f2(a.by_segment[s].ipm)).join(" / ")}</small></td><td>${a.guardrail_ok ? "✓" : "✗"}</td></tr>`;
 		}).join("");
 		const videos = (prop?.variant_ids ?? []).map((id: string) => videoCard(r, id, manifests.get(id))).filter(Boolean).join("");
+		const pulse = readJsonIf<any>(join(r.paths.round(n), "pulse.json"));
+		const pulseRows = pulse ? Object.entries<any>(pulse.pulse ?? {}).map(([vid, d]) => {
+			if (d?.error) return `<tr><td>${esc(vid)}</td><td colspan="3" class="muted">${esc(d.error)} ${esc(JSON.stringify(d.detail ?? "").slice(0, 120))}</td></tr>`;
+			const ms = [...(d?.primaryMetrics ?? []), ...(d?.secondaryMetrics ?? [])];
+			return ms.map((mm: any) => `<tr><td>${esc(vid)}</td><td>${esc(mm.metricID ?? mm.name)}</td><td>${mm.percent_change ?? mm.percentChange ?? "—"}</td><td>${mm.p_value ?? mm.pValue ?? "—"}</td></tr>`).join("") || `<tr><td>${esc(vid)}</td><td colspan="3" class="muted">no metrics yet</td></tr>`;
+		}).join("") : "";
+		const pulseBlock = pulse ? `<h4>${t("Statsig Pulse (Statsig's own readout, fetched", "Statsig Pulse（Statsig 自己的分析，拉取于")} ${esc(String(pulse.fetched_at ?? "").slice(0, 16))})</h4><table class="t"><thead><tr><th>${t("arm", "组")}</th><th>metric</th><th>% change</th><th>p</th></tr></thead><tbody>${pulseRows}</tbody></table>` : "";
 		const learn = (prop?.learnings ?? []).map((l: any) => `<li><span class="badge ${l.status === "supported" ? "pass" : l.status === "refuted" ? "fail" : ""}">${esc(l.status)}</span> ${esc(l.text)}</li>`).join("");
 		const c = costs[n] ?? {};
 		const expLink = exp?.console_url ? `<a href="${esc(exp.console_url)}" target="_blank" rel="noopener">${esc(exp.name)}</a>` : esc(exp?.name ?? "");
@@ -114,6 +121,7 @@ ${changeRows ? `<table class="t"><thead><tr><th>${t("variant", "变体")}</th><t
 <h4>${t("Results", "结果")}</h4>
 <div class="scroll"><table class="t res"><thead><tr><th>${t("arm", "组")}</th><th>${t("layers (changed = highlighted)", "图层（高亮=改动）")}</th><th>${t("users", "用户")}</th><th>${t("imps", "曝光")}</th><th>CTR</th><th>ipm [95% CI]</th><th>${t("lift", "提升")}</th><th>p<sub>adj</sub></th><th>P(best)</th><th>rpg / companion / casual</th><th>${t("guardrail", "护栏")}</th></tr></thead><tbody>${armRows}</tbody></table></div>
 <p class="muted">${t("Segment leaders", "分人群最佳")}: ${SEGMENTS.map((s) => `${s} → <b>${esc(res.segment_winners[s])}</b>`).join(" · ")}</p>
+${pulseBlock}
 ${videos ? `<h4>${t("Rendered videos (verified by the video model)", "已渲染视频（由视频大模型校验）")}</h4><div class="vgrid">${videos}</div>` : ""}
 ${learn ? `<h4>${t("Agent learnings after this round", "本轮后的 Agent 结论")}</h4><ul class="learn">${learn}</ul>` : ""}
 </details>`;
@@ -165,7 +173,7 @@ html[lang=en] .l-zh,html[lang=zh] .l-en{display:none}
 html[lang=en] .v-zh,html[lang=zh] .v-en{display:none}.att{margin:6px 0 0;padding-left:16px;font-size:12px}.att li.pass{color:var(--ok)}.att li.fail{color:var(--bad)}
 .chart{width:100%;max-width:640px;height:auto}.chart .grid{stroke:var(--line)}.chart .ax{fill:var(--muted);font-size:11px}.chart .val{fill:var(--ink);font-size:11px}.chart .win{fill:none;stroke:var(--accent);stroke-width:2.5}.chart .ctrl{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4 4}.chart .ci{stroke:var(--accent);stroke-width:6;opacity:.25;stroke-linecap:round}.chart .dot{fill:var(--accent)}
 .legend{font-size:12px;color:var(--muted)}.legend .k{display:inline-block;width:18px;height:3px;margin:0 4px 3px 10px;vertical-align:middle}.legend .k.win{background:var(--accent)}.legend .k.ctrl{border-top:2px dashed var(--muted)}
-pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px;overflow:auto;font-size:12px}
+a{color:var(--accent)}pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px;overflow:auto;font-size:12px}
 .timeline{list-style:none;padding:0;margin:0;font-size:12.5px;max-height:420px;overflow:auto}.ev{padding:3px 0;border-bottom:1px dashed var(--line)}.ev time{color:var(--muted);margin-right:6px;font-variant-numeric:tabular-nums}.ev .ty{color:var(--muted);margin-right:6px}.ev.error{color:var(--bad)}
 .summary{margin:4px 0}.hyp,.learn,.lineage{padding-left:18px;margin:4px 0}
 </style></head><body><div class="wrap">

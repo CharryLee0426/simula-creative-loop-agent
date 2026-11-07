@@ -42,6 +42,8 @@ export type Config = {
 		early_stop: boolean;
 		guardrail_ctr_drop: number;
 		statsig_event_mode: "per_user" | "per_impression";
+		/** Statsig: after the readout, set the target to the simulated traffic and record the decision (ship the winner). */
+		conclude_on_platform?: boolean;
 	};
 	review: { mode: "auto" | "human"; max_revisions: number };
 	memory: { read: boolean; write: boolean };

@@ -39,6 +39,7 @@ npm run loop      # 第 0 轮（8 个种子变体，渲染并校验）+ 第 1..3
 | `npm run report -- --run <id>` | 重新生成 `trace.html` / `trajectory.md` |
 | `npm run eval -- --run <id>` | 离线评估：和随机搜索、单层变异等基线比，看离目录最优解还差多少 |
 | `npm run pulse -- --run <id>` | Statsig 算好 Pulse 后，挂上指标并拉取结果 |
+| `npm run conclude -- --run <id>` | 把每轮结论写回 Statsig：计划时长改为模拟流量（替代默认 14 天），并记录决策（发布胜出组，理由里写明 IPM、置信区间、提升和 p 值） |
 | `npm run export -- --run <id>` | 把视频、manifest、trace 拷到 `deliverables/<id>/` |
 | `npm run doctor` | 检查工具、密钥、模型 ID 和 Statsig 连通性 |
 
@@ -88,6 +89,7 @@ npm run loop      # 第 0 轮（8 个种子变体，渲染并校验）+ 第 1..3
   - 样本量：按 30% 最小可检测效应做功效分析，Bonferroni 校正，每组上限 2 万用户，并报告实际可检测的效应。
   - 停止：最多 4 次观察，用 O'Brien–Fleming 边界，满足时可提前停止。
   - 冠军：护栏合格、P(best) 最高的组；经 Holm 校正后仍显著，才标为"显著"。
+  - 写回 Statsig：每轮读完结果后，把实验的计划时长改为模拟流量（`targetExposures`，替代默认的 14 天），再把结论记录为实验决策：发布胜出组，理由里写明完整读数。控制台里每一轮都会显示为已完成。
 - **Agent：**
   - 策略 Agent 是整个运行共用的一个 Pi Durable 对话，所以记得自己之前的推理。
   - 工具 `submit_generation` 调用确定性校验器：取值合法、子代改动层数、不重复测试、引用的数字必须与记录一致。不通过就把所有错误退回给 Agent 修改。

@@ -137,3 +137,16 @@ export function shouldStopEarly(r: RoundResult, look: number, looks: number, alp
 	const stop = z > bound && leader.p_best >= 0.95;
 	return { stop, why: `look ${look}/${looks}: leader ${leader.variant_id} z=${z.toFixed(2)} vs boundary ${bound.toFixed(2)}, P(best)=${leader.p_best.toFixed(2)}` };
 }
+
+/** One-paragraph readout used as the Statsig decision reason and in logs. */
+export function decisionReason(r: RoundResult, users: number, looks: number): string {
+	const w = r.arms.find((a) => a.variant_id === r.winner)!;
+	const c = r.arms.find((a) => a.is_control)!;
+	const f = (x: number) => x.toFixed(2);
+	const others = r.arms.filter((a) => a.variant_id !== r.winner && !a.is_control).sort((a, b) => b.ipm - a.ipm).slice(0, 2)
+		.map((a) => `${a.variant_id} ${f(a.ipm)}`).join(", ");
+	return `Simulated readout (creative-loop agent): ${users.toLocaleString()} users, ${r.total_impressions.toLocaleString()} impressions, ${looks} look(s)${r.stopped_early ? ", stopped early (O'Brien-Fleming)" : ""}. ` +
+		`Primary metric IPM (installs per 1000 impressions, delta-method CI). Winner ${w.variant_id}: IPM ${f(w.ipm)} [${f(w.ipm_ci[0])}, ${f(w.ipm_ci[1])}], CTR ${(100 * w.ctr).toFixed(2)}%, P(best) ${w.p_best.toFixed(2)}` +
+		(w.is_control ? "" : `, lift vs control ${(100 * (w.lift_vs_control ?? 0)).toFixed(0)}% (Holm p=${(w.p_adj ?? 1).toFixed(3)})`) +
+		`. Control ${c.variant_id}: IPM ${f(c.ipm)} [${f(c.ipm_ci[0])}, ${f(c.ipm_ci[1])}]. Next best: ${others || "n/a"}. Decision: ${r.decision}.`;
+}
