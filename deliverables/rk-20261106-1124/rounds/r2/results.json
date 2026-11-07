@@ -1,0 +1,569 @@
+{
+  "round": 2,
+  "control": "g1_v03",
+  "arms": [
+    {
+      "variant_id": "g1_v03",
+      "parent_id": "g0_v04",
+      "is_control": true,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "hook"
+      ],
+      "users": 20010,
+      "impressions": 30095,
+      "clicks": 1521,
+      "installs": 230,
+      "ctr": 0.05053995680345572,
+      "ctr_se": 0.0012697041966007168,
+      "ipm": 7.642465525834856,
+      "ipm_ci": [
+        6.657287622151647,
+        8.627643429518065
+      ],
+      "lift_vs_control": null,
+      "lift_ci": null,
+      "p_value": null,
+      "p_adj": null,
+      "ctr_lift_vs_control": null,
+      "guardrail_ok": true,
+      "p_best": 0.0007,
+      "by_segment": {
+        "rpg": {
+          "users": 8919,
+          "impressions": 13426,
+          "installs": 129,
+          "ipm": 9.60822285118427,
+          "ipm_ci": [
+            7.957418305754166,
+            11.259027396614371
+          ]
+        },
+        "companion": {
+          "users": 7150,
+          "impressions": 10773,
+          "installs": 54,
+          "ipm": 5.012531328320802,
+          "ipm_ci": [
+            3.675568969038548,
+            6.349493687603055
+          ]
+        },
+        "casual": {
+          "users": 3941,
+          "impressions": 5896,
+          "installs": 47,
+          "ipm": 7.9715061058344645,
+          "ipm_ci": [
+            5.699311300484944,
+            10.243700911183984
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g2_v01",
+      "parent_id": "g1_v03",
+      "is_control": false,
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "background"
+      ],
+      "users": 20156,
+      "impressions": 30140,
+      "clicks": 1833,
+      "installs": 291,
+      "ctr": 0.06081619110816191,
+      "ctr_se": 0.0013813431785836532,
+      "ipm": 9.654943596549435,
+      "ipm_ci": [
+        8.547493714173887,
+        10.762393478924983
+      ],
+      "lift_vs_control": 0.26332838060067515,
+      "lift_ci": [
+        0.04533879336072191,
+        0.4813179678406284
+      ],
+      "p_value": 0.0077874008203027145,
+      "p_adj": 0.03893700410151357,
+      "ctr_lift_vs_control": 0.20332890953328908,
+      "guardrail_ok": true,
+      "p_best": 0.69715,
+      "by_segment": {
+        "rpg": {
+          "users": 8956,
+          "impressions": 13516,
+          "installs": 197,
+          "ipm": 14.57531814146197,
+          "ipm_ci": [
+            12.545600562620459,
+            16.60503572030348
+          ]
+        },
+        "companion": {
+          "users": 7181,
+          "impressions": 10628,
+          "installs": 54,
+          "ipm": 5.080918328942416,
+          "ipm_ci": [
+            3.7267933192375673,
+            6.435043338647264
+          ]
+        },
+        "casual": {
+          "users": 4019,
+          "impressions": 5996,
+          "installs": 40,
+          "ipm": 6.6711140760507,
+          "ipm_ci": [
+            4.603706538920441,
+            8.73852161318096
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g2_v02",
+      "parent_id": "g1_v03",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Join Luna",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "cta"
+      ],
+      "users": 19810,
+      "impressions": 29616,
+      "clicks": 1464,
+      "installs": 172,
+      "ctr": 0.04943273905996758,
+      "ctr_se": 0.0012667553442414282,
+      "ipm": 5.807671528903295,
+      "ipm_ci": [
+        4.940791142335542,
+        6.674551915471048
+      ],
+      "lift_vs_control": -0.24007880581589264,
+      "lift_ci": [
+        -0.3899535394235243,
+        -0.09020407220826096
+      ],
+      "p_value": 0.006135888533658207,
+      "p_adj": 0.03681533120194924,
+      "ctr_lift_vs_control": -0.021907769881837978,
+      "guardrail_ok": true,
+      "p_best": 0,
+      "by_segment": {
+        "rpg": {
+          "users": 8719,
+          "impressions": 13215,
+          "installs": 98,
+          "ipm": 7.41581536133182,
+          "ipm_ci": [
+            5.948094961484305,
+            8.883535761179335
+          ]
+        },
+        "companion": {
+          "users": 7187,
+          "impressions": 10693,
+          "installs": 46,
+          "ipm": 4.301879734405686,
+          "ipm_ci": [
+            3.060312495527593,
+            5.543446973283779
+          ]
+        },
+        "casual": {
+          "users": 3904,
+          "impressions": 5708,
+          "installs": 28,
+          "ipm": 4.905395935529082,
+          "ipm_ci": [
+            3.093102886916314,
+            6.71768898414185
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g2_v03",
+      "parent_id": "g1_v03",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "casts_spell",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "action"
+      ],
+      "users": 20166,
+      "impressions": 30066,
+      "clicks": 1323,
+      "installs": 194,
+      "ctr": 0.044003192975454,
+      "ctr_se": 0.0011898730126881742,
+      "ipm": 6.452471229960753,
+      "ipm_ci": [
+        5.545703093009702,
+        7.359239366911805
+      ],
+      "lift_vs_control": -0.1557081666710049,
+      "lift_ci": [
+        -0.31671387930356626,
+        0.00529754596155646
+      ],
+      "p_value": 0.08151791041072065,
+      "p_adj": 0.24455373123216195,
+      "ctr_lift_vs_control": -0.1293385321523418,
+      "guardrail_ok": true,
+      "p_best": 0,
+      "by_segment": {
+        "rpg": {
+          "users": 9001,
+          "impressions": 13464,
+          "installs": 112,
+          "ipm": 8.318478906714201,
+          "ipm_ci": [
+            6.7795301577523155,
+            9.857427655676087
+          ]
+        },
+        "companion": {
+          "users": 7278,
+          "impressions": 10805,
+          "installs": 54,
+          "ipm": 4.997686256362795,
+          "ipm_ci": [
+            3.6673815725890426,
+            6.327990940136547
+          ]
+        },
+        "casual": {
+          "users": 3887,
+          "impressions": 5797,
+          "installs": 28,
+          "ipm": 4.830084526479213,
+          "ipm_ci": [
+            3.0415503140816265,
+            6.6186187388768
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g2_v04",
+      "parent_id": "g1_v03",
+      "is_control": false,
+      "layers": {
+        "background": "sunlit_meadow",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "background"
+      ],
+      "users": 19913,
+      "impressions": 29540,
+      "clicks": 1556,
+      "installs": 206,
+      "ctr": 0.052674339878131346,
+      "ctr_se": 0.0013052775613263809,
+      "ipm": 6.973595125253893,
+      "ipm_ci": [
+        6.023651420579664,
+        7.923538829928123
+      ],
+      "lift_vs_control": -0.08752023784993075,
+      "lift_ci": [
+        -0.2586516346978193,
+        0.0836111589979578
+      ],
+      "p_value": 0.33809912021169897,
+      "p_adj": 0.6761982404233979,
+      "ctr_lift_vs_control": 0.0422315967339664,
+      "guardrail_ok": true,
+      "p_best": 0,
+      "by_segment": {
+        "rpg": {
+          "users": 8772,
+          "impressions": 13149,
+          "installs": 113,
+          "ipm": 8.593809415164651,
+          "ipm_ci": [
+            7.014377760270661,
+            10.173241070058642
+          ]
+        },
+        "companion": {
+          "users": 7201,
+          "impressions": 10432,
+          "installs": 58,
+          "ipm": 5.559815950920245,
+          "ipm_ci": [
+            4.130932795810251,
+            6.988699106030239
+          ]
+        },
+        "casual": {
+          "users": 3940,
+          "impressions": 5959,
+          "installs": 35,
+          "ipm": 5.873468702802484,
+          "ipm_ci": [
+            3.931992058236509,
+            7.814945347368457
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g2_v05",
+      "parent_id": "g1_v03",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Kael",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "low_drums"
+      },
+      "changed": [
+        "character",
+        "audio"
+      ],
+      "users": 19815,
+      "impressions": 29736,
+      "clicks": 1689,
+      "installs": 241,
+      "ctr": 0.0567998385794996,
+      "ctr_se": 0.0013390035362941918,
+      "ipm": 8.104654291094969,
+      "ipm_ci": [
+        7.0837420021083455,
+        9.125566580081593
+      ],
+      "lift_vs_control": 0.06047639517610041,
+      "lift_ci": [
+        -0.13065913832966275,
+        0.25161192868186355
+      ],
+      "p_value": 0.5231383690370692,
+      "p_adj": 0.6761982404233979,
+      "ctr_lift_vs_control": 0.12386005394479979,
+      "guardrail_ok": true,
+      "p_best": 0.0075,
+      "by_segment": {
+        "rpg": {
+          "users": 8847,
+          "impressions": 13449,
+          "installs": 138,
+          "ipm": 10.26098594691055,
+          "ipm_ci": [
+            8.55072992358246,
+            11.97124197023864
+          ]
+        },
+        "companion": {
+          "users": 7034,
+          "impressions": 10448,
+          "installs": 61,
+          "ipm": 5.838437978560489,
+          "ipm_ci": [
+            4.377723584946695,
+            7.299152372174285
+          ]
+        },
+        "casual": {
+          "users": 3934,
+          "impressions": 5839,
+          "installs": 42,
+          "ipm": 7.193012502140777,
+          "ipm_ci": [
+            5.024260603800866,
+            9.361764400480688
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g2_v06",
+      "parent_id": "g1_v03",
+      "is_control": false,
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "The ruins are calling",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "background",
+        "hook"
+      ],
+      "users": 20064,
+      "impressions": 29838,
+      "clicks": 1827,
+      "installs": 276,
+      "ctr": 0.06123064548562236,
+      "ctr_se": 0.0014020136285995777,
+      "ipm": 9.249949728534084,
+      "ipm_ci": [
+        8.161610172606807,
+        10.33828928446136
+      ],
+      "lift_vs_control": 0.2103358133923186,
+      "lift_ci": [
+        -0.0009050826623944463,
+        0.42157670944703163
+      ],
+      "p_value": 0.03185570502013668,
+      "p_adj": 0.12742282008054673,
+      "ctr_lift_vs_control": 0.21152943845483566,
+      "guardrail_ok": true,
+      "p_best": 0.29465,
+      "by_segment": {
+        "rpg": {
+          "users": 8953,
+          "impressions": 13320,
+          "installs": 190,
+          "ipm": 14.264264264264265,
+          "ipm_ci": [
+            12.24856163768546,
+            16.279966890843067
+          ]
+        },
+        "companion": {
+          "users": 7207,
+          "impressions": 10727,
+          "installs": 49,
+          "ipm": 4.567912743544327,
+          "ipm_ci": [
+            3.288244412532582,
+            5.847581074556072
+          ]
+        },
+        "casual": {
+          "users": 3904,
+          "impressions": 5791,
+          "installs": 37,
+          "ipm": 6.389224658953548,
+          "ipm_ci": [
+            4.331424960953519,
+            8.447024356953579
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g2_v07",
+      "parent_id": "g1_v03",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Claim Bonus",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "cta"
+      ],
+      "users": 20066,
+      "impressions": 29590,
+      "clicks": 1518,
+      "installs": 163,
+      "ctr": 0.051301115241635685,
+      "ctr_se": 0.0012865978026622687,
+      "ipm": 5.508617776275769,
+      "ipm_ci": [
+        4.663931210174968,
+        6.353304342376569
+      ],
+      "lift_vs_control": -0.27920933923035096,
+      "lift_ci": [
+        -0.4236019987939623,
+        -0.1348166796667396
+      ],
+      "p_value": 0.0012693715500236014,
+      "p_adj": 0.00888560085016521,
+      "ctr_lift_vs_control": 0.015060528071680453,
+      "guardrail_ok": true,
+      "p_best": 0,
+      "by_segment": {
+        "rpg": {
+          "users": 9071,
+          "impressions": 13519,
+          "installs": 79,
+          "ipm": 5.84362748724018,
+          "ipm_ci": [
+            4.557009402739128,
+            7.130245571741232
+          ]
+        },
+        "companion": {
+          "users": 7092,
+          "impressions": 10410,
+          "installs": 52,
+          "ipm": 4.99519692603266,
+          "ipm_ci": [
+            3.638814632992849,
+            6.351579219072472
+          ]
+        },
+        "casual": {
+          "users": 3903,
+          "impressions": 5661,
+          "installs": 32,
+          "ipm": 5.652711535064476,
+          "ipm_ci": [
+            3.694769239909505,
+            7.610653830219448
+          ]
+        }
+      }
+    }
+  ],
+  "winner": "g2_v01",
+  "winner_significant": true,
+  "decision": "ship g2_v01: beats control by 26% (Holm p=0.039)",
+  "segment_winners": {
+    "rpg": "g2_v01",
+    "companion": "g2_v05",
+    "casual": "g1_v03"
+  },
+  "looks_used": 4,
+  "stopped_early": false,
+  "total_users": 160000,
+  "total_impressions": 238621
+}

@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v05",
+  "attempt": 0,
+  "lines": {
+    "en": "The ruins are calling. Try to keep up.",
+    "zh": "遗迹在呼唤你,跟上吧。"
+  },
+  "tagline": {
+    "en": "Recruit AI companions. Adventure together.",
+    "zh": "招募AI伙伴,并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 3,
+    "line_in_s": 0.4,
+    "line_out_s": 2.8,
+    "endcard_s": 4
+  },
+  "visual_notes": {},
+  "rationale": "Kael's sardonic but secretly kind voice delivers the hook with a playful dare, then the cut to the treasure opening pays it off before a warm recruit-your-companions end card."
+}

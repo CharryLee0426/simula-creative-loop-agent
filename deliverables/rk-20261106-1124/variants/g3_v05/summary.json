@@ -1,0 +1,23 @@
+{
+  "variant_id": "g3_v05",
+  "purpose": "final",
+  "passed": true,
+  "best_attempt": 0,
+  "score": 100,
+  "attempts": [
+    {
+      "attempt": 0,
+      "pass": true,
+      "score": 100,
+      "issues": [],
+      "reused": [
+        false,
+        false
+      ]
+    }
+  ],
+  "videos": {
+    "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g3_v05/g3_v05_en.mp4",
+    "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g3_v05/g3_v05_zh.mp4"
+  }
+}

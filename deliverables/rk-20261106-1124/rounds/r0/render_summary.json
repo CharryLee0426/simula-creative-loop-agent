@@ -1,0 +1,198 @@
+[
+  {
+    "variant_id": "g0_v01",
+    "purpose": "seed",
+    "passed": true,
+    "best_attempt": 0,
+    "score": 100,
+    "attempts": [
+      {
+        "attempt": 0,
+        "pass": true,
+        "score": 100,
+        "issues": [],
+        "reused": [
+          false,
+          false
+        ]
+      }
+    ],
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v01/g0_v01_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v01/g0_v01_zh.mp4"
+    }
+  },
+  {
+    "variant_id": "g0_v02",
+    "purpose": "seed",
+    "passed": true,
+    "best_attempt": 0,
+    "score": 100,
+    "attempts": [
+      {
+        "attempt": 0,
+        "pass": true,
+        "score": 100,
+        "issues": [],
+        "reused": [
+          false,
+          false
+        ]
+      }
+    ],
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v02/g0_v02_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v02/g0_v02_zh.mp4"
+    }
+  },
+  {
+    "variant_id": "g0_v03",
+    "purpose": "seed",
+    "passed": true,
+    "best_attempt": 1,
+    "score": 100,
+    "attempts": [
+      {
+        "attempt": 0,
+        "pass": false,
+        "score": 95,
+        "issues": [
+          "[zh] line: hook line missing final Chinese period 。: shows '欢迎回来,米拉记得你的一切' instead of '欢迎回来,米拉记得你的一切。'"
+        ],
+        "reused": [
+          false,
+          false
+        ]
+      },
+      {
+        "attempt": 1,
+        "pass": true,
+        "score": 100,
+        "issues": [],
+        "reused": [
+          true,
+          true
+        ]
+      }
+    ],
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v03/g0_v03_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v03/g0_v03_zh.mp4"
+    }
+  },
+  {
+    "variant_id": "g0_v04",
+    "purpose": "seed",
+    "passed": true,
+    "best_attempt": 0,
+    "score": 100,
+    "attempts": [
+      {
+        "attempt": 0,
+        "pass": true,
+        "score": 100,
+        "issues": [],
+        "reused": [
+          false,
+          false
+        ]
+      }
+    ],
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v04/g0_v04_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v04/g0_v04_zh.mp4"
+    }
+  },
+  {
+    "variant_id": "g0_v05",
+    "purpose": "seed",
+    "passed": true,
+    "best_attempt": 0,
+    "score": 100,
+    "attempts": [
+      {
+        "attempt": 0,
+        "pass": true,
+        "score": 100,
+        "issues": [],
+        "reused": [
+          false,
+          false
+        ]
+      }
+    ],
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v05/g0_v05_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v05/g0_v05_zh.mp4"
+    }
+  },
+  {
+    "variant_id": "g0_v06",
+    "purpose": "seed",
+    "passed": true,
+    "best_attempt": 0,
+    "score": 100,
+    "attempts": [
+      {
+        "attempt": 0,
+        "pass": true,
+        "score": 100,
+        "issues": [],
+        "reused": [
+          false,
+          false
+        ]
+      }
+    ],
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v06/g0_v06_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v06/g0_v06_zh.mp4"
+    }
+  },
+  {
+    "variant_id": "g0_v07",
+    "purpose": "seed",
+    "passed": true,
+    "best_attempt": 0,
+    "score": 100,
+    "attempts": [
+      {
+        "attempt": 0,
+        "pass": true,
+        "score": 100,
+        "issues": [],
+        "reused": [
+          false,
+          false
+        ]
+      }
+    ],
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v07/g0_v07_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v07/g0_v07_zh.mp4"
+    }
+  },
+  {
+    "variant_id": "g0_v08",
+    "purpose": "seed",
+    "passed": true,
+    "best_attempt": 0,
+    "score": 100,
+    "attempts": [
+      {
+        "attempt": 0,
+        "pass": true,
+        "score": 100,
+        "issues": [],
+        "reused": [
+          false,
+          false
+        ]
+      }
+    ],
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v08/g0_v08_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g0_v08/g0_v08_zh.mp4"
+    }
+  }
+]

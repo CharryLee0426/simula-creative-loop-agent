@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v06",
+  "attempt": 0,
+  "lines": {
+    "en": "Can you beat level 3?",
+    "zh": "你能通过第3关吗？"
+  },
+  "tagline": {
+    "en": "Recruit your AI companions today.",
+    "zh": "招募AI伙伴，同行冒险"
+  },
+  "timeline": {
+    "cut_s": 2.8,
+    "line_in_s": 0.4,
+    "line_out_s": 2.6,
+    "endcard_s": 3.9
+  },
+  "visual_notes": {},
+  "rationale": "Luna delivers the hook verbatim in her dry, quiet voice in the cozy café, then cuts to a warm wave to the camera that invites the player to install and recruit companions."
+}

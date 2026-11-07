@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g1_v06",
+  "generation": 1,
+  "parent_id": "g0_v04",
+  "created_round": 1,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "throne_room",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "She remembers everything.",
+    "cta": "Play Free",
+    "audio": "low_drums"
+  },
+  "creative_key": "762226e6e7",
+  "hypothesis_id": "h1",
+  "rationale": "v02 rpg-strong combo elements"
+}

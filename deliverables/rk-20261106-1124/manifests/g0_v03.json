@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v03",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Mira",
+    "action": "waves_to_camera",
+    "hook": "She remembers everything.",
+    "cta": "Install Now",
+    "audio": "none"
+  },
+  "creative_key": "3eca1847d6",
+  "hypothesis_id": "h2",
+  "rationale": "Companion-strong hook with temple and no audio"
+}

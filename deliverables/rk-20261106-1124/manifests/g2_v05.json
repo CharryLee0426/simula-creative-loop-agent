@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g2_v05",
+  "generation": 2,
+  "parent_id": "g1_v03",
+  "created_round": 2,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Kael",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "low_drums"
+  },
+  "creative_key": "c3ca70e8b4",
+  "hypothesis_id": "h3",
+  "rationale": "Explore other character and audio"
+}

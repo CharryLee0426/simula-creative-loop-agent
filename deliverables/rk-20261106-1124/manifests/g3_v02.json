@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g3_v02",
+  "generation": 3,
+  "parent_id": "g2_v01",
+  "created_round": 3,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "low_drums"
+  },
+  "creative_key": "131e99dd33",
+  "hypothesis_id": "h2",
+  "rationale": "Low drums good for rpg and casual"
+}

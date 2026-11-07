@@ -1,0 +1,12 @@
+{
+  "attempt": 0,
+  "pass": false,
+  "score": 95,
+  "issues": [
+    "[zh] line: hook line missing final Chinese period 。: shows '欢迎回来,米拉记得你的一切' instead of '欢迎回来,米拉记得你的一切。'"
+  ],
+  "reused": [
+    false,
+    false
+  ]
+}

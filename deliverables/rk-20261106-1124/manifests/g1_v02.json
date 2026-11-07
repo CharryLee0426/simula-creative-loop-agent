@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g1_v02",
+  "generation": 1,
+  "parent_id": "g0_v04",
+  "created_round": 1,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "She remembers everything.",
+    "cta": "Play Free",
+    "audio": "none"
+  },
+  "creative_key": "817f80af96",
+  "hypothesis_id": "h1",
+  "rationale": "None audio strong in companion"
+}

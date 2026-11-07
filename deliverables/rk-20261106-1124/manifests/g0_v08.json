@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v08",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Kael",
+    "action": "draws_blade",
+    "hook": "The ruins are calling",
+    "cta": "Join Luna",
+    "audio": "none"
+  },
+  "creative_key": "5222b06e8a",
+  "hypothesis_id": "h3",
+  "rationale": "Temple+blade+no audio exploration"
+}

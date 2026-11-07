@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v08",
+  "attempt": 0,
+  "lines": {
+    "en": "The ruins are calling. Don't be late.",
+    "zh": "遗迹在呼唤你,别迟到。"
+  },
+  "tagline": {
+    "en": "Recruit AI allies. Adventure together.",
+    "zh": "招募AI伙伴,并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 3,
+    "line_in_s": 0.4,
+    "line_out_s": 2.8,
+    "endcard_s": 4.2
+  },
+  "visual_notes": {},
+  "rationale": "Kael's sardonic-but-kind nudge wraps the verbatim hook, then the blade-draw cut leads into an end card with enough time for the install call to action."
+}

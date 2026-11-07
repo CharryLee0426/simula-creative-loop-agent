@@ -1,0 +1,551 @@
+{
+  "round": 0,
+  "control": "g0_v01",
+  "arms": [
+    {
+      "variant_id": "g0_v01",
+      "parent_id": null,
+      "is_control": true,
+      "layers": {
+        "background": "storm_battlefield",
+        "character": "Mira",
+        "action": "close_up_smile",
+        "hook": "Free gems every day",
+        "cta": "Claim Bonus",
+        "audio": "warm_piano"
+      },
+      "changed": [],
+      "users": 9965,
+      "impressions": 14807,
+      "clicks": 553,
+      "installs": 27,
+      "ctr": 0.037347200648342,
+      "ctr_se": 0.0015569460522195902,
+      "ipm": 1.8234618761396637,
+      "ipm_ci": [
+        1.1355503152292774,
+        2.51137343705005
+      ],
+      "lift_vs_control": null,
+      "lift_ci": null,
+      "p_value": null,
+      "p_adj": null,
+      "ctr_lift_vs_control": null,
+      "guardrail_ok": true,
+      "p_best": 0,
+      "by_segment": {
+        "rpg": {
+          "users": 4428,
+          "impressions": 6579,
+          "installs": 14,
+          "ipm": 2.127982976136191,
+          "ipm_ci": [
+            1.0134471593170538,
+            3.2425187929553285
+          ]
+        },
+        "companion": {
+          "users": 3595,
+          "impressions": 5385,
+          "installs": 12,
+          "ipm": 2.2284122562674096,
+          "ipm_ci": [
+            0.9666781801105455,
+            3.490146332424273
+          ]
+        },
+        "casual": {
+          "users": 1942,
+          "impressions": 2843,
+          "installs": 1,
+          "ipm": 0.35174111853675694,
+          "ipm_ci": [
+            0,
+            1.041411772334654
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g0_v02",
+      "parent_id": null,
+      "is_control": false,
+      "layers": {
+        "background": "throne_room",
+        "character": "Rex",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "low_drums"
+      },
+      "changed": [],
+      "users": 9933,
+      "impressions": 14858,
+      "clicks": 818,
+      "installs": 100,
+      "ctr": 0.05505451608561045,
+      "ctr_se": 0.0018951850766487375,
+      "ipm": 6.730380939561179,
+      "ipm_ci": [
+        5.413490520901753,
+        8.047271358220604
+      ],
+      "lift_vs_control": 2.690990761928977,
+      "lift_ci": [
+        1.122401451064036,
+        4.259580072793918
+      ],
+      "p_value": 9.638378983822804e-11,
+      "p_adj": 4.819189491911402e-10,
+      "ctr_lift_vs_control": 0.47412697952917515,
+      "guardrail_ok": true,
+      "p_best": 0.00615,
+      "by_segment": {
+        "rpg": {
+          "users": 4424,
+          "impressions": 6711,
+          "installs": 75,
+          "ipm": 11.17568171658471,
+          "ipm_ci": [
+            8.653289084491197,
+            13.698074348678226
+          ]
+        },
+        "companion": {
+          "users": 3538,
+          "impressions": 5245,
+          "installs": 18,
+          "ipm": 3.4318398474737846,
+          "ipm_ci": [
+            1.8483460412230444,
+            5.015333653724524
+          ]
+        },
+        "casual": {
+          "users": 1971,
+          "impressions": 2902,
+          "installs": 7,
+          "ipm": 2.412129565816678,
+          "ipm_ci": [
+            0.623405930018691,
+            4.200853201614665
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g0_v03",
+      "parent_id": null,
+      "is_control": false,
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "waves_to_camera",
+        "hook": "She remembers everything.",
+        "cta": "Install Now",
+        "audio": "none"
+      },
+      "changed": [],
+      "users": 10127,
+      "impressions": 15421,
+      "clicks": 668,
+      "installs": 105,
+      "ctr": 0.04331755398482589,
+      "ctr_se": 0.0016496134741045615,
+      "ipm": 6.808896958692692,
+      "ipm_ci": [
+        5.511578915339019,
+        8.106215002046367
+      ],
+      "lift_vs_control": 2.7340495284208406,
+      "lift_ci": [
+        1.1558903731292112,
+        4.31220868371247
+      ],
+      "p_value": 2.8598901025134182e-11,
+      "p_adj": 1.715934061508051e-10,
+      "ctr_lift_vs_control": 0.159860799011423,
+      "guardrail_ok": true,
+      "p_best": 0.00725,
+      "by_segment": {
+        "rpg": {
+          "users": 4422,
+          "impressions": 6788,
+          "installs": 63,
+          "ipm": 9.281084266352387,
+          "ipm_ci": [
+            7.00344001790147,
+            11.558728514803303
+          ]
+        },
+        "companion": {
+          "users": 3576,
+          "impressions": 5316,
+          "installs": 32,
+          "ipm": 6.019563581640331,
+          "ipm_ci": [
+            3.940237080544841,
+            8.09889008273582
+          ]
+        },
+        "casual": {
+          "users": 2129,
+          "impressions": 3317,
+          "installs": 10,
+          "ipm": 3.0147723846849566,
+          "ipm_ci": [
+            1.1462129107912618,
+            4.883331858578651
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g0_v04",
+      "parent_id": null,
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "She remembers everything.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [],
+      "users": 10054,
+      "impressions": 15031,
+      "clicks": 792,
+      "installs": 139,
+      "ctr": 0.05269110504956424,
+      "ctr_se": 0.0018280265914704553,
+      "ipm": 9.247555052890693,
+      "ipm_ci": [
+        7.710979491296576,
+        10.784130614484809
+      ],
+      "lift_vs_control": 4.071427691413056,
+      "lift_ci": [
+        1.9808479817767424,
+        6.162007401049369
+      ],
+      "p_value": 0,
+      "p_adj": 0,
+      "ctr_lift_vs_control": 0.4108448326743176,
+      "guardrail_ok": true,
+      "p_best": 0.9799,
+      "by_segment": {
+        "rpg": {
+          "users": 4585,
+          "impressions": 6957,
+          "installs": 65,
+          "ipm": 9.34310766134828,
+          "ipm_ci": [
+            7.0713999836216335,
+            11.614815339074928
+          ]
+        },
+        "companion": {
+          "users": 3496,
+          "impressions": 5156,
+          "installs": 55,
+          "ipm": 10.667183863460046,
+          "ipm_ci": [
+            7.849320571210173,
+            13.485047155709921
+          ]
+        },
+        "casual": {
+          "users": 1973,
+          "impressions": 2918,
+          "installs": 19,
+          "ipm": 6.511309115832763,
+          "ipm_ci": [
+            3.58797332934139,
+            9.434644902324134
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g0_v05",
+      "parent_id": null,
+      "is_control": false,
+      "layers": {
+        "background": "sunlit_meadow",
+        "character": "Kael",
+        "action": "opens_treasure",
+        "hook": "The ruins are calling",
+        "cta": "Play Free",
+        "audio": "none"
+      },
+      "changed": [],
+      "users": 9903,
+      "impressions": 14918,
+      "clicks": 685,
+      "installs": 78,
+      "ctr": 0.04591768333556777,
+      "ctr_se": 0.0017290424109051101,
+      "ipm": 5.228582919962461,
+      "ipm_ci": [
+        4.068716117068943,
+        6.388449722855979
+      ],
+      "lift_vs_control": 1.8673936035512653,
+      "lift_ci": [
+        0.6124989994768197,
+        3.1222882076257106
+      ],
+      "p_value": 7.465146030227743e-7,
+      "p_adj": 0.0000010481409034035494,
+      "ctr_lift_vs_control": 0.22948126066862914,
+      "guardrail_ok": true,
+      "p_best": 0,
+      "by_segment": {
+        "rpg": {
+          "users": 4380,
+          "impressions": 6633,
+          "installs": 51,
+          "ipm": 7.688828584350972,
+          "ipm_ci": [
+            5.577000068827679,
+            9.800657099874266
+          ]
+        },
+        "companion": {
+          "users": 3513,
+          "impressions": 5246,
+          "installs": 14,
+          "ipm": 2.668699961875715,
+          "ipm_ci": [
+            1.273543842010776,
+            4.063856081740654
+          ]
+        },
+        "casual": {
+          "users": 2010,
+          "impressions": 3039,
+          "installs": 13,
+          "ipm": 4.277722935176045,
+          "ipm_ci": [
+            1.9513329501100722,
+            6.604112920242017
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g0_v06",
+      "parent_id": null,
+      "is_control": false,
+      "layers": {
+        "background": "cozy_cafe",
+        "character": "Luna",
+        "action": "waves_to_camera",
+        "hook": "Can you beat level 3?",
+        "cta": "Install Now",
+        "audio": "low_drums"
+      },
+      "changed": [],
+      "users": 9899,
+      "impressions": 14953,
+      "clicks": 648,
+      "installs": 79,
+      "ctr": 0.043335785461111484,
+      "ctr_se": 0.001692220480973313,
+      "ipm": 5.283220758376245,
+      "ipm_ci": [
+        4.1199283099815105,
+        6.44651320677098
+      ],
+      "lift_vs_control": 1.8973573988621137,
+      "lift_ci": [
+        0.6317596156143181,
+        3.1629551821099096
+      ],
+      "p_value": 5.240704517017747e-7,
+      "p_adj": 0.0000010481409034035494,
+      "ctr_lift_vs_control": 0.1603489608005022,
+      "guardrail_ok": true,
+      "p_best": 0,
+      "by_segment": {
+        "rpg": {
+          "users": 4424,
+          "impressions": 6762,
+          "installs": 22,
+          "ipm": 3.2534753031647443,
+          "ipm_ci": [
+            1.8950199151111722,
+            4.6119306912183164
+          ]
+        },
+        "companion": {
+          "users": 3582,
+          "impressions": 5430,
+          "installs": 48,
+          "ipm": 8.839779005524862,
+          "ipm_ci": [
+            6.347182225246271,
+            11.332375785803455
+          ]
+        },
+        "casual": {
+          "users": 1893,
+          "impressions": 2761,
+          "installs": 9,
+          "ipm": 3.2596885186526623,
+          "ipm_ci": [
+            1.1286405184302837,
+            5.39073651887504
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g0_v07",
+      "parent_id": null,
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Rex",
+        "action": "casts_spell",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [],
+      "users": 9971,
+      "impressions": 14935,
+      "clicks": 670,
+      "installs": 100,
+      "ctr": 0.044861064613324404,
+      "ctr_se": 0.0017360075847435866,
+      "ipm": 6.6956812855708066,
+      "ipm_ci": [
+        5.385015029653928,
+        8.006347541487685
+      ],
+      "lift_vs_control": 2.671961214646183,
+      "lift_ci": [
+        1.111316283121494,
+        4.232606146170872
+      ],
+      "p_value": 1.1134160260439785e-10,
+      "p_adj": 4.819189491911402e-10,
+      "ctr_lift_vs_control": 0.20118948233181633,
+      "guardrail_ok": true,
+      "p_best": 0.00565,
+      "by_segment": {
+        "rpg": {
+          "users": 4456,
+          "impressions": 6790,
+          "installs": 76,
+          "ipm": 11.192930780559646,
+          "ipm_ci": [
+            8.679755172962178,
+            13.706106388157115
+          ]
+        },
+        "companion": {
+          "users": 3588,
+          "impressions": 5307,
+          "installs": 13,
+          "ipm": 2.4495948746938008,
+          "ipm_ci": [
+            1.117367277691581,
+            3.7818224716960205
+          ]
+        },
+        "casual": {
+          "users": 1927,
+          "impressions": 2838,
+          "installs": 11,
+          "ipm": 3.875968992248062,
+          "ipm_ci": [
+            1.591683018395241,
+            6.160254966100883
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g0_v08",
+      "parent_id": null,
+      "is_control": false,
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Kael",
+        "action": "draws_blade",
+        "hook": "The ruins are calling",
+        "cta": "Join Luna",
+        "audio": "none"
+      },
+      "changed": [],
+      "users": 10148,
+      "impressions": 15139,
+      "clicks": 965,
+      "installs": 94,
+      "ctr": 0.06374265143008125,
+      "ctr_se": 0.0020099198578826263,
+      "ipm": 6.20912874033952,
+      "ipm_ci": [
+        4.955705371150658,
+        7.462552109528382
+      ],
+      "lift_vs_control": 2.405132194748418,
+      "lift_ci": [
+        0.9481789956129767,
+        3.8620853938838593
+      ],
+      "p_value": 1.8389094691428909e-9,
+      "p_adj": 5.516728407428673e-9,
+      "ctr_lift_vs_control": 0.7067584805157558,
+      "guardrail_ok": true,
+      "p_best": 0.00105,
+      "by_segment": {
+        "rpg": {
+          "users": 4466,
+          "impressions": 6674,
+          "installs": 75,
+          "ipm": 11.237638597542702,
+          "ipm_ci": [
+            8.700050217192924,
+            13.77522697789248
+          ]
+        },
+        "companion": {
+          "users": 3628,
+          "impressions": 5430,
+          "installs": 6,
+          "ipm": 1.1049723756906078,
+          "ipm_ci": [
+            0.2219298768470618,
+            1.9880148745341542
+          ]
+        },
+        "casual": {
+          "users": 2054,
+          "impressions": 3035,
+          "installs": 13,
+          "ipm": 4.2833607907743,
+          "ipm_ci": [
+            1.9539570017624375,
+            6.6127645797861625
+          ]
+        }
+      }
+    }
+  ],
+  "winner": "g0_v04",
+  "winner_significant": true,
+  "decision": "ship g0_v04: beats control by 407% (Holm p=0.000)",
+  "segment_winners": {
+    "rpg": "g0_v08",
+    "companion": "g0_v04",
+    "casual": "g0_v04"
+  },
+  "looks_used": 2,
+  "stopped_early": true,
+  "total_users": 80000,
+  "total_impressions": 120062
+}

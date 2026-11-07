@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g2_v01",
+  "generation": 2,
+  "parent_id": "g1_v03",
+  "created_round": 2,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "e8735cb655",
+  "hypothesis_id": "h1",
+  "rationale": "Stack temple with party hook"
+}

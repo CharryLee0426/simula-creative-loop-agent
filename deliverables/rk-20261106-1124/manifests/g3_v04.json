@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g3_v04",
+  "generation": 3,
+  "parent_id": "g2_v01",
+  "created_round": 3,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Kael",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "be308c3f0a",
+  "hypothesis_id": "h3",
+  "rationale": "Kael did well in companion with party hook"
+}

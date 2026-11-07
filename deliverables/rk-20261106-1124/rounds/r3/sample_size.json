@@ -1,0 +1,13 @@
+{
+  "base_install_per_user": 0.014437388370708473,
+  "base_source": "control g2_v01 in round 2",
+  "target_mde": 0.3,
+  "users_needed_per_arm": 21706,
+  "users_per_arm": 20000,
+  "achievable_mde": 0.313423211178501,
+  "arms": 8,
+  "total_users": 160000,
+  "looks": 4,
+  "alpha": 0.05,
+  "power": 0.8
+}

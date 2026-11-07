@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g2_v06",
+  "generation": 2,
+  "parent_id": "g1_v03",
+  "created_round": 2,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "The ruins are calling",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "87bb91771e",
+  "hypothesis_id": "h1",
+  "rationale": "Ruins hook fits temple, rpg-strong"
+}

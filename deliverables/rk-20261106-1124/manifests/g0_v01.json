@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v01",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "storm_battlefield",
+    "character": "Mira",
+    "action": "close_up_smile",
+    "hook": "Free gems every day",
+    "cta": "Claim Bonus",
+    "audio": "warm_piano"
+  },
+  "creative_key": "be6d51ba09",
+  "rationale": "Control replica of most-served v_036"
+}

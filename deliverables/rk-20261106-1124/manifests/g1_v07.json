@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g1_v07",
+  "generation": 1,
+  "parent_id": "g0_v04",
+  "created_round": 1,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "She remembers everything.",
+    "cta": "Install Now",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "1c190aee79",
+  "hypothesis_id": "h1",
+  "rationale": "Check Play Free contribution in companion"
+}

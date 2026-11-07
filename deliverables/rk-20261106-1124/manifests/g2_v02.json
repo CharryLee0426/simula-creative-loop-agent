@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g2_v02",
+  "generation": 2,
+  "parent_id": "g1_v03",
+  "created_round": 2,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Join Luna",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "2c7cb50e61",
+  "hypothesis_id": "h2",
+  "rationale": "Character-matched CTA"
+}

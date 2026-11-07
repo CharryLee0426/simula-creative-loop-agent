@@ -1,0 +1,101 @@
+{
+  "round": 1,
+  "summary": "g0_v04 won (9.25). Refine it with single/double-layer changes: background, character, action, audio, cta, hook, and an rpg-oriented hook.",
+  "control_variant_id": "g0_v04",
+  "hypotheses": [
+    {
+      "id": "h1",
+      "statement": "Background/audio tweaks of v04 keep or raise ipm"
+    },
+    {
+      "id": "h2",
+      "statement": "Hook 'Your party is waiting.' lifts rpg without hurting companion much"
+    },
+    {
+      "id": "h3",
+      "statement": "Character/action swaps keep Luna+blade synergy"
+    }
+  ],
+  "variants": [
+    {
+      "parent_id": "g0_v04",
+      "changes": {
+        "background": "moonlit_temple"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Temple strong in rpg/companion priors"
+    },
+    {
+      "parent_id": "g0_v04",
+      "changes": {
+        "audio": "none"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "None audio strong in companion"
+    },
+    {
+      "parent_id": "g0_v04",
+      "changes": {
+        "hook": "Your party is waiting."
+      },
+      "hypothesis_id": "h2",
+      "rationale": "Best rpg hook"
+    },
+    {
+      "parent_id": "g0_v04",
+      "changes": {
+        "character": "Rex"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Rex strong in rpg; tests Luna dependence"
+    },
+    {
+      "parent_id": "g0_v04",
+      "changes": {
+        "action": "opens_treasure"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Treasure strong in casual"
+    },
+    {
+      "parent_id": "g0_v04",
+      "changes": {
+        "background": "throne_room",
+        "audio": "low_drums"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "v02 rpg-strong combo elements"
+    },
+    {
+      "parent_id": "g0_v04",
+      "changes": {
+        "cta": "Install Now"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Check Play Free contribution in companion"
+    }
+  ],
+  "accepted_at": "2026-11-06T19:45:06.050Z",
+  "control": "g0_v04",
+  "variant_ids": [
+    "g1_v01",
+    "g1_v02",
+    "g1_v03",
+    "g1_v04",
+    "g1_v05",
+    "g1_v06",
+    "g1_v07"
+  ],
+  "diffs": {
+    "g1_v01": "background: neon_city → moonlit_temple",
+    "g1_v02": "audio: upbeat_synth → none",
+    "g1_v03": "hook: She remembers everything. → Your party is waiting.",
+    "g1_v04": "character: Luna → Rex",
+    "g1_v05": "action: draws_blade → opens_treasure",
+    "g1_v06": "background: neon_city → throne_room; audio: upbeat_synth → low_drums",
+    "g1_v07": "cta: Play Free → Install Now"
+  },
+  "warnings": [
+    "variants[3]: hook \"She remembers everything.\" is about a female companion but the character is Rex"
+  ]
+}

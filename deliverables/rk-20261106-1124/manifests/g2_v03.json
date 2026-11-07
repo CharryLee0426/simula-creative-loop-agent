@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g2_v03",
+  "generation": 2,
+  "parent_id": "g1_v03",
+  "created_round": 2,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Luna",
+    "action": "casts_spell",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "32bdd10010",
+  "hypothesis_id": "h3",
+  "rationale": "Untested with Luna"
+}

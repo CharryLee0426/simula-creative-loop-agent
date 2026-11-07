@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v07",
+  "attempt": 0,
+  "lines": {
+    "en": "Your party is waiting. Let's go!",
+    "zh": "你的队伍在等你,走吧!"
+  },
+  "tagline": {
+    "en": "Recruit AI companions. Adventure together.",
+    "zh": "招募AI伙伴,并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 3,
+    "line_in_s": 0.4,
+    "line_out_s": 2.8,
+    "endcard_s": 4.2
+  },
+  "visual_notes": {},
+  "rationale": "Rex's loud, loyal voice delivers the hook verbatim plus a short rallying call over the neon street, then a spell-casting cut leads into a 1.8s end card with the install button."
+}

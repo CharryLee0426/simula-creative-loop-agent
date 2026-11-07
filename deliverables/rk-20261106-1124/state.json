@@ -1,0 +1,51 @@
+{
+  "run_id": "rk-20261106-1124",
+  "created_at": "2026-11-06T19:24:35.088Z",
+  "rounds": [
+    {
+      "round": 0,
+      "control": "g0_v01",
+      "winner": "g0_v04",
+      "significant": true,
+      "decision": "ship g0_v04: beats control by 407% (Holm p=0.000)",
+      "champion_after": "g0_v04"
+    },
+    {
+      "round": 1,
+      "control": "g0_v04",
+      "winner": "g1_v03",
+      "significant": false,
+      "decision": "promote g1_v03 as champion (directional: P(best)=0.44, not significant vs control)",
+      "champion_after": "g1_v03"
+    },
+    {
+      "round": 2,
+      "control": "g1_v03",
+      "winner": "g2_v01",
+      "significant": true,
+      "decision": "ship g2_v01: beats control by 26% (Holm p=0.039)",
+      "champion_after": "g2_v01"
+    },
+    {
+      "round": 3,
+      "control": "g2_v01",
+      "winner": "g3_v05",
+      "significant": false,
+      "decision": "promote g3_v05 as champion (directional: P(best)=0.88, not significant vs control)",
+      "champion_after": "g3_v05"
+    }
+  ],
+  "learnings": [],
+  "strategist_conversation": 2,
+  "loop_task": 13,
+  "champion": "g3_v05",
+  "final": {
+    "variant_id": "g3_v05",
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g3_v05/g3_v05_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261106-1124/variants/g3_v05/g3_v05_zh.mp4"
+    },
+    "verified": true,
+    "score": 100
+  }
+}

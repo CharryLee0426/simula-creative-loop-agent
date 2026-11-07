@@ -1,0 +1,101 @@
+{
+  "round": 3,
+  "summary": "g2_v01 (temple/Luna/blade/party/Play Free/synth) is champion at 9.65. Temple gains are consistent, mainly for rpg. The final round tests small exploitation tweaks of it, plus two exploratory arms. One arm is a deliberate replicate of g1_v01.",
+  "control_variant_id": "g2_v01",
+  "hypotheses": [
+    {
+      "id": "h1",
+      "statement": "She remembers everything. hook with temple lifts companion without hurting rpg"
+    },
+    {
+      "id": "h2",
+      "statement": "Audio tweaks (none/low_drums) are neutral or slightly positive on temple"
+    },
+    {
+      "id": "h3",
+      "statement": "Different character/action on temple may lift"
+    }
+  ],
+  "variants": [
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "hook": "She remembers everything."
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Replicates g1_v01; best companion hook",
+      "replicate": true
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "audio": "low_drums"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "Low drums good for rpg and casual"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "audio": "none"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "None did well for companion"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "character": "Kael"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Kael did well in companion with party hook"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "character": "Rex"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Rex strong in rpg"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "cta": "Install Now"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "Exploratory CTA check"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "action": "waves_to_camera"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Exploratory action"
+    }
+  ],
+  "accepted_at": "2026-11-06T19:51:23.743Z",
+  "control": "g2_v01",
+  "variant_ids": [
+    "g3_v01",
+    "g3_v02",
+    "g3_v03",
+    "g3_v04",
+    "g3_v05",
+    "g3_v06",
+    "g3_v07"
+  ],
+  "diffs": {
+    "g3_v01": "hook: Your party is waiting. → She remembers everything.",
+    "g3_v02": "audio: upbeat_synth → low_drums",
+    "g3_v03": "audio: upbeat_synth → none",
+    "g3_v04": "character: Luna → Kael",
+    "g3_v05": "character: Luna → Rex",
+    "g3_v06": "cta: Play Free → Install Now",
+    "g3_v07": "action: draws_blade → waves_to_camera"
+  },
+  "warnings": [
+    "variants[0]: replicate of already-tested g1_v01"
+  ]
+}

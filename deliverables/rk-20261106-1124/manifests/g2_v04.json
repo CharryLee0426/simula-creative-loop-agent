@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g2_v04",
+  "generation": 2,
+  "parent_id": "g1_v03",
+  "created_round": 2,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "sunlit_meadow",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "54ae00dbfa",
+  "hypothesis_id": "h3",
+  "rationale": "Casual-strong background"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g1_v05",
+  "generation": 1,
+  "parent_id": "g0_v04",
+  "created_round": 1,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Luna",
+    "action": "opens_treasure",
+    "hook": "She remembers everything.",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "2948670b48",
+  "hypothesis_id": "h3",
+  "rationale": "Treasure strong in casual"
+}

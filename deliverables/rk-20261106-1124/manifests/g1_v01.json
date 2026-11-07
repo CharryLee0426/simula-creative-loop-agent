@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g1_v01",
+  "generation": 1,
+  "parent_id": "g0_v04",
+  "created_round": 1,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "She remembers everything.",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "d07ff85eb9",
+  "hypothesis_id": "h1",
+  "rationale": "Temple strong in rpg/companion priors"
+}

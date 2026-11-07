@@ -1,0 +1,141 @@
+{
+  "round": 0,
+  "summary": "Round 0: control is replica of most-served v_036; challengers mix strong historical values (Play Free, Your party is waiting, draws_blade, She remembers everything) across characters/backgrounds, with varied audio.",
+  "control_index": 0,
+  "hypotheses": [
+    {
+      "id": "h1",
+      "statement": "Play Free CTA + Your party is waiting hook is a strong combo for rpg"
+    },
+    {
+      "id": "h2",
+      "statement": "She remembers everything + Mira/Luna lifts companion"
+    },
+    {
+      "id": "h3",
+      "statement": "draws_blade and low_drums/none audio beat close_up_smile/warm_piano"
+    }
+  ],
+  "variants": [
+    {
+      "layers": {
+        "background": "storm_battlefield",
+        "character": "Mira",
+        "action": "close_up_smile",
+        "hook": "Free gems every day",
+        "cta": "Claim Bonus",
+        "audio": "warm_piano"
+      },
+      "rationale": "Control replica of most-served v_036"
+    },
+    {
+      "layers": {
+        "background": "throne_room",
+        "character": "Rex",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "low_drums"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Stack rpg-strong values"
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "waves_to_camera",
+        "hook": "She remembers everything.",
+        "cta": "Install Now",
+        "audio": "none"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "Companion-strong hook with temple and no audio"
+    },
+    {
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "She remembers everything.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "Luna strong in companion/casual, blade strong"
+    },
+    {
+      "layers": {
+        "background": "sunlit_meadow",
+        "character": "Kael",
+        "action": "opens_treasure",
+        "hook": "The ruins are calling",
+        "cta": "Play Free",
+        "audio": "none"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Casual-friendly treasure/meadow with Play Free"
+    },
+    {
+      "layers": {
+        "background": "cozy_cafe",
+        "character": "Luna",
+        "action": "waves_to_camera",
+        "hook": "Can you beat level 3?",
+        "cta": "Install Now",
+        "audio": "low_drums"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Explore underserved hook and cafe"
+    },
+    {
+      "layers": {
+        "background": "neon_city",
+        "character": "Rex",
+        "action": "casts_spell",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Neon city broad performer with strong hook/CTA"
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Kael",
+        "action": "draws_blade",
+        "hook": "The ruins are calling",
+        "cta": "Join Luna",
+        "audio": "none"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Temple+blade+no audio exploration"
+    }
+  ],
+  "accepted_at": "2026-11-06T19:24:42.612Z",
+  "control": "g0_v01",
+  "variant_ids": [
+    "g0_v01",
+    "g0_v02",
+    "g0_v03",
+    "g0_v04",
+    "g0_v05",
+    "g0_v06",
+    "g0_v07",
+    "g0_v08"
+  ],
+  "diffs": {
+    "g0_v01": "(new)",
+    "g0_v02": "(new)",
+    "g0_v03": "(new)",
+    "g0_v04": "(new)",
+    "g0_v05": "(new)",
+    "g0_v06": "(new)",
+    "g0_v07": "(new)",
+    "g0_v08": "(new)"
+  },
+  "warnings": [
+    "variants[7]: CTA \"Join Luna\" but the character on screen is Kael"
+  ]
+}

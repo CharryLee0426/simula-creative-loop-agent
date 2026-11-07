@@ -1,0 +1,566 @@
+{
+  "round": 1,
+  "control": "g0_v04",
+  "arms": [
+    {
+      "variant_id": "g0_v04",
+      "parent_id": null,
+      "is_control": true,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "She remembers everything.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [],
+      "users": 19759,
+      "impressions": 29180,
+      "clicks": 1426,
+      "installs": 237,
+      "ctr": 0.048869088416723785,
+      "ctr_se": 0.0012759608633824899,
+      "ipm": 8.122001370801918,
+      "ipm_ci": [
+        7.0907002837422475,
+        9.15330245786159
+      ],
+      "lift_vs_control": null,
+      "lift_ci": null,
+      "p_value": null,
+      "p_adj": null,
+      "ctr_lift_vs_control": null,
+      "guardrail_ok": true,
+      "p_best": 0.08935,
+      "by_segment": {
+        "rpg": {
+          "users": 8730,
+          "impressions": 13095,
+          "installs": 103,
+          "ipm": 7.865597556319206,
+          "ipm_ci": [
+            6.349124007919025,
+            9.382071104719387
+          ]
+        },
+        "companion": {
+          "users": 7049,
+          "impressions": 10258,
+          "installs": 102,
+          "ipm": 9.943458763891597,
+          "ipm_ci": [
+            8.021653883128371,
+            11.865263644654823
+          ]
+        },
+        "casual": {
+          "users": 3980,
+          "impressions": 5827,
+          "installs": 32,
+          "ipm": 5.49167667753561,
+          "ipm_ci": [
+            3.5933228541403706,
+            7.390030500930849
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g1_v01",
+      "parent_id": "g0_v04",
+      "is_control": false,
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "She remembers everything.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "background"
+      ],
+      "users": 19895,
+      "impressions": 29511,
+      "clicks": 1655,
+      "installs": 254,
+      "ctr": 0.05608078343668463,
+      "ctr_se": 0.0013480499726636766,
+      "ipm": 8.606960116566704,
+      "ipm_ci": [
+        7.549930674410759,
+        9.663989558722651
+      ],
+      "lift_vs_control": 0.05970926667264322,
+      "lift_ci": [
+        -0.12748922462768755,
+        0.246907757972974
+      ],
+      "p_value": 0.5198081643539307,
+      "p_adj": 1,
+      "ctr_lift_vs_control": 0.1475717115585255,
+      "guardrail_ok": true,
+      "p_best": 0.335,
+      "by_segment": {
+        "rpg": {
+          "users": 8979,
+          "impressions": 13367,
+          "installs": 152,
+          "ipm": 11.371287499064861,
+          "ipm_ci": [
+            9.5665118379577,
+            13.176063160172022
+          ]
+        },
+        "companion": {
+          "users": 7010,
+          "impressions": 10383,
+          "installs": 75,
+          "ipm": 7.22334585379948,
+          "ipm_ci": [
+            5.589446427390246,
+            8.857245280208714
+          ]
+        },
+        "casual": {
+          "users": 3906,
+          "impressions": 5761,
+          "installs": 27,
+          "ipm": 4.686686339177226,
+          "ipm_ci": [
+            2.922000522833204,
+            6.451372155521248
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g1_v02",
+      "parent_id": "g0_v04",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "She remembers everything.",
+        "cta": "Play Free",
+        "audio": "none"
+      },
+      "changed": [
+        "audio"
+      ],
+      "users": 19903,
+      "impressions": 29480,
+      "clicks": 1338,
+      "installs": 238,
+      "ctr": 0.045386702849389414,
+      "ctr_se": 0.001210144897236668,
+      "ipm": 8.073270013568521,
+      "ipm_ci": [
+        7.0507646373578945,
+        9.09577538977915
+      ],
+      "lift_vs_control": -0.005999919848398857,
+      "lift_ci": [
+        -0.18426709861628363,
+        0.17226725891948594
+      ],
+      "p_value": 0.947562220171273,
+      "p_adj": 1,
+      "ctr_lift_vs_control": -0.07125947465274682,
+      "guardrail_ok": true,
+      "p_best": 0.0755,
+      "by_segment": {
+        "rpg": {
+          "users": 8826,
+          "impressions": 13243,
+          "installs": 106,
+          "ipm": 8.004228649097637,
+          "ipm_ci": [
+            6.4850028495418135,
+            9.52345444865346
+          ]
+        },
+        "companion": {
+          "users": 7142,
+          "impressions": 10434,
+          "installs": 101,
+          "ipm": 9.679892658616064,
+          "ipm_ci": [
+            7.7992764471908265,
+            11.5605088700413
+          ]
+        },
+        "casual": {
+          "users": 3935,
+          "impressions": 5803,
+          "installs": 31,
+          "ipm": 5.342064449422712,
+          "ipm_ci": [
+            3.465046920008922,
+            7.219081978836502
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g1_v03",
+      "parent_id": "g0_v04",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "hook"
+      ],
+      "users": 19895,
+      "impressions": 29819,
+      "clicks": 1607,
+      "installs": 260,
+      "ctr": 0.053891813944129584,
+      "ctr_se": 0.001308823084782021,
+      "ipm": 8.7192729467789,
+      "ipm_ci": [
+        7.661109412775168,
+        9.777436480782631
+      ],
+      "lift_vs_control": 0.07353748770889584,
+      "lift_ci": [
+        -0.1150235118824281,
+        0.2620984873002198
+      ],
+      "p_value": 0.4282044175607307,
+      "p_adj": 1,
+      "ctr_lift_vs_control": 0.10277919417230097,
+      "guardrail_ok": true,
+      "p_best": 0.43995,
+      "by_segment": {
+        "rpg": {
+          "users": 8933,
+          "impressions": 13557,
+          "installs": 157,
+          "ipm": 11.580733200560596,
+          "ipm_ci": [
+            9.7750697902342,
+            13.38639661088699
+          ]
+        },
+        "companion": {
+          "users": 7046,
+          "impressions": 10326,
+          "installs": 69,
+          "ipm": 6.682161533991866,
+          "ipm_ci": [
+            5.10555544656023,
+            8.2587676214235
+          ]
+        },
+        "casual": {
+          "users": 3916,
+          "impressions": 5936,
+          "installs": 34,
+          "ipm": 5.727762803234501,
+          "ipm_ci": [
+            3.8023706179551158,
+            7.653154988513887
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g1_v04",
+      "parent_id": "g0_v04",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Rex",
+        "action": "draws_blade",
+        "hook": "She remembers everything.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "character"
+      ],
+      "users": 20068,
+      "impressions": 29747,
+      "clicks": 1421,
+      "installs": 235,
+      "ctr": 0.04776952297710693,
+      "ctr_se": 0.0012404464594321916,
+      "ipm": 7.899956298114096,
+      "ipm_ci": [
+        6.890714150055018,
+        8.909198446173173
+      ],
+      "lift_vs_control": -0.0273387140127877,
+      "lift_ci": [
+        -0.20253593746922682,
+        0.14785850944365142
+      ],
+      "p_value": 0.762952010965714,
+      "p_adj": 1,
+      "ctr_lift_vs_control": -0.022500224072945153,
+      "guardrail_ok": true,
+      "p_best": 0.0418,
+      "by_segment": {
+        "rpg": {
+          "users": 9050,
+          "impressions": 13499,
+          "installs": 139,
+          "ipm": 10.297059041410474,
+          "ipm_ci": [
+            8.587921488768172,
+            12.006196594052778
+          ]
+        },
+        "companion": {
+          "users": 7091,
+          "impressions": 10380,
+          "installs": 55,
+          "ipm": 5.298651252408478,
+          "ipm_ci": [
+            3.898711141974761,
+            6.698591362842194
+          ]
+        },
+        "casual": {
+          "users": 3927,
+          "impressions": 5868,
+          "installs": 41,
+          "ipm": 6.987048398091343,
+          "ipm_ci": [
+            4.847147385313116,
+            9.12694941086957
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g1_v05",
+      "parent_id": "g0_v04",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "opens_treasure",
+        "hook": "She remembers everything.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "action"
+      ],
+      "users": 20248,
+      "impressions": 30278,
+      "clicks": 1402,
+      "installs": 226,
+      "ctr": 0.04630424730827663,
+      "ctr_se": 0.0012151411124834389,
+      "ipm": 7.464165400620913,
+      "ipm_ci": [
+        6.493054367768702,
+        8.435276433473124
+      ],
+      "lift_vs_control": -0.08099431902903691,
+      "lift_ci": [
+        -0.24806585632463712,
+        0.08607721826656332
+      ],
+      "p_value": 0.3627144747793827,
+      "p_adj": 1,
+      "ctr_lift_vs_control": -0.0524839155290939,
+      "guardrail_ok": true,
+      "p_best": 0.00595,
+      "by_segment": {
+        "rpg": {
+          "users": 9086,
+          "impressions": 13883,
+          "installs": 75,
+          "ipm": 5.402290571202189,
+          "ipm_ci": [
+            4.181699877186807,
+            6.622881265217572
+          ]
+        },
+        "companion": {
+          "users": 7177,
+          "impressions": 10559,
+          "installs": 108,
+          "ipm": 10.228241310730182,
+          "ipm_ci": [
+            8.301272564615651,
+            12.155210056844712
+          ]
+        },
+        "casual": {
+          "users": 3985,
+          "impressions": 5836,
+          "installs": 43,
+          "ipm": 7.368060315284441,
+          "ipm_ci": [
+            5.17746862404351,
+            9.55865200652537
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g1_v06",
+      "parent_id": "g0_v04",
+      "is_control": false,
+      "layers": {
+        "background": "throne_room",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "She remembers everything.",
+        "cta": "Play Free",
+        "audio": "low_drums"
+      },
+      "changed": [
+        "background",
+        "audio"
+      ],
+      "users": 19985,
+      "impressions": 29809,
+      "clicks": 1596,
+      "installs": 226,
+      "ctr": 0.05354087691636754,
+      "ctr_se": 0.0013218265560316941,
+      "ipm": 7.581602871615955,
+      "ipm_ci": [
+        6.595896064561424,
+        8.567309678670485
+      ],
+      "lift_vs_control": -0.06653514011074448,
+      "lift_ci": [
+        -0.23617510892789512,
+        0.10310482870640615
+      ],
+      "p_value": 0.4578151531650909,
+      "p_adj": 1,
+      "ctr_lift_vs_control": 0.09559802834474383,
+      "guardrail_ok": true,
+      "p_best": 0.01195,
+      "by_segment": {
+        "rpg": {
+          "users": 8890,
+          "impressions": 13337,
+          "installs": 101,
+          "ipm": 7.572917447701882,
+          "ipm_ci": [
+            6.096062025866985,
+            9.04977286953678
+          ]
+        },
+        "companion": {
+          "users": 7137,
+          "impressions": 10491,
+          "installs": 100,
+          "ipm": 9.531979792202842,
+          "ipm_ci": [
+            7.675248402152211,
+            11.38871118225347
+          ]
+        },
+        "casual": {
+          "users": 3958,
+          "impressions": 5981,
+          "installs": 25,
+          "ipm": 4.179903026249791,
+          "ipm_ci": [
+            2.5462834389577615,
+            5.813522613541821
+          ]
+        }
+      }
+    },
+    {
+      "variant_id": "g1_v07",
+      "parent_id": "g0_v04",
+      "is_control": false,
+      "layers": {
+        "background": "neon_city",
+        "character": "Luna",
+        "action": "draws_blade",
+        "hook": "She remembers everything.",
+        "cta": "Install Now",
+        "audio": "upbeat_synth"
+      },
+      "changed": [
+        "cta"
+      ],
+      "users": 20247,
+      "impressions": 29921,
+      "clicks": 1399,
+      "installs": 209,
+      "ctr": 0.04675645867450954,
+      "ctr_se": 0.0012226988691147061,
+      "ipm": 6.985060659737308,
+      "ipm_ci": [
+        6.039971846892804,
+        7.930149472581813
+      ],
+      "lift_vs_control": -0.1399828267884613,
+      "lift_ci": [
+        -0.2995604990762607,
+        0.0195948454993381
+      ],
+      "p_value": 0.11115386647224246,
+      "p_adj": 0.7780770653056972,
+      "ctr_lift_vs_control": -0.043230389816137235,
+      "guardrail_ok": true,
+      "p_best": 0.0005,
+      "by_segment": {
+        "rpg": {
+          "users": 9143,
+          "impressions": 13795,
+          "installs": 68,
+          "ipm": 4.929322218194998,
+          "ipm_ci": [
+            3.7582153960761957,
+            6.100429040313801
+          ]
+        },
+        "companion": {
+          "users": 7204,
+          "impressions": 10478,
+          "installs": 103,
+          "ipm": 9.83012025195648,
+          "ipm_ci": [
+            7.937543084187081,
+            11.722697419725877
+          ]
+        },
+        "casual": {
+          "users": 3900,
+          "impressions": 5648,
+          "installs": 38,
+          "ipm": 6.7280453257790365,
+          "ipm_ci": [
+            4.59788936794439,
+            8.858201283613685
+          ]
+        }
+      }
+    }
+  ],
+  "winner": "g1_v03",
+  "winner_significant": false,
+  "decision": "promote g1_v03 as champion (directional: P(best)=0.44, not significant vs control)",
+  "segment_winners": {
+    "rpg": "g1_v03",
+    "companion": "g1_v05",
+    "casual": "g1_v05"
+  },
+  "looks_used": 4,
+  "stopped_early": false,
+  "total_users": 160000,
+  "total_impressions": 237745
+}

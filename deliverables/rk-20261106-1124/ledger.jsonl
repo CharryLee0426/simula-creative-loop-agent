@@ -1,0 +1,56 @@
+{"ts":"2026-11-06T19:24:42.617Z","round":0,"kind":"llm_strategist","model":"anthropic/claude-sonnet-5.5","usd":0.018176,"note":"Pi Durable conversation usage delta"}
+{"ts":"2026-11-06T19:24:44.779Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.004731,"variant_id":"g0_v01","tokens_in":4,"tokens_out":226}
+{"ts":"2026-11-06T19:24:47.021Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.003076,"variant_id":"g0_v02","tokens_in":4,"tokens_out":239}
+{"ts":"2026-11-06T19:24:49.466Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.003129,"variant_id":"g0_v03","tokens_in":4,"tokens_out":240}
+{"ts":"2026-11-06T19:24:51.769Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.003104,"variant_id":"g0_v04","tokens_in":4,"tokens_out":231}
+{"ts":"2026-11-06T19:24:54.071Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.003131,"variant_id":"g0_v05","tokens_in":4,"tokens_out":244}
+{"ts":"2026-11-06T19:24:56.575Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.003029,"variant_id":"g0_v06","tokens_in":4,"tokens_out":225}
+{"ts":"2026-11-06T19:24:58.897Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.003139,"variant_id":"g0_v07","tokens_in":4,"tokens_out":240}
+{"ts":"2026-11-06T19:25:03.355Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.006161,"variant_id":"g0_v08","tokens_in":4,"tokens_out":546}
+{"ts":"2026-11-06T19:25:58.257Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.033165,"variant_id":"g0_v01","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:26:54.628Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.033085,"variant_id":"g0_v02","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:27:36.395Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.03312,"variant_id":"g0_v03","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:28:25.173Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.033205,"variant_id":"g0_v04","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:28:30.619Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.009261,"variant_id":"g0_v08","tokens_in":4,"tokens_out":767}
+{"ts":"2026-11-06T19:29:23.623Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043203,"variant_id":"g0_v01","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:30:14.578Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043258,"variant_id":"g0_v02","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:31:05.786Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043188,"variant_id":"g0_v03","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:32:03.529Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043248,"variant_id":"g0_v04","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:32:38.575Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.03308,"variant_id":"g0_v05","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:32:46.391Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000444,"variant_id":"g0_v01","tokens_in":2159,"tokens_out":1142}
+{"ts":"2026-11-06T19:32:55.406Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000514,"variant_id":"g0_v01","tokens_in":2157,"tokens_out":1493}
+{"ts":"2026-11-06T19:33:42.803Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.03316,"variant_id":"g0_v06","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:33:48.719Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000472,"variant_id":"g0_v02","tokens_in":2145,"tokens_out":1287}
+{"ts":"2026-11-06T19:33:56.934Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.00048,"variant_id":"g0_v02","tokens_in":2149,"tokens_out":1324}
+{"ts":"2026-11-06T19:34:46.553Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.03314,"variant_id":"g0_v07","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:35:30.929Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.0331,"variant_id":"g0_v08","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:36:32.113Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043188,"variant_id":"g0_v05","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:36:38.862Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000442,"variant_id":"g0_v03","tokens_in":2144,"tokens_out":1194}
+{"ts":"2026-11-06T19:36:51.826Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000566,"variant_id":"g0_v03","tokens_in":2147,"tokens_out":1810}
+{"ts":"2026-11-06T19:37:52.463Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043188,"variant_id":"g0_v06","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:39:02.620Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043223,"variant_id":"g0_v07","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:39:57.238Z","round":0,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043258,"variant_id":"g0_v08","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:40:08.785Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000419,"variant_id":"g0_v03","tokens_in":2144,"tokens_out":1080}
+{"ts":"2026-11-06T19:40:25.162Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000505,"variant_id":"g0_v05","tokens_in":2139,"tokens_out":1455}
+{"ts":"2026-11-06T19:40:35.494Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000465,"variant_id":"g0_v04","tokens_in":2163,"tokens_out":1243}
+{"ts":"2026-11-06T19:40:43.101Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000296,"variant_id":"g0_v04","tokens_in":2165,"tokens_out":1458}
+{"ts":"2026-11-06T19:40:52.756Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000235,"variant_id":"g0_v03","tokens_in":2144,"tokens_out":1097}
+{"ts":"2026-11-06T19:41:04.414Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000456,"variant_id":"g0_v05","tokens_in":2142,"tokens_out":1262}
+{"ts":"2026-11-06T19:41:13.445Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000567,"variant_id":"g0_v06","tokens_in":2149,"tokens_out":1760}
+{"ts":"2026-11-06T19:41:31.997Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.00053,"variant_id":"g0_v06","tokens_in":2152,"tokens_out":1572}
+{"ts":"2026-11-06T19:41:44.721Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.00059,"variant_id":"g0_v03","tokens_in":2493,"tokens_out":1705}
+{"ts":"2026-11-06T19:42:02.150Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000501,"variant_id":"g0_v07","tokens_in":2149,"tokens_out":1432}
+{"ts":"2026-11-06T19:42:30.622Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.001093,"variant_id":"g0_v07","tokens_in":2152,"tokens_out":4446}
+{"ts":"2026-11-06T19:42:41.801Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000528,"variant_id":"g0_v08","tokens_in":2155,"tokens_out":1563}
+{"ts":"2026-11-06T19:42:46.931Z","round":0,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.009998,"variant_id":"g0_v03","tokens_in":4,"tokens_out":673}
+{"ts":"2026-11-06T19:43:03.017Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.00053,"variant_id":"g0_v08","tokens_in":2159,"tokens_out":1569}
+{"ts":"2026-11-06T19:43:14.779Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000237,"variant_id":"g0_v03","tokens_in":2144,"tokens_out":1111}
+{"ts":"2026-11-06T19:43:26.809Z","round":0,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000428,"variant_id":"g0_v03","tokens_in":2147,"tokens_out":1124}
+{"ts":"2026-11-06T19:45:06.055Z","round":1,"kind":"llm_strategist","model":"anthropic/claude-sonnet-5.5","usd":0.032221,"note":"Pi Durable conversation usage delta"}
+{"ts":"2026-11-06T19:48:19.225Z","round":2,"kind":"llm_strategist","model":"anthropic/claude-sonnet-5.5","usd":0.020907,"note":"Pi Durable conversation usage delta"}
+{"ts":"2026-11-06T19:51:23.745Z","round":3,"kind":"llm_strategist","model":"anthropic/claude-sonnet-5.5","usd":0.033934,"note":"Pi Durable conversation usage delta"}
+{"ts":"2026-11-06T19:54:27.392Z","round":3,"kind":"llm_planner","model":"anthropic/claude-sonnet-5.5","usd":0.005476,"variant_id":"g3_v05","tokens_in":4,"tokens_out":307}
+{"ts":"2026-11-06T19:55:22.786Z","round":3,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.033085,"variant_id":"g3_v05","note":"keyframe f1 (background+character)"}
+{"ts":"2026-11-06T19:56:18.680Z","round":3,"kind":"image","model":"openai/gpt-image-2.6-sunburst","usd":0.043258,"variant_id":"g3_v05","note":"keyframe f2 (+action, ref f1)"}
+{"ts":"2026-11-06T19:56:43.684Z","round":3,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000505,"variant_id":"g3_v05","tokens_in":2154,"tokens_out":1449}
+{"ts":"2026-11-06T19:56:56.531Z","round":3,"kind":"vlm","model":"meta/muse-spark-1.3-contributor","usd":0.000536,"variant_id":"g3_v05","tokens_in":2149,"tokens_out":1607}

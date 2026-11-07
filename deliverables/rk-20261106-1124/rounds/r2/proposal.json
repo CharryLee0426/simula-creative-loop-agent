@@ -1,0 +1,104 @@
+{
+  "round": 2,
+  "summary": "Round 1 showed a plateau near 8-9 ipm. Hook, background and audio swaps were within noise. Play Free CTA mattered most (Install Now -14%), and draws_blade beat treasure. This round stacks the small gains (temple + party hook) and tests untried values, such as Join Luna with Luna, sunlit_meadow and casts_spell.",
+  "control_variant_id": "g1_v03",
+  "hypotheses": [
+    {
+      "id": "h1",
+      "statement": "Temple background and Your party hook gains stack (both lifted rpg)"
+    },
+    {
+      "id": "h2",
+      "statement": "Join Luna CTA matches Luna and helps now that Luna is on screen"
+    },
+    {
+      "id": "h3",
+      "statement": "Untested action/background values may match draws_blade/neon"
+    },
+    {
+      "id": "h4",
+      "statement": "Play Free CTA and upbeat_synth remain best"
+    }
+  ],
+  "variants": [
+    {
+      "parent_id": "g1_v03",
+      "changes": {
+        "background": "moonlit_temple"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Stack temple with party hook"
+    },
+    {
+      "parent_id": "g1_v03",
+      "changes": {
+        "cta": "Join Luna"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "Character-matched CTA"
+    },
+    {
+      "parent_id": "g1_v03",
+      "changes": {
+        "action": "casts_spell"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Untested with Luna"
+    },
+    {
+      "parent_id": "g1_v03",
+      "changes": {
+        "background": "sunlit_meadow"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Casual-strong background"
+    },
+    {
+      "parent_id": "g1_v03",
+      "changes": {
+        "character": "Kael",
+        "audio": "low_drums"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Explore other character and audio"
+    },
+    {
+      "parent_id": "g1_v03",
+      "changes": {
+        "hook": "The ruins are calling",
+        "background": "moonlit_temple"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Ruins hook fits temple, rpg-strong"
+    },
+    {
+      "parent_id": "g1_v03",
+      "changes": {
+        "cta": "Claim Bonus"
+      },
+      "hypothesis_id": "h4",
+      "rationale": "Test the CTA as a negative control"
+    }
+  ],
+  "accepted_at": "2026-11-06T19:48:19.223Z",
+  "control": "g1_v03",
+  "variant_ids": [
+    "g2_v01",
+    "g2_v02",
+    "g2_v03",
+    "g2_v04",
+    "g2_v05",
+    "g2_v06",
+    "g2_v07"
+  ],
+  "diffs": {
+    "g2_v01": "background: neon_city → moonlit_temple",
+    "g2_v02": "cta: Play Free → Join Luna",
+    "g2_v03": "action: draws_blade → casts_spell",
+    "g2_v04": "background: neon_city → sunlit_meadow",
+    "g2_v05": "character: Luna → Kael; audio: upbeat_synth → low_drums",
+    "g2_v06": "background: neon_city → moonlit_temple; hook: Your party is waiting. → The ruins are calling",
+    "g2_v07": "cta: Play Free → Claim Bonus"
+  },
+  "warnings": []
+}

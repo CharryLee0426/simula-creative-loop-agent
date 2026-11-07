@@ -1,0 +1,129 @@
+{
+  "optimum_ipm": 12.2889494041138,
+  "optimum_label": "moonlit_temple / Mira / draws_blade / Your party is waiting. / Play Free / upbeat_synth",
+  "worst_ipm": 1.7862489351096085,
+  "control_ipm": 2.412664570934205,
+  "top5": [
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "ipm": 12.2889494041138
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "low_drums"
+      },
+      "ipm": 12.085923281616441
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "The ruins are calling",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "ipm": 11.800524045919579
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "The ruins are calling",
+        "cta": "Play Free",
+        "audio": "low_drums"
+      },
+      "ipm": 11.563793713576866
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "none"
+      },
+      "ipm": 11.525718227342919
+    }
+  ],
+  "agent_trajectory": [
+    {
+      "round": 0,
+      "champion": "g0_v04",
+      "true_ipm": 8.08159712344669,
+      "observed_ipm": 9.247555052890693
+    },
+    {
+      "round": 1,
+      "champion": "g1_v03",
+      "true_ipm": 8.401711563709897,
+      "observed_ipm": 8.7192729467789
+    },
+    {
+      "round": 2,
+      "champion": "g2_v01",
+      "true_ipm": 9.790094460505708,
+      "observed_ipm": 9.654943596549435
+    },
+    {
+      "round": 3,
+      "champion": "g3_v05",
+      "true_ipm": 11.199395892235023,
+      "observed_ipm": 10.963062911114859
+    }
+  ],
+  "rows": [
+    {
+      "policy": "agent",
+      "label": "LLM agent (anthropic/claude-sonnet-5.5)",
+      "final_true_ipm": 11.199395892235023,
+      "regret": 1.089553511878778,
+      "pct_of_optimum": 0.896259679584856
+    },
+    {
+      "policy": "mutate",
+      "label": "mutate-1 baseline (mean of 30)",
+      "final_true_ipm": 10.243615866977779,
+      "sd": 1.1871152018969817,
+      "regret": 2.045333537136022,
+      "pct_of_optimum": 0.8052564154169438
+    },
+    {
+      "policy": "random",
+      "label": "random-search baseline (mean of 30)",
+      "final_true_ipm": 8.392088685094391,
+      "sd": 1.304749520574307,
+      "regret": 3.8968607190194096,
+      "pct_of_optimum": 0.6289658330712264
+    },
+    {
+      "policy": "history",
+      "label": "history heuristic (no experiments)",
+      "final_true_ipm": 8.415191523720644,
+      "regret": 3.873757880393157,
+      "pct_of_optimum": 0.6311655376800015
+    },
+    {
+      "policy": "control",
+      "label": "round-0 control (no loop)",
+      "final_true_ipm": 2.412664570934205,
+      "regret": 9.876284833179596,
+      "pct_of_optimum": 0.05964329247256824
+    }
+  ],
+  "note": "pct_of_optimum is scaled between the worst (0%) and best (100%) creative in the catalog. Baselines use a Poisson readout with the same users per arm per round as the agent's run."
+}

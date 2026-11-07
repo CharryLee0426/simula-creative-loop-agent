@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v02",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "throne_room",
+    "character": "Rex",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "low_drums"
+  },
+  "creative_key": "cd1088ef58",
+  "hypothesis_id": "h1",
+  "rationale": "Stack rpg-strong values"
+}

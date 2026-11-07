@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g3_v03",
+  "generation": 3,
+  "parent_id": "g2_v01",
+  "created_round": 3,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "none"
+  },
+  "creative_key": "5220d64971",
+  "hypothesis_id": "h2",
+  "rationale": "None did well for companion"
+}

@@ -1,0 +1,44 @@
+{
+  "campaign": "rune_keepers",
+  "rounds": 3,
+  "seed": 42,
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "budget_usd": 25,
+  "models": {
+    "strategist": "anthropic/claude-sonnet-5.5",
+    "strategist_thinking": "medium",
+    "planner": "anthropic/claude-sonnet-5.5",
+    "verifier": "meta/muse-spark-1.3-contributor",
+    "image": "openai/gpt-image-2.6-sunburst",
+    "image_quality": "high"
+  },
+  "render": {
+    "policy": "seed_and_final",
+    "max_redo": 3,
+    "image_concurrency": 4,
+    "render_concurrency": 2,
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "experiment": {
+    "platform": "statsig",
+    "arms": 8,
+    "max_layers_changed": 2,
+    "mde_relative": 0.3,
+    "alpha": 0.05,
+    "power": 0.8,
+    "users_per_arm_min": 4000,
+    "users_per_arm_max": 20000,
+    "looks": 4,
+    "early_stop": true,
+    "guardrail_ctr_drop": 0.15,
+    "statsig_event_mode": "per_user"
+  },
+  "review": {
+    "mode": "auto",
+    "max_revisions": 2
+  }
+}

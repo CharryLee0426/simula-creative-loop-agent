@@ -1,0 +1,20 @@
+{
+  "variant_id": "g3_v05",
+  "attempt": 0,
+  "lines": {
+    "en": "Your party is waiting. Let's go!",
+    "zh": "雷克斯在此,你的队伍在等你!"
+  },
+  "tagline": {
+    "en": "Gather your AI party. Adventure awaits.",
+    "zh": "召集AI伙伴,冒险启程"
+  },
+  "timeline": {
+    "cut_s": 2.8,
+    "line_in_s": 0.4,
+    "line_out_s": 2.6,
+    "endcard_s": 3.9
+  },
+  "visual_notes": {},
+  "rationale": "Rex's loud, loyal voice delivers the hook verbatim with a short rallying add-on, then a cut to him drawing his blade leads into a warm end card inviting players to recruit AI companions and install."
+}

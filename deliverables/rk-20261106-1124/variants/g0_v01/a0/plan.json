@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v01",
+  "attempt": 0,
+  "lines": {
+    "en": "Stay close. Free gems every day",
+    "zh": "米拉在此,每天免费领宝石"
+  },
+  "tagline": {
+    "en": "Gather your AI companions. Adventure on.",
+    "zh": "召集AI伙伴,并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 2.8,
+    "line_in_s": 0.4,
+    "line_out_s": 2.6,
+    "endcard_s": 4
+  },
+  "visual_notes": {},
+  "rationale": "Mira's calm, warm line against the storm sets up the hook, then a close-up smile cut and a 2-second end card keep the install call to action clear."
+}

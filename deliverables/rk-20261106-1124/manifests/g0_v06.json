@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v06",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "cozy_cafe",
+    "character": "Luna",
+    "action": "waves_to_camera",
+    "hook": "Can you beat level 3?",
+    "cta": "Install Now",
+    "audio": "low_drums"
+  },
+  "creative_key": "50d2153160",
+  "hypothesis_id": "h3",
+  "rationale": "Explore underserved hook and cafe"
+}

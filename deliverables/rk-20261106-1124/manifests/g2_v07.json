@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g2_v07",
+  "generation": 2,
+  "parent_id": "g1_v03",
+  "created_round": 2,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "Your party is waiting.",
+    "cta": "Claim Bonus",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "ad79c96ed4",
+  "hypothesis_id": "h4",
+  "rationale": "Test the CTA as a negative control"
+}

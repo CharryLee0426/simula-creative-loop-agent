@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g3_v07",
+  "generation": 3,
+  "parent_id": "g2_v01",
+  "created_round": 3,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Luna",
+    "action": "waves_to_camera",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "f6161acdfa",
+  "hypothesis_id": "h3",
+  "rationale": "Exploratory action"
+}

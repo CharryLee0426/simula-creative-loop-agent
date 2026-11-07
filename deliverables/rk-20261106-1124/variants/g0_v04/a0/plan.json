@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v04",
+  "attempt": 0,
+  "lines": {
+    "en": "She remembers everything. Even your promises.",
+    "zh": "她记得你说过的一切。"
+  },
+  "tagline": {
+    "en": "Recruit companions who never forget.",
+    "zh": "招募永不忘记的伙伴"
+  },
+  "timeline": {
+    "cut_s": 2.8,
+    "line_in_s": 0.4,
+    "line_out_s": 2.6,
+    "endcard_s": 3.9
+  },
+  "visual_notes": {},
+  "rationale": "A dry, quiet line from Luna sets up a warm-but-dramatic hook, the blade draw lands on the cut, and the end card gets a full 2+ seconds for the install CTA."
+}

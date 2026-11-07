@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v07",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Rex",
+    "action": "casts_spell",
+    "hook": "Your party is waiting.",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "631b2250df",
+  "hypothesis_id": "h1",
+  "rationale": "Neon city broad performer with strong hook/CTA"
+}
