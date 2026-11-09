@@ -62,7 +62,8 @@ Useful flags: `--human` (approve each proposal in the terminal), `--langs en,zh`
 | 0 | code | renders the 8 variants **in parallel** (8 child durable tasks) in EN and 中文. Muse Spark checks each video against its manifest; failures go back with fix suggestions, up to 3 redos |
 | 0..3 | code | creates the round's Statsig experiment (8 groups, parameter `variant_id`), simulates users, sends exposures and events, reads out the results |
 | 1..3 | strategist | reads the results and keeps the champion as control. Proposes 7 challengers, each a child of a tested variant that changes 1–2 layers. Cites the numbers it relies on |
-| final | code | renders and verifies the final champion (if it is not a seed variant), writes `trace.html`, updates the cross-run playbook |
+| final | strategist | **reflection**: restates its learnings with the last round in view (`submit_learnings`); code verifies every claim |
+| final | code | renders and verifies the final champion (if it is not a seed variant), writes `trace.html`, merges the verified learnings into the cross-run playbook |
 
 Per your instructions, only generation 0 and the final winner are rendered. Experiments evaluate **manifests**, because the audience model scores layers, not pixels. Set `render.policy` to `"all"` to also render every intermediate generation.
 
@@ -142,7 +143,17 @@ Hold-out AUC is 0.65 for clicks and 0.65 for installs. Variant-level weighted co
   - `--human` asks for approval in the terminal; a free-text answer goes back to the agent, which revises.
   - Without stopping the loop, you can write notes into `runs/<id>/feedback.md`. They are injected into the next round once.
 - **Evaluation:** `npm run eval` uses the audience model as ground truth (the agent never sees it). It brute-forces all 9,600 creatives for the optimum, scores the agent's final creative, and compares against random-search and one-layer-mutation baselines at the same traffic, plus a history-only heuristic.
-- **Improvement over time:** the learnings list is the agent's memory between rounds. At the end of a run it is appended to `memory/playbook.json` and shown to the next run as a weak prior.
+- **Learnings are verified by code, not by the agent** (`src/memory.ts`):
+  - The agent writes structured claims: `effect` (one layer, `value` vs `vs`, relation `better` or `similar` = within ±10%, optional `context` and `segment`) or `optimum` (a variant no one-layer change beats). The validator rejects compound claims and values outside the catalog.
+  - After every round, code re-checks each claim against **clean contrasts** only: two arms of the same experiment that differ in exactly that layer. It pools them (inverse-variance on log ratios) and sets the status: `supported` (95% CI on the claimed side), `refuted` (CI on the other side), `open` (CI too wide), `unverified` (no clean contrast). An optimum claim ("no one-layer change beats it by more than 5%") needs all 22 one-layer neighbours compared head-to-head and none scoring more than 5% higher (smaller gaps are not measurable at this traffic). An earlier 60% threshold let runs stop at a weak optimum whose one better neighbour was in the untested 40%. The agent sees these verdicts in the next round.
+  - After the last round a **reflection** step asks the agent to restate its learnings with every result in view, so the last experiment is never left out. Code also lists the significant clean contrasts the agent has not claimed, so memory is not limited to what it happened to write down.
+- **Champion rule** (`experiment.promote_min_pbest`, default 0.8): a challenger replaces the control only if it beats it significantly (Holm) or has P(best) ≥ 0.8. A weaker "win" is most likely a winner's-curse draw, so the control stays champion. The agent can still pick any tested variant as the next control.
+- **Convergence stop** (`convergence`): the loop ends before `rounds` once the champion was kept as control for 2 consecutive rounds (after at least 3 rounds) and passes the local-optimum check above (`convergence.coverage`, default 1.0 = every neighbour). The reflection and final render then run as usual.
+- **Cross-run memory** (`memory/playbook.json`, v2):
+  - One entry per comparison (layer, two values, context, segment). Each run adds its pooled evidence, and the statement is re-derived from all runs' evidence, whatever the agent claimed.
+  - Ranked by the lift that holds with 95% confidence (the CI bound nearest 0), discounted for staleness. The next run's round 0 sees the top 8 `better` / `similar` statements; `open` entries stay out of the prompt.
+  - A statement the evidence stops supporting (reversed, or CI now includes 0) and `open` entries without new evidence for 3 runs move to `memory/archive.jsonl`, which the agent never reads. A legacy free-text playbook is archived on the first write.
+  - `npm run eval` also scores the final learnings and the memory statements against the audience model's ground truth.
 
 ### Pi Durable harness
 

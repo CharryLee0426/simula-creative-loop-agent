@@ -55,7 +55,8 @@ test("validator: catalog, attributable edits, no re-tests, real citations", () =
 	const parent = makeManifest({ variant_id: "g0_v01", generation: 0, parent_id: null, round: 0, layers: A, format: FORMAT });
 	const manifests = new Map([[parent.variant_id, parent]]);
 	const results = [{ round: 0, control: "g0_v01", winner: "g0_v01", arms: [{ variant_id: "g0_v01", ipm: 5.0, ctr: 0.05 }] }] as any;
-	const base = { round: 1, summary: "Testing hooks and CTAs on the champion after round 0.", control_variant_id: "g0_v01" };
+	const base = { round: 1, summary: "Testing hooks and CTAs on the champion after round 0.", control_variant_id: "g0_v01",
+		learnings: [{ id: "L1", kind: "effect", layer: "cta", value: "Play Free", vs: "Install Now", relation: "better" }] };
 	const seven = (changes: Partial<Layers>[]) => changes.map((c) => ({ parent_id: "g0_v01", changes: c, rationale: "x" }));
 	const okChanges: Partial<Layers>[] = [{ hook: "Your party is waiting." }, { hook: "The ruins are calling" }, { cta: "Install Now" }, { audio: "low_drums" }, { background: "neon_city" }, { character: "Mira" }, { action: "casts_spell", cta: "Claim Bonus" }];
 	const ok = validateProposal({ ...base, variants: seven(okChanges), evidence: [{ variant_id: "g0_v01", round: 0, metric: "ipm", value: 5.0 }] }, { round: 1, cfg, manifests, results, champion: "g0_v01" });
@@ -95,4 +96,29 @@ test("local assignment is balanced and deterministic", async () => {
 	}
 	for (const c of counts.values()) assert.ok(Math.abs(c - 2000) < 200, `arm size ${c}`);
 	assert.equal(p.assign(exp, { userID: "u1", segment: "rpg", os: "ios" }), p.assign(exp, { userID: "u1", segment: "casual", os: "android" }));
+});
+
+test("analyze: a non-significant challenger replaces the control only with P(best) >= promoteMinPbest", async () => {
+	const { analyze } = await import("../src/experiment/analyze.ts");
+	const { emptyArm } = await import("../src/experiment/simulate.ts");
+	const agg = (id: string, users: number, installs: number) => {
+		const a = emptyArm(id);
+		for (let i = 0; i < users; i++) {
+			const inst = i < installs ? 1 : 0;
+			for (const c of [a, a.seg.rpg]) { c.users++; c.impressions++; c.installs += inst; addUser(c.install, 1, inst); addUser(c.click, 1, inst); }
+		}
+		return a;
+	};
+	const ms = (ids: string[]) => new Map(ids.map((id, i) => [id, makeManifest({ variant_id: id, generation: 0, parent_id: null, round: 0, layers: { ...A, audio: ["none", "low_drums", "upbeat_synth"][i]! }, format: FORMAT })]));
+	const run = (arms: Record<string, ReturnType<typeof agg>>) => analyze({ round: 1, arms, manifests: ms(Object.keys(arms)), control: "c", alpha: 0.05, guardrailDrop: 1, seed: "t", looksUsed: 4, stoppedEarly: false, promoteMinPbest: 0.8 });
+	const weak = run({ c: agg("c", 20000, 200), x: agg("x", 20000, 215), y: agg("y", 20000, 210) });
+	assert.equal(weak.winner, "c");
+	assert.equal(weak.top_arm === "x" || weak.top_arm === "y", true);
+	assert.match(weak.decision, /^keep control: best challenger/);
+	const directional = run({ c: agg("c", 20000, 200), x: agg("x", 20000, 230) });
+	assert.equal(directional.winner, "x");
+	assert.match(directional.decision, /^promote x/);
+	const strong = run({ c: agg("c", 20000, 200), x: agg("x", 20000, 300), y: agg("y", 20000, 205) });
+	assert.equal(strong.winner, "x");
+	assert.match(strong.decision, /^ship x/);
 });

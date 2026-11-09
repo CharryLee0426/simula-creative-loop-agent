@@ -5,7 +5,8 @@
 //   history    — no experiments: best historical value per layer (marginals from the CSV)
 import { join } from "node:path";
 import { LAYER_NAMES, layerValues, type Layers, type Manifest } from "../manifest.ts";
-import { allManifests, roundResults, type RunContext } from "../runtime.ts";
+import { claimIsTrue, loadPlaybook, trueEffect, type Claim, type Learning } from "../memory.ts";
+import { allManifests, loadState, roundResults, type RunContext } from "../runtime.ts";
 import { log, readJsonIf, Rng, writeJson } from "../util/core.ts";
 import { PATHS } from "../config.ts";
 
@@ -85,6 +86,33 @@ export async function runEval(r: RunContext, reps = 20): Promise<void> {
 	const histLayers = Object.fromEntries(LAYER_NAMES.map((l) => [l, Object.entries<any>(hist.layers[l]).sort((a, b) => b[1].all.ipm - a[1].all.ipm)[0]![0]])) as Layers;
 	const histIpm = r.audience.expected(histLayers, format).ipm;
 	const row = (policy: string, label: string, v: number, sd?: number) => ({ policy, label, final_true_ipm: v, sd, regret: best.ipm - v, pct_of_optimum: (v - worst.ipm) / (best.ipm - worst.ipm) });
+	// Learnings vs ground truth: is each claim true, and does the code verdict agree with the truth?
+	const tcache = new Map<string, number>();
+	const learnings = (loadState(r.paths).learnings ?? []).filter((l: Learning) => (l as any).reason && (l.kind === "effect" || l.variant_id)).map((l: Learning) => {
+		const t = claimIsTrue(r.audience, format, l as Claim, manifests, tcache);
+		const verdict_correct = l.status === "supported" ? t.truth : l.status === "refuted" ? !t.truth : null;
+		return { id: l.id, text: l.text, status: l.status, effect: l.effect ?? null, ci: l.ci ?? null, true_effect: t.true_effect ?? null, claim_true: t.truth, verdict_correct };
+	});
+	const decided = learnings.filter((x) => x.verdict_correct !== null);
+	const supported = learnings.filter((x) => x.status === "supported");
+	// Memory statements shown to future runs vs ground truth
+	const memory = loadPlaybook().pb.entries.filter((e) => e.campaign === r.cfg.campaign && e.statement.relation !== "open").map((e) => {
+		const s = e.statement;
+		const te = s.relation === "better"
+			? trueEffect(r.audience, format, { layer: e.layer, value: s.winner!, vs: s.loser!, context: e.context, segment: e.segment }, tcache)
+			: trueEffect(r.audience, format, { layer: e.layer, value: e.a, vs: e.b, context: e.context, segment: e.segment }, tcache);
+		return { text: e.text, score: e.score, true_effect: te, correct: s.relation === "better" ? te > 0 : Math.abs(te) <= 0.1 };
+	});
+	const learningSummary = {
+		claims: learnings.length,
+		claims_true: learnings.filter((x) => x.claim_true).length,
+		supported: supported.length,
+		supported_true: supported.filter((x) => x.claim_true).length,
+		decided: decided.length,
+		verdicts_correct: decided.filter((x) => x.verdict_correct).length,
+		memory_shown: memory.length,
+		memory_correct: memory.filter((x) => x.correct).length,
+	};
 	const out = {
 		optimum_ipm: best.ipm,
 		optimum_label: LAYER_NAMES.map((l) => best.layers[l]).join(" / "),
@@ -99,9 +127,18 @@ export async function runEval(r: RunContext, reps = 20): Promise<void> {
 			row("history", "history heuristic (no experiments)", histIpm),
 			row("control", "round-0 control (no loop)", trueOf(control)),
 		],
+		learnings,
+		learning_summary: learningSummary,
+		memory,
 		note: "pct_of_optimum is scaled between the worst (0%) and best (100%) creative in the catalog. Baselines use a Poisson readout with the same users per arm per round as the agent's run.",
 	};
 	writeJson(join(r.paths.dir, "eval.json"), out);
 	for (const x of out.rows) log.info(`${x.label.padEnd(44)} true ipm ${x.final_true_ipm.toFixed(2)}${x.sd ? ` ± ${x.sd.toFixed(2)}` : ""}  regret ${x.regret.toFixed(2)}  (${Math.round(100 * x.pct_of_optimum)}% of optimum)`);
+	if (learnings.length) {
+		const L = learningSummary;
+		log.info(`learnings: ${L.claims} claims, ${L.claims_true} true under the audience model · code verdicts ${L.verdicts_correct}/${L.decided} correct (supported ${L.supported_true}/${L.supported} true)`);
+		for (const x of learnings) log.info(`  ${x.verdict_correct === null ? "·" : x.verdict_correct ? "✓" : "✗"} [${x.status}] ${x.text}${x.true_effect !== null ? `  (true ${x.true_effect >= 0 ? "+" : ""}${(100 * x.true_effect).toFixed(1)}%)` : ""}`);
+	}
+	if (memory.length) log.info(`memory: ${learningSummary.memory_correct}/${memory.length} statements shown to future runs are true`);
 	log.ok(`optimum: ${out.optimum_label} (${best.ipm.toFixed(2)}) → ${join(r.paths.dir, "eval.json")}`);
 }

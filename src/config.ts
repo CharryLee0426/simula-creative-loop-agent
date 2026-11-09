@@ -44,7 +44,11 @@ export type Config = {
 		statsig_event_mode: "per_user" | "per_impression";
 		/** Statsig: after the readout, set the target to the simulated traffic and record the decision (ship the winner). */
 		conclude_on_platform?: boolean;
+		/** A non-significant challenger replaces the control only with at least this P(best). */
+		promote_min_pbest?: number;
 	};
+	/** Stop before `rounds` once the champion held as control for hold_rounds rounds and passes the local-optimum check. */
+	convergence?: { stop: boolean; min_rounds: number; hold_rounds: number; coverage?: number };
 	review: { mode: "auto" | "human"; max_revisions: number };
 	memory: { read: boolean; write: boolean };
 };

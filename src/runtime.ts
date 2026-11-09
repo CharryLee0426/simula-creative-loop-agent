@@ -11,7 +11,8 @@ import { readJsonIf, Semaphore, writeJson, readJson } from "./util/core.ts";
 import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
-export type Learning = { id: string; text: string; status: "supported" | "refuted" | "open"; evidence?: string };
+import type { Learning } from "./memory.ts";
+export type { Learning };
 export type RunState = {
 	run_id: string;
 	created_at: string;
@@ -21,6 +22,8 @@ export type RunState = {
 	champion?: string;
 	rounds: { round: number; control: string; winner: string; significant: boolean; decision: string; champion_after: string }[];
 	learnings: Learning[];
+	/** Set when the loop ended before cfg.rounds because the search converged. */
+	stopped_early?: { after_round: number; reason: string };
 	final?: { variant_id: string; videos: Record<string, string>; verified: boolean; score: number };
 };
 

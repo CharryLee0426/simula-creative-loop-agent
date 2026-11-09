@@ -33,7 +33,10 @@ export type RoundResult = {
 	round: number;
 	control: string;
 	arms: ArmResult[];
+	/** The champion after this round: the control unless a challenger was significant or convincing (see promoteMinPbest). */
 	winner: string;
+	/** The arm with the highest P(best), whether or not it was promoted. */
+	top_arm?: string;
 	winner_significant: boolean;
 	decision: string;
 	segment_winners: Record<Segment, string>;
@@ -55,6 +58,8 @@ export function analyze(args: {
 	seed: string;
 	looksUsed: number;
 	stoppedEarly: boolean;
+	/** A non-significant challenger replaces the control only with at least this P(best) (default 0.8). */
+	promoteMinPbest?: number;
 }): RoundResult {
 	const ids = [...args.manifests.keys()];
 	const ctrl = args.arms[args.control]!;
@@ -101,13 +106,20 @@ export function analyze(args: {
 		};
 	});
 	const eligible = arms.filter((a) => a.guardrail_ok);
-	const winner = [...eligible].sort((a, b) => b.p_best - a.p_best || b.ipm - a.ipm)[0]!;
-	const sig = !winner.is_control && (winner.p_adj ?? 1) < args.alpha && (winner.lift_vs_control ?? 0) > 0;
-	const decision = winner.is_control
+	const top = [...eligible].sort((a, b) => b.p_best - a.p_best || b.ipm - a.ipm)[0]!;
+	const ctrlArm = arms.find((a) => a.is_control)!;
+	const minPb = args.promoteMinPbest ?? 0.8;
+	const sig = !top.is_control && (top.p_adj ?? 1) < args.alpha && (top.lift_vs_control ?? 0) > 0;
+	// A challenger that is neither significant nor clearly the best is most likely a winner's-curse draw: keep the control.
+	const directional = !top.is_control && !sig && top.p_best >= minPb && (top.lift_vs_control ?? 0) > 0;
+	const winner = top.is_control || sig || directional ? top : ctrlArm;
+	const decision = top.is_control
 		? "keep control: no challenger beat it"
 		: sig
-			? `ship ${winner.variant_id}: beats control by ${(100 * winner.lift_vs_control!).toFixed(0)}% (Holm p=${winner.p_adj!.toFixed(3)})`
-			: `promote ${winner.variant_id} as champion (directional: P(best)=${winner.p_best.toFixed(2)}, not significant vs control)`;
+			? `ship ${top.variant_id}: beats control by ${(100 * top.lift_vs_control!).toFixed(0)}% (Holm p=${top.p_adj!.toFixed(3)})`
+			: directional
+				? `promote ${top.variant_id} as champion (directional: P(best)=${top.p_best.toFixed(2)} ≥ ${minPb}, not significant vs control)`
+				: `keep control: best challenger ${top.variant_id} not convincing (${pctTxt(top.lift_vs_control)}, P(best)=${top.p_best.toFixed(2)} < ${minPb}, Holm p=${(top.p_adj ?? 1).toFixed(3)})`;
 	const segWin = {} as Record<Segment, string>;
 	for (const s of SEGMENTS) segWin[s] = [...arms].sort((a, b) => b.by_segment[s].ipm - a.by_segment[s].ipm)[0]!.variant_id;
 	return {
@@ -115,7 +127,8 @@ export function analyze(args: {
 		control: args.control,
 		arms,
 		winner: winner.variant_id,
-		winner_significant: sig,
+		top_arm: top.variant_id,
+		winner_significant: sig && winner === top,
 		decision,
 		segment_winners: segWin,
 		looks_used: args.looksUsed,
@@ -124,6 +137,8 @@ export function analyze(args: {
 		total_impressions: arms.reduce((s, a) => s + a.impressions, 0),
 	};
 }
+
+const pctTxt = (x: number | null) => (x === null ? "—" : `${x >= 0 ? "+" : ""}${(100 * x).toFixed(0)}%`);
 
 /** Early stop at look k when the leader beats control past an O'Brien-Fleming boundary (Bonferroni over challengers). */
 export function shouldStopEarly(r: RoundResult, look: number, looks: number, alpha: number): { stop: boolean; why: string } {

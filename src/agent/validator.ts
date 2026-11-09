@@ -3,6 +3,7 @@
 // number the agent cites must match a recorded result.
 import type { Config } from "../config.ts";
 import type { RoundResult } from "../experiment/analyze.ts";
+import { validateClaims } from "../memory.ts";
 import { brandWarnings, creativeKey, diffLayers, isValidValue, LAYER_NAMES, layerValues, makeManifest, variantId, type Layers, type Manifest } from "../manifest.ts";
 
 export type ProposalVariant = { parent_id?: string | null; layers?: Partial<Layers>; changes?: Partial<Layers>; hypothesis_id?: string; rationale?: string; replicate?: boolean };
@@ -13,7 +14,8 @@ export type Proposal = {
 	control_variant_id?: string;
 	control_index?: number;
 	variants: ProposalVariant[];
-	learnings?: { id: string; text: string; status: "supported" | "refuted" | "open"; evidence?: string }[];
+	/** Structured claims (see src/memory.ts); code assigns their status. */
+	learnings?: unknown[];
 	evidence?: { variant_id: string; round: number; metric: "ipm" | "ctr"; value: number }[];
 };
 
@@ -85,6 +87,10 @@ export function validateProposal(p: Proposal, args: { round: number; cfg: Config
 		control = p.control_variant_id ?? args.champion ?? "";
 		if (!args.manifests.has(control) || ![...tested.values()].includes(control)) errors.push(`control_variant_id "${control}" must be an already-tested variant (current champion: ${args.champion})`);
 	}
+
+	// learnings must be structured, one layer per claim, catalog values only; from round 1 the running list is required
+	errors.push(...validateClaims(p.learnings, new Set(tested.values())).errors);
+	if (round >= 1 && !p.learnings?.length) errors.push("learnings: give your running list of structured claims (at least one); it is your memory between rounds and the fallback if the final reflection fails");
 
 	// citations must be real
 	const byId = new Map<string, { round: number; ipm: number; ctr: number }>();
