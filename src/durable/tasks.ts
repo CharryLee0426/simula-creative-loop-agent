@@ -4,12 +4,14 @@
 //
 //   LoopTask ── RoundTask(0) ── VideoTask × 8 (parallel: plan → keyframes → render → verify, ≤3 redos)
 //            ├─ RoundTask(1..R)   (propose → review → experiment → simulate×looks → analyze → record)
-//            └─ VideoTask(final champion) → report
+//            ├─ reflect           (strategist restates its learnings with the last round in view; code verifies them)
+//            └─ VideoTask(final champion) → report (merges verified learnings into memory/playbook.json)
 import { defineTask, UsageDoc } from "@earendil-works/pi-durable";
 import { copyFileSync, existsSync, renameSync } from "node:fs";
 import { join } from "node:path";
 import type { Lang } from "../config.ts";
-import { takeHumanFeedback, roundMessage } from "../agent/context.ts";
+import { takeHumanFeedback, reflectMessage, roundMessage } from "../agent/context.ts";
+import { reflectionPath } from "../agent/extension.ts";
 import type { Proposal } from "../agent/validator.ts";
 import { analyze, decisionReason, shouldStopEarly, type RoundResult } from "../experiment/analyze.ts";
 import type { CreatedExperiment, ExperimentSpec } from "../experiment/platform.ts";
@@ -17,6 +19,7 @@ import { StatsigPlatform } from "../experiment/platform.ts";
 import { mergeBatches, simulateBatch, type BatchAgg } from "../experiment/simulate.ts";
 import { BudgetExceeded } from "../ledger.ts";
 import { describeDiff, diffLayers, type Manifest } from "../manifest.ts";
+import { checkConvergence, mergeIntoPlaybook, scoreLearnings, verdictCounts } from "../memory.ts";
 import { ensureKeyframes, renderVideo, verifyVideo, writePlan, type CreativePlan, type Verdict } from "../render/creative.ts";
 import { writeReport } from "../report/html.ts";
 import { allManifests, loadManifest, loadState, rc, roundResults, saveState } from "../runtime.ts";
@@ -237,7 +240,9 @@ export const RoundTask = defineTask<RoundInput, RoundState, RoundOutput>({
 					: readJsonIf<{ text: string }>(join(r.paths.round(n), `revision_${rev}.json`))?.text ?? `You did not get an accepted proposal yet. Call submit_generation now for round ${n} and fix every problem it reports.`;
 				r.ledger.guard(0.4, "strategist turn");
 				writeJson(join(r.paths.round(n), `prompt_${rev}.json`), { content });
-				const sub = await conv.submit({ type: "input", content, requestId: `r${n}-propose-${rev}` }, c);
+				// Request ids dedupe within this task (crash-resume), but a fresh task after a failure (e.g. an API outage) must
+				// reach the model again instead of getting the stored unanswered submission back.
+				const sub = await conv.submit({ type: "input", content, requestId: `r${n}-propose-${rev}-t${task.id}` }, c);
 				const settled: any = await sub.wait(c);
 				await recordStrategistCost(n, rt, c);
 				if (!existsSync(proposalPath(n))) {
@@ -358,7 +363,7 @@ export const RoundTask = defineTask<RoundInput, RoundState, RoundOutput>({
 			const looks: BatchAgg[] = [];
 			for (let i = 1; i <= k; i++) looks.push(readJson<BatchAgg>(join(dir, "sim", `look_${i}.json`)));
 			const p = readJson<{ control: string }>(proposalPath(n));
-			const interim = analyze({ round: n, arms: mergeBatches(looks, [...manifests.keys()]), manifests, parents: allManifests(r.paths), control: p.control, alpha: r.cfg.experiment.alpha, guardrailDrop: r.cfg.experiment.guardrail_ctr_drop, seed: `${r.cfg.seed}|${n}|${k}`, looksUsed: k, stoppedEarly: false });
+			const interim = analyze({ round: n, arms: mergeBatches(looks, [...manifests.keys()]), manifests, parents: allManifests(r.paths), control: p.control, alpha: r.cfg.experiment.alpha, guardrailDrop: r.cfg.experiment.guardrail_ctr_drop, seed: `${r.cfg.seed}|${n}|${k}`, looksUsed: k, stoppedEarly: false, promoteMinPbest: r.cfg.experiment.promote_min_pbest });
 			const es = shouldStopEarly(interim, k, plan.looks, r.cfg.experiment.alpha);
 			if (es.why) r.trace.emit(n, "note", `interim ${es.why}${es.stop ? " → stop early" : ""}`, undefined, true);
 			if (r.cfg.experiment.early_stop && es.stop) await rt.commit(() => running({ phase: "analyze" as const, looks: k, early: true }), c);
@@ -375,7 +380,7 @@ export const RoundTask = defineTask<RoundInput, RoundState, RoundOutput>({
 			const looks: BatchAgg[] = [];
 			for (let i = 1; i <= k; i++) looks.push(readJson<BatchAgg>(join(dir, "sim", `look_${i}.json`)));
 			const p = readJson<{ control: string }>(proposalPath(n));
-			const res = analyze({ round: n, arms: mergeBatches(looks, [...manifests.keys()]), manifests, parents: allManifests(r.paths), control: p.control, alpha: r.cfg.experiment.alpha, guardrailDrop: r.cfg.experiment.guardrail_ctr_drop, seed: `${r.cfg.seed}|${n}|final`, looksUsed: k, stoppedEarly: early });
+			const res = analyze({ round: n, arms: mergeBatches(looks, [...manifests.keys()]), manifests, parents: allManifests(r.paths), control: p.control, alpha: r.cfg.experiment.alpha, guardrailDrop: r.cfg.experiment.guardrail_ctr_drop, seed: `${r.cfg.seed}|${n}|final`, looksUsed: k, stoppedEarly: early, promoteMinPbest: r.cfg.experiment.promote_min_pbest });
 			writeJson(join(dir, "results.json"), res);
 			if (r.platform instanceof StatsigPlatform && r.cfg.experiment.conclude_on_platform !== false) {
 				// Close the loop on Statsig too: metrics attached, horizon = simulated traffic, readout written as the decision.
@@ -400,7 +405,12 @@ export const RoundTask = defineTask<RoundInput, RoundState, RoundOutput>({
 			st.rounds.push({ round: n, control: res.control, winner: res.winner, significant: res.winner_significant, decision: res.decision, champion_after: res.winner });
 			st.rounds.sort((a, b) => a.round - b.round);
 			st.champion = res.winner;
-			if (p?.learnings?.length) st.learnings = p.learnings;
+			// The proposal's claims were written before this round's data existed: verdicts come from code, with it.
+			if (p?.learnings?.length) {
+				st.learnings = scoreLearnings(p.learnings, roundResults(r.paths), allManifests(r.paths));
+				writeJson(join(r.paths.round(n), "learnings.json"), st.learnings);
+				r.trace.emit(n, "note", `learnings re-checked against all results: ${verdictCounts(st.learnings)}`, { learnings: st.learnings }, true);
+			}
 			saveState(r.paths, st);
 			const cost = r.ledger.byRound()[n]?.total ?? 0;
 			r.trace.emit(n, "round_end", `round ${n} done: champion ${res.winner} — round cost ${fmtUsd(cost)}, total ${fmtUsd(r.ledger.total())}`, { cost_by_kind: r.ledger.byRound()[n] ?? {}, total: r.ledger.total() });
@@ -412,16 +422,20 @@ export const RoundTask = defineTask<RoundInput, RoundState, RoundOutput>({
 });
 
 // =====================================================================================================
-// LoopTask: rounds 0..R, then render + verify the final champion, then the report
+// LoopTask: rounds 0..R, reflection, then render + verify the final champion, then the report
 // =====================================================================================================
 export type LoopInput = { rounds: number };
 type LoopState =
 	| { phase: "round"; n: number }
 	| { phase: "round_wait"; n: number; task: string }
+	| { phase: "reflect"; attempt: number }
 	| { phase: "final" }
 	| { phase: "final_wait"; task: string }
 	| { phase: "report" };
 export type LoopOutput = { champion: string; rounds: number; total_usd: number };
+
+/** The last round with results (smaller than cfg.rounds when the loop converged early). */
+const lastRound = () => Math.max(0, roundResults(rc().paths).length - 1);
 
 export const LoopTask = defineTask<LoopInput, LoopState, LoopOutput>({
 	name: "app.loop",
@@ -430,7 +444,7 @@ export const LoopTask = defineTask<LoopInput, LoopState, LoopOutput>({
 	phases: {
 		round: async (task: any, rt: any, c: Ctx) => {
 			const n = task.state.checkpoint.n;
-			if (n > task.input.rounds) return void (await rt.commit(() => running({ phase: "final" as const }), c));
+			if (n > task.input.rounds) return void (await rt.commit(() => running({ phase: "reflect" as const, attempt: 0 }), c));
 			await rt.commit(async (tx: any) => {
 				const id = await tx.createTask(RoundTask, { round: n }, { ownership: { kind: "task", taskId: task.id } });
 				return { status: "waiting", checkpoint: { phase: "round_wait", n, task: id }, on: [id], policy: "allSettled" } as any;
@@ -440,7 +454,50 @@ export const LoopTask = defineTask<LoopInput, LoopState, LoopOutput>({
 			const { n, task: child } = task.state.checkpoint;
 			const [o] = await rt.outcomes([child] as any, c);
 			if ((o as any).status !== "completed") return void (await rt.commit(() => failed(`round ${n} ${(o as any).status}: ${(o as any).error?.message ?? ""}`), c));
+			const r = rc();
+			const conv = r.cfg.convergence;
+			if (conv?.stop && n < task.input.rounds) {
+				// only rounds ≤ n: when a resumed loop re-walks finished rounds, later results must not decide for round n
+				const cv = checkConvergence(roundResults(r.paths).filter((x) => x.round <= n), allManifests(r.paths), conv);
+				if (cv.converged) {
+					const st = loadState(r.paths);
+					st.stopped_early = { after_round: n, reason: cv.why };
+					saveState(r.paths, st);
+					r.trace.emit(n, "note", `converged after round ${n}: ${cv.why} → skipping rounds ${n + 1}..${task.input.rounds}`, cv);
+					return void (await rt.commit(() => running({ phase: "reflect" as const, attempt: 0 }), c));
+				}
+				r.trace.emit(n, "note", `not converged: ${cv.why}`, undefined, true);
+			}
 			await rt.commit(() => running({ phase: "round" as const, n: n + 1 }), c);
+		},
+		reflect: async (task: any, rt: any, c: Ctx) => {
+			const r = rc();
+			const R = lastRound();
+			const attempt = task.state.checkpoint.attempt ?? 0;
+			const st = loadState(r.paths);
+			if (!existsSync(reflectionPath()) && attempt < 3 && st.strategist_conversation) {
+				const conv = await rt.conversation(st.strategist_conversation as any, c);
+				if (conv) {
+					const content = attempt === 0
+						? reflectMessage({ cfg: r.cfg, manifests: allManifests(r.paths), results: roundResults(r.paths), state: st })
+						: "You have not submitted an accepted final reflection yet. Call submit_learnings now and fix every problem it reports.";
+					r.ledger.guard(0.4, "strategist reflection");
+					writeJson(join(r.paths.dir, `reflect_prompt_${attempt}.json`), { content });
+					r.trace.emit(R, "note", `final reflection — strategist restates its learnings with all ${R + 1} experiments in view`);
+					const sub = await conv.submit({ type: "input", content, requestId: `reflect-${attempt}-t${task.id}` }, c);
+					await sub.wait(c);
+					await recordStrategistCost(R, rt, c);
+					if (!existsSync(reflectionPath())) return void (await rt.commit(() => running({ phase: "reflect" as const, attempt: attempt + 1 }), c));
+				}
+			}
+			// Verify the final claims (or, if the reflection failed, the last round's claims) against every result.
+			const refl = readJsonIf<{ learnings: unknown[] }>(reflectionPath());
+			const claims = refl?.learnings ?? st.learnings;
+			st.learnings = scoreLearnings(claims, roundResults(r.paths), allManifests(r.paths));
+			saveState(r.paths, st);
+			writeJson(join(r.paths.dir, "learnings_final.json"), st.learnings);
+			r.trace.emit(R, "note", `final learnings verified by code: ${verdictCounts(st.learnings)}${refl ? "" : " (no accepted reflection; kept the last round's claims)"}`, { learnings: st.learnings });
+			await rt.commit(() => running({ phase: "final" as const }), c);
 		},
 		final: async (task: any, rt: any, c: Ctx) => {
 			const r = rc();
@@ -448,13 +505,13 @@ export const LoopTask = defineTask<LoopInput, LoopState, LoopOutput>({
 			const champ = st.champion!;
 			const m = loadManifest(r.paths, champ);
 			const existing = readJsonIf<{ passed: boolean; videos: Record<string, string> }>(join(r.paths.variantDir(champ), "summary.json"));
-			r.trace.emit(task.input.rounds, "final", `final champion ${champ} (${describeDiff(diffLayers(loadManifest(r.paths, st.rounds[0]!.control).layers, m.layers))} vs the round-0 control)`);
+			r.trace.emit(lastRound(), "final", `final champion ${champ} (${describeDiff(diffLayers(loadManifest(r.paths, st.rounds[0]!.control).layers, m.layers))} vs the round-0 control)`);
 			if (r.cfg.render.policy === "none" || (existing && Object.keys(existing.videos).length)) {
-				if (existing) r.trace.emit(task.input.rounds, "final", `${champ} already rendered (${existing.passed ? "verified" : "best effort"}); reusing its videos`);
+				if (existing) r.trace.emit(lastRound(), "final", `${champ} already rendered (${existing.passed ? "verified" : "best effort"}); reusing its videos`);
 				return void (await rt.commit(() => running({ phase: "report" as const }), c));
 			}
 			await rt.commit(async (tx: any) => {
-				const id = await tx.createTask(VideoTask, { variant_id: champ, round: task.input.rounds, purpose: "final" }, { ownership: { kind: "task", taskId: task.id } });
+				const id = await tx.createTask(VideoTask, { variant_id: champ, round: lastRound(), purpose: "final" }, { ownership: { kind: "task", taskId: task.id } });
 				return { status: "waiting", checkpoint: { phase: "final_wait", task: id }, on: [id], policy: "allSettled" } as any;
 			}, c);
 		},
@@ -468,20 +525,15 @@ export const LoopTask = defineTask<LoopInput, LoopState, LoopOutput>({
 			const vs = readJsonIf<{ passed: boolean; score: number; videos: Record<string, string> }>(join(r.paths.variantDir(champ), "summary.json"));
 			st.final = { variant_id: champ, videos: vs?.videos ?? {}, verified: !!vs?.passed, score: vs?.score ?? 0 };
 			saveState(r.paths, st);
-			if (r.cfg.memory?.write !== false) updatePlaybook(st);
+			if (r.cfg.memory?.write !== false) {
+				const { pb, archived } = mergeIntoPlaybook(st.run_id, r.cfg.campaign, st.learnings);
+				r.trace.emit(lastRound(), "note", `memory: ${pb.entries.length} entries after merge (${pb.entries.filter((e) => e.statement.relation !== "open").length} shown to future runs), ${archived} archived`, { top: pb.entries.slice(0, 10).map((e) => e.text) });
+			}
 			writeReport(r);
-			r.trace.emit(task.input.rounds, "final", `done: champion ${champ}, total spend ${fmtUsd(r.ledger.total())}; report → ${r.paths.html}`);
-			await rt.commit(() => done({ champion: champ, rounds: task.input.rounds, total_usd: r.ledger.total() }), c);
+			r.trace.emit(lastRound(), "final", `done: champion ${champ}, total spend ${fmtUsd(r.ledger.total())}; report → ${r.paths.html}`);
+			await rt.commit(() => done({ champion: champ, rounds: lastRound(), total_usd: r.ledger.total() }), c);
 		},
 	} as any,
 	abort: abortTask as any,
 });
 
-function updatePlaybook(st: ReturnType<typeof loadState>): void {
-	const r = rc();
-	const path = join(r.paths.dir, "..", "..", "memory", "playbook.json");
-	const pb = readJsonIf<{ campaigns: any[] }>(path) ?? { campaigns: [] };
-	pb.campaigns = pb.campaigns.filter((x) => x.run_id !== st.run_id);
-	pb.campaigns.push({ run_id: st.run_id, finished_at: new Date().toISOString(), champion: st.champion, learnings: st.learnings });
-	writeJson(path, pb);
-}

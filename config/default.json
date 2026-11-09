@@ -37,7 +37,15 @@
     "early_stop": true,
     "guardrail_ctr_drop": 0.15,
     "statsig_event_mode": "per_user",
-    "conclude_on_platform": true
+    "conclude_on_platform": true,
+    "promote_min_pbest": 0.8
+  },
+  "convergence": {
+    "stop": true,
+    "min_rounds": 3,
+    "hold_rounds": 2,
+    "coverage": 1.0,
+    "_doc": "end the loop before `rounds` once the champion was kept as control for hold_rounds consecutive rounds and passes the local-optimum check (coverage = share of its one-layer neighbours compared head-to-head; none higher by more than 5%)"
   },
   "review": {
     "mode": "auto",
@@ -46,6 +54,6 @@
   "memory": {
     "read": true,
     "write": true,
-    "_doc": "cross-run playbook in memory/playbook.json: read = show past learnings to the agent at round 0, write = append this run's learnings at the end"
+    "_doc": "cross-run playbook in memory/playbook.json: read = show the top verified statements to the agent at round 0, write = merge this run's code-verified learnings at the end (unsupported statements move to memory/archive.jsonl)"
   }
 }

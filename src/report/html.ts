@@ -41,12 +41,32 @@ ${pts.map((p, i) => `<circle cx="${x(i)}" cy="${y(p.win)}" r="4" class="dot"/><t
 <div class="legend"><span class="k win"></span>${t("winner ipm (95% CI)", "胜出变体 ipm（95% 置信区间）")} <span class="k ctrl"></span>${t("control ipm", "对照组 ipm")}</div>`;
 }
 
+/** Learnings with the code-assigned verdict; legacy free-text learnings render as before. */
+function learnItems(ls: any[]): string {
+	return ls.map((l) => {
+		const cls = l.status === "supported" ? "pass" : l.status === "refuted" ? "fail" : "";
+		const text = l.text ?? [l.layer, l.value, l.relation === "similar" ? "≈" : ">", l.vs].filter(Boolean).join(" ");
+		return `<li><span class="badge ${cls}">${esc(l.status ?? "claim")}</span> ${esc(text)}${l.reason ? ` <small class="muted">— ${esc(l.reason)}</small>` : ""}</li>`;
+	}).join("");
+}
+
 function videoCard(r: RunContext, id: string, m: Manifest | undefined): string {
 	const s = readJsonIf<any>(join(r.paths.variantDir(id), "summary.json"));
 	if (!s || !m) return "";
 	const vids = Object.entries<string>(s.videos ?? {}).map(([lang, p]) => `<video class="v-${lang}" src="${esc(relative(r.paths.dir, p))}#t=1.2" controls preload="metadata" playsinline></video>`).join("");
 	const attempts = (s.attempts ?? []).map((a: any) => `<li class="${a.pass ? "pass" : "fail"}">a${a.attempt}: ${a.pass ? "PASS" : "FAIL"} · ${a.score}${a.reused ? ` · kf ${a.reused.map((x: boolean) => (x ? "♻" : "★")).join("")}` : ""}${a.issues?.length ? `<br><small>${esc(a.issues.slice(0, 3).join(" | "))}</small>` : ""}</li>`).join("");
 	return `<figure class="vcard">${vids}<figcaption><b>${esc(id)}</b> <span class="badge ${s.passed ? "pass" : "fail"}">${s.passed ? t("verified", "已通过校验") : t("best effort", "未通过·取最佳")}</span><div class="layers">${layerCell(m, [])}</div><ul class="att">${attempts}</ul></figcaption></figure>`;
+}
+
+function evalLearnings(e: any): string {
+	if (!e?.learnings?.length) return "";
+	const L = e.learning_summary;
+	const rows = e.learnings.map((x: any) => `<tr><td><span class="badge ${x.status === "supported" ? "pass" : x.status === "refuted" ? "fail" : ""}">${esc(x.status)}</span></td><td>${esc(x.text)}</td><td>${x.effect === null ? "—" : `${pct(x.effect)} <small>[${pct(x.ci[0])}, ${pct(x.ci[1])}]</small>`}</td><td>${x.true_effect === null ? "—" : pct(x.true_effect)}</td><td>${x.claim_true ? "✓" : "✗"}</td><td>${x.verdict_correct === null ? "—" : x.verdict_correct ? "✓" : "✗"}</td></tr>`).join("");
+	const mem = (e.memory ?? []).map((m: any) => `<li>${m.correct ? "✓" : "✗"} ${esc(m.text)} <small class="muted">(true ${pct(m.true_effect)})</small></li>`).join("");
+	return `<h4>${t("Final learnings vs ground truth", "最终结论 vs 真值")}</h4>
+<p class="muted">${t(`${L.claims} claims, ${L.claims_true} true · code verdicts correct ${L.verdicts_correct}/${L.decided} · supported claims true ${L.supported_true}/${L.supported}`, `${L.claims} 条主张，其中 ${L.claims_true} 条为真 · 代码判定正确 ${L.verdicts_correct}/${L.decided} · 判为成立的主张中为真 ${L.supported_true}/${L.supported}`)}</p>
+<div class="scroll"><table class="t"><thead><tr><th>${t("code verdict", "代码判定")}</th><th>${t("claim", "主张")}</th><th>${t("observed [95% CI]", "观测 [95% CI]")}</th><th>${t("true effect", "真实效应")}</th><th>${t("claim true", "主张为真")}</th><th>${t("verdict correct", "判定正确")}</th></tr></thead><tbody>${rows}</tbody></table></div>
+${mem ? `<h4>${t(`Cross-run memory shown to future runs (${L.memory_correct}/${L.memory_shown} true)`, `跨 run 记忆（展示给后续 run 的条目，${L.memory_correct}/${L.memory_shown} 为真）`)}</h4><ol class="learn">${mem}</ol>` : ""}`;
 }
 
 export function buildReport(r: RunContext): string {
@@ -63,7 +83,7 @@ export function buildReport(r: RunContext): string {
 	const firstCtrl = results[0]?.arms.find((a) => a.is_control);
 
 	const kpis = `<div class="kpis">
-<div><small>${t("rounds (experiments)", "轮次（实验数）")}</small><b>${results.length}</b></div>
+<div><small>${t("rounds (experiments)", "轮次（实验数）")}</small><b>${results.length}</b>${st.stopped_early ? `<small title="${esc(st.stopped_early.reason)}">${t(`converged after R${st.stopped_early.after_round}`, `第 ${st.stopped_early.after_round} 轮后收敛`)}</small>` : ""}</div>
 <div><small>${t("final champion", "最终胜出")}</small><b>${esc(st.champion ?? "—")}</b></div>
 <div><small>${t("champion ipm (last readout)", "胜出 ipm（最后一轮）")}</small><b>${champArm ? f2(champArm.ipm) : "—"}</b>${firstCtrl && champArm ? `<small>${t("round-0 control", "第0轮对照")} ${f2(firstCtrl.ipm)}</small>` : ""}</div>
 <div><small>${t("users simulated", "模拟用户数")}</small><b>${results.reduce((s, x) => s + x.total_users, 0).toLocaleString()}</b></div>
@@ -105,7 +125,7 @@ export function buildReport(r: RunContext): string {
 			return ms.map((mm: any) => `<tr><td>${esc(vid)}</td><td>${esc(mm.metricID ?? mm.name)}</td><td>${mm.percent_change ?? mm.percentChange ?? "—"}</td><td>${mm.p_value ?? mm.pValue ?? "—"}</td></tr>`).join("") || `<tr><td>${esc(vid)}</td><td colspan="3" class="muted">no metrics yet</td></tr>`;
 		}).join("") : "";
 		const pulseBlock = pulse ? `<h4>${t("Statsig Pulse (Statsig's own readout, fetched", "Statsig Pulse（Statsig 自己的分析，拉取于")} ${esc(String(pulse.fetched_at ?? "").slice(0, 16))})</h4><table class="t"><thead><tr><th>${t("arm", "组")}</th><th>metric</th><th>% change</th><th>p</th></tr></thead><tbody>${pulseRows}</tbody></table>` : "";
-		const learn = (prop?.learnings ?? []).map((l: any) => `<li><span class="badge ${l.status === "supported" ? "pass" : l.status === "refuted" ? "fail" : ""}">${esc(l.status)}</span> ${esc(l.text)}</li>`).join("");
+		const learn = learnItems(readJsonIf<any[]>(join(r.paths.round(n), "learnings.json")) ?? prop?.learnings ?? []);
 		const c = costs[n] ?? {};
 		const expLink = exp?.console_url ? `<a href="${esc(exp.console_url)}" target="_blank" rel="noopener">${esc(exp.name)}</a>` : esc(exp?.name ?? "");
 		return `<details class="round" ${n === results.length - 1 || n === 0 ? "open" : ""}>
@@ -123,7 +143,7 @@ ${changeRows ? `<table class="t"><thead><tr><th>${t("variant", "变体")}</th><t
 <p class="muted">${t("Segment leaders", "分人群最佳")}: ${SEGMENTS.map((s) => `${s} → <b>${esc(res.segment_winners[s])}</b>`).join(" · ")}</p>
 ${pulseBlock}
 ${videos ? `<h4>${t("Rendered videos (verified by the video model)", "已渲染视频（由视频大模型校验）")}</h4><div class="vgrid">${videos}</div>` : ""}
-${learn ? `<h4>${t("Agent learnings after this round", "本轮后的 Agent 结论")}</h4><ul class="learn">${learn}</ul>` : ""}
+${learn ? `<h4>${t("Agent learnings, checked by code against this round's data", "Agent 结论（代码已用本轮数据核验）")}</h4><ul class="learn">${learn}</ul>` : ""}
 </details>`;
 	}).join("\n");
 
@@ -138,13 +158,13 @@ ${learn ? `<h4>${t("Agent learnings after this round", "本轮后的 Agent 结�
 		}).join("");
 		finalBlock = `<section class="final"><h2>${t("Final creative", "最终创意")}: ${esc(champ.variant_id)}</h2>
 <div class="grid2"><div class="vgrid">${videoCard(r, champ.variant_id, champ) || `<p class="muted">${t("not rendered yet", "尚未渲染")}</p>`}</div>
-<div><h4>${t("Lineage", "演化路径")}</h4><ol class="lineage">${chain}</ol><h4>Manifest</h4><pre>${esc(JSON.stringify(champ, null, 2))}</pre></div></div></section>`;
+<div><h4>${t("Lineage", "演化路径")}</h4><ol class="lineage">${chain}</ol>${st.learnings?.length ? `<h4>${t("Final learnings (verdicts computed by code from clean contrasts)", "最终结论（由代码根据干净对比判定）")}</h4><ul class="learn">${learnItems(st.learnings)}</ul>` : ""}<h4>Manifest</h4><pre>${esc(JSON.stringify(champ, null, 2))}</pre></div></div></section>`;
 	}
 
 	const evalBlock = evalJson ? `<section><h2>${t("Offline evaluation (uses the audience model's ground truth — never shown to the agent)", "离线评估（使用受众模型的真值，Agent 看不到）")}</h2>
 <table class="t"><thead><tr><th>${t("policy", "策略")}</th><th>${t("final true ipm", "最终真实 ipm")}</th><th>${t("regret vs optimum", "距最优差距")}</th><th>${t("% of optimum", "达到最优的比例")}</th></tr></thead><tbody>
 ${(evalJson.rows ?? []).map((x: any) => `<tr${x.policy === "agent" ? ' class="winner"' : ""}><td>${esc(x.label)}</td><td>${f2(x.final_true_ipm)}${x.sd ? ` ± ${f2(x.sd)}` : ""}</td><td>${f2(x.regret)}</td><td>${Math.round(100 * x.pct_of_optimum)}%</td></tr>`).join("")}
-</tbody></table><p class="muted">${t(`Optimum in the catalog: ${esc(evalJson.optimum_label)} (true ipm ${f2(evalJson.optimum_ipm)}); round-0 control true ipm ${f2(evalJson.control_ipm)}.`, `目录内最优：${esc(evalJson.optimum_label)}（真实 ipm ${f2(evalJson.optimum_ipm)}）；第0轮对照真实 ipm ${f2(evalJson.control_ipm)}。`)}</p></section>` : "";
+</tbody></table><p class="muted">${t(`Optimum in the catalog: ${esc(evalJson.optimum_label)} (true ipm ${f2(evalJson.optimum_ipm)}); round-0 control true ipm ${f2(evalJson.control_ipm)}.`, `目录内最优：${esc(evalJson.optimum_label)}（真实 ipm ${f2(evalJson.optimum_ipm)}）；第0轮对照真实 ipm ${f2(evalJson.control_ipm)}。`)}</p>${evalLearnings(evalJson)}</section>` : "";
 
 	const tl = trace.filter((e) => ["round_start", "proposal", "validation", "review", "verification", "variant_video_done", "experiment_created", "sample_size", "analysis", "round_end", "final", "error"].includes(e.type))
 		.map((e) => `<li class="ev ${e.type}"><time>${esc(e.ts.slice(11, 19))}</time><span class="rn">R${e.round}</span><span class="ty">${esc(e.type)}</span> ${esc(e.msg)}</li>`).join("");
