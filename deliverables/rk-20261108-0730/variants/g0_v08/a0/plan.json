@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v08",
+  "attempt": 0,
+  "lines": {
+    "en": "Hm. The ruins are calling. Obviously.",
+    "zh": "遗迹在呼唤你，凯尔带路。"
+  },
+  "tagline": {
+    "en": "Recruit your AI companions. Adventure on.",
+    "zh": "招募AI伙伴，一起冒险"
+  },
+  "timeline": {
+    "cut_s": 3,
+    "line_in_s": 0.4,
+    "line_out_s": 2.8,
+    "endcard_s": 4.2
+  },
+  "visual_notes": {},
+  "rationale": "Kael's sardonic aside wraps the verbatim hook, then a cut to his friendly wave leads into a warm recruitment tagline and the install button."
+}

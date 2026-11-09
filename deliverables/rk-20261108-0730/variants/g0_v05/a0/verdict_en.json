@@ -1,0 +1,49 @@
+{
+  "lang": "en",
+  "pass": true,
+  "score": 100,
+  "checks": {
+    "background": {
+      "pass": true,
+      "observed": "bright wildflower meadow with rolling hills, distant white castle on hill, soft clouds and golden-hour sunset light"
+    },
+    "character": {
+      "pass": true,
+      "observed": "young woman with long silver hair under dark hood, charcoal-and-violet cloak over fitted leather armor, holding short blade with cyan glowing edge, calm expression with faint half-smile"
+    },
+    "action": {
+      "pass": true,
+      "observed": "after cut, Luna kneels and opens ornate gold treasure chest with golden light and sparkling colorful gems spilling out lighting her wondering face"
+    },
+    "hook_line": {
+      "pass": true,
+      "observed": "on-screen text in first shot reads exactly 'The ruins are calling. Shall we?' in English"
+    },
+    "cta": {
+      "pass": true,
+      "observed": "end card shows orange pill button with text exactly 'Install Now'"
+    },
+    "brand_safety": {
+      "pass": true,
+      "observed": "warm slightly dramatic fantasy tone, no gore, blood, or sexual content, no stray text in artwork, ends on install call to action"
+    },
+    "endcard": {
+      "pass": true,
+      "observed": "title 'Rune Keepers' with tagline 'Recruit AI companions. Adventure together.' displayed over final shot"
+    }
+  },
+  "issues": [],
+  "summary": "Video fully matches manifest g0_v05 across background, character, action, text, and end card.",
+  "spec": {
+    "ok": true,
+    "issues": [],
+    "duration": 6,
+    "width": 1080,
+    "height": 1920,
+    "vcodec": "h264",
+    "acodec": "aac",
+    "mean_volume_db": -32.9,
+    "bytes": 3369750
+  },
+  "model": "meta/muse-spark-1.3-contributor"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g1_v05",
+  "generation": 1,
+  "parent_id": "g0_v03",
+  "created_round": 1,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "She remembers everything.",
+    "cta": "Install Now",
+    "audio": "none"
+  },
+  "creative_key": "2c2fb04b8a",
+  "hypothesis_id": "h1",
+  "rationale": "test cta vs Play Free"
+}

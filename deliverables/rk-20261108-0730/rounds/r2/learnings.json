@@ -1,0 +1,109 @@
+[
+  {
+    "id": "l1",
+    "kind": "effect",
+    "layer": "audio",
+    "value": "low_drums",
+    "vs": "none",
+    "relation": "better",
+    "text": "audio: low_drums > none",
+    "status": "supported",
+    "effect": 0.28019981993465914,
+    "ci": [
+      0.07437562035768597,
+      0.525454922753273
+    ],
+    "contrasts": [
+      {
+        "round": 1,
+        "a": "g1_v06",
+        "b": "g0_v03",
+        "log_ratio": 0.24701617507168572,
+        "se": 0.08942678597155791
+      }
+    ],
+    "reason": "+28% [+7%, +53%] from 1 clean contrast(s); CI above 0"
+  },
+  {
+    "id": "l2",
+    "kind": "effect",
+    "layer": "cta",
+    "value": "Play Free",
+    "vs": "Install Now",
+    "relation": "better",
+    "text": "cta: Play Free > Install Now",
+    "status": "supported",
+    "effect": 0.2508365068697729,
+    "ci": [
+      0.028052217164761917,
+      0.5218993167809338
+    ],
+    "contrasts": [
+      {
+        "round": 1,
+        "a": "g0_v03",
+        "b": "g1_v05",
+        "log_ratio": 0.22381253299187823,
+        "se": 0.10007478180692173
+      }
+    ],
+    "reason": "+25% [+3%, +52%] from 1 clean contrast(s); CI above 0"
+  },
+  {
+    "id": "l3",
+    "kind": "effect",
+    "layer": "hook",
+    "value": "Your party is waiting.",
+    "vs": "She remembers everything.",
+    "relation": "better",
+    "text": "hook: Your party is waiting. > She remembers everything.",
+    "status": "open",
+    "effect": 0.06850245422963908,
+    "ci": [
+      -0.03159594631320206,
+      0.17894745519519573
+    ],
+    "contrasts": [
+      {
+        "round": 1,
+        "a": "g1_v04",
+        "b": "g0_v03",
+        "log_ratio": 0.20632602691152654,
+        "se": 0.09005627229594317
+      },
+      {
+        "round": 2,
+        "a": "g2_v01",
+        "b": "g1_v06",
+        "log_ratio": 0.10198721005590564,
+        "se": 0.08326039493910202
+      },
+      {
+        "round": 2,
+        "a": "g2_v07",
+        "b": "g2_v02",
+        "log_ratio": -0.10691879426052121,
+        "se": 0.0878782111034342
+      }
+    ],
+    "reason": "+7% [-3%, +18%] from 3 clean contrast(s); CI includes 0"
+  },
+  {
+    "id": "l4",
+    "kind": "optimum",
+    "variant_id": "g1_v06",
+    "text": "g1_v06 is a local optimum (no one-layer change beats it by more than 5%)",
+    "status": "open",
+    "coverage": {
+      "compared": 7,
+      "total": 22,
+      "higher": [
+        {
+          "variant_id": "g2_v01",
+          "lift": 0.10736930844581294
+        }
+      ]
+    },
+    "reason": "7/22 one-layer neighbours compared head-to-head (32%), below the 100% needed; not yet compared: background=cozy_cafe, background=storm_battlefield, background=sunlit_meadow, background=throne_room, character=Mira, character=Kael, action=casts_spell, action=close_up_smile, action=opens_treasure, hook=Can you beat level 3?, hook=Free gems every day, hook=The ruins are calling, cta=Claim Bonus, cta=Install Now, audio=warm_piano; directionally higher: g2_v01 +11%"
+  }
+]

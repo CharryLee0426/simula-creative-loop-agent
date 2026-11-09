@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g1_v03",
+  "generation": 1,
+  "parent_id": "g0_v03",
+  "created_round": 1,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Luna",
+    "action": "casts_spell",
+    "hook": "She remembers everything.",
+    "cta": "Play Free",
+    "audio": "none"
+  },
+  "creative_key": "250116fcbb",
+  "hypothesis_id": "h1",
+  "rationale": "test action"
+}

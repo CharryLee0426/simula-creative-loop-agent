@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v07",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "neon_city",
+    "character": "Mira",
+    "action": "draws_blade",
+    "hook": "She remembers everything.",
+    "cta": "Install Now",
+    "audio": "none"
+  },
+  "creative_key": "332c5afedf",
+  "rationale": "Companion hook with Mira and blade."
+}

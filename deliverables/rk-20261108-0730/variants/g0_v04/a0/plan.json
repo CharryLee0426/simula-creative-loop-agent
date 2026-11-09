@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v04",
+  "attempt": 0,
+  "lines": {
+    "en": "Your party is waiting. Don't be late.",
+    "zh": "凯尔:你的队伍在等你,快来。"
+  },
+  "tagline": {
+    "en": "Recruit AI companions. Adventure together.",
+    "zh": "招募AI伙伴,并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 3,
+    "line_in_s": 0.4,
+    "line_out_s": 3,
+    "endcard_s": 4.2
+  },
+  "visual_notes": {},
+  "rationale": "Kael's sardonic but kind line sells the hook with a short added nudge, then cuts to his friendly wave at 3.0s and lands on the install end card at 4.2s."
+}

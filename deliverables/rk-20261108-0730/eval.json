@@ -1,0 +1,308 @@
+{
+  "optimum_ipm": 12.2889494041138,
+  "optimum_label": "moonlit_temple / Mira / draws_blade / Your party is waiting. / Play Free / upbeat_synth",
+  "worst_ipm": 1.7862489351096085,
+  "control_ipm": 2.412664570934205,
+  "top5": [
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "ipm": 12.2889494041138
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "low_drums"
+      },
+      "ipm": 12.085923281616441
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "The ruins are calling",
+        "cta": "Play Free",
+        "audio": "upbeat_synth"
+      },
+      "ipm": 11.800524045919579
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "The ruins are calling",
+        "cta": "Play Free",
+        "audio": "low_drums"
+      },
+      "ipm": 11.563793713576866
+    },
+    {
+      "layers": {
+        "background": "moonlit_temple",
+        "character": "Mira",
+        "action": "draws_blade",
+        "hook": "Your party is waiting.",
+        "cta": "Play Free",
+        "audio": "none"
+      },
+      "ipm": 11.525718227342919
+    }
+  ],
+  "agent_trajectory": [
+    {
+      "round": 0,
+      "champion": "g0_v03",
+      "true_ipm": 8.415191523720644,
+      "observed_ipm": 8.488796762412397
+    },
+    {
+      "round": 1,
+      "champion": "g1_v06",
+      "true_ipm": 9.267693276554589,
+      "observed_ipm": 9.592895156096404
+    },
+    {
+      "round": 2,
+      "champion": "g1_v06",
+      "true_ipm": 9.267693276554589,
+      "observed_ipm": 9.163001466080233
+    },
+    {
+      "round": 3,
+      "champion": "g3_v01",
+      "true_ipm": 11.004346468592285,
+      "observed_ipm": 11.937830687830688
+    }
+  ],
+  "rows": [
+    {
+      "policy": "agent",
+      "label": "LLM agent (anthropic/claude-sonnet-5.5)",
+      "final_true_ipm": 11.004346468592285,
+      "regret": 1.2846029355215158,
+      "pct_of_optimum": 0.8776883203217435
+    },
+    {
+      "policy": "mutate",
+      "label": "mutate-1 baseline (mean of 20)",
+      "final_true_ipm": 10.062848072594678,
+      "sd": 1.1496650583069683,
+      "regret": 2.226101331519123,
+      "pct_of_optimum": 0.7880448615964205
+    },
+    {
+      "policy": "random",
+      "label": "random-search baseline (mean of 20)",
+      "final_true_ipm": 8.197877189721813,
+      "sd": 1.0976994051494775,
+      "regret": 4.091072214391987,
+      "pct_of_optimum": 0.6104742559815305
+    },
+    {
+      "policy": "history",
+      "label": "history heuristic (no experiments)",
+      "final_true_ipm": 8.415191523720644,
+      "regret": 3.873757880393157,
+      "pct_of_optimum": 0.6311655376800015
+    },
+    {
+      "policy": "control",
+      "label": "round-0 control (no loop)",
+      "final_true_ipm": 2.412664570934205,
+      "regret": 9.876284833179596,
+      "pct_of_optimum": 0.05964329247256824
+    }
+  ],
+  "learnings": [
+    {
+      "id": "l1",
+      "text": "audio: low_drums > none",
+      "status": "supported",
+      "effect": 0.28019981993465914,
+      "ci": [
+        0.07437562035768597,
+        0.525454922753273
+      ],
+      "true_effect": 0.08580560451213182,
+      "claim_true": true,
+      "verdict_correct": true
+    },
+    {
+      "id": "l2",
+      "text": "cta: Play Free > Install Now",
+      "status": "supported",
+      "effect": 0.2508365068697729,
+      "ci": [
+        0.028052217164761917,
+        0.5218993167809338
+      ],
+      "true_effect": 0.17874814841708808,
+      "claim_true": true,
+      "verdict_correct": true
+    },
+    {
+      "id": "l3",
+      "text": "cta: Play Free > Join Luna",
+      "status": "supported",
+      "effect": 0.4466088564574169,
+      "ci": [
+        0.20065377809935336,
+        0.7429480685879017
+      ],
+      "true_effect": 0.3656906569785445,
+      "claim_true": true,
+      "verdict_correct": true
+    },
+    {
+      "id": "l4",
+      "text": "action: draws_blade > casts_spell",
+      "status": "supported",
+      "effect": 0.2892513051898804,
+      "ci": [
+        0.13559661862839767,
+        0.4636966160936793
+      ],
+      "true_effect": 0.2639436739176313,
+      "claim_true": true,
+      "verdict_correct": true
+    },
+    {
+      "id": "l5",
+      "text": "action: draws_blade > waves_to_camera",
+      "status": "supported",
+      "effect": 0.16223097700546263,
+      "ci": [
+        0.03312820892790147,
+        0.3074668102546587
+      ],
+      "true_effect": 0.11723369336851608,
+      "claim_true": true,
+      "verdict_correct": true
+    },
+    {
+      "id": "l6",
+      "text": "background: moonlit_temple > throne_room",
+      "status": "supported",
+      "effect": 0.28507066881844545,
+      "ci": [
+        0.1319127851096078,
+        0.4589521786323618
+      ],
+      "true_effect": 0.2799987152711121,
+      "claim_true": true,
+      "verdict_correct": true
+    },
+    {
+      "id": "l7",
+      "text": "hook: Your party is waiting. > The ruins are calling",
+      "status": "supported",
+      "effect": 0.2167758847327761,
+      "ci": [
+        0.03449323015353212,
+        0.4311776148090387
+      ],
+      "true_effect": 0.06255412175995345,
+      "claim_true": true,
+      "verdict_correct": true
+    },
+    {
+      "id": "l8",
+      "text": "character: Rex > Kael",
+      "status": "supported",
+      "effect": 0.27183148530170187,
+      "ci": [
+        0.08802191252763736,
+        0.48669370384913546
+      ],
+      "true_effect": 0.08513821457698523,
+      "claim_true": true,
+      "verdict_correct": true
+    },
+    {
+      "id": "l9",
+      "text": "hook: Your party is waiting. > She remembers everything.",
+      "status": "open",
+      "effect": 0.06850245422963908,
+      "ci": [
+        -0.03159594631320206,
+        0.17894745519519573
+      ],
+      "true_effect": 0.027803355788847517,
+      "claim_true": true,
+      "verdict_correct": null
+    }
+  ],
+  "learning_summary": {
+    "claims": 9,
+    "claims_true": 9,
+    "supported": 8,
+    "supported_true": 8,
+    "decided": 8,
+    "verdicts_correct": 8,
+    "memory_shown": 8,
+    "memory_correct": 8
+  },
+  "memory": [
+    {
+      "text": "cta: Play Free > Join Luna by +45% [+20%, +74%] — 1 contrast(s), 1 run(s)",
+      "score": 0.20065377809935336,
+      "true_effect": 0.3656906569785445,
+      "correct": true
+    },
+    {
+      "text": "action: draws_blade > casts_spell by +29% [+14%, +46%] — 2 contrast(s), 1 run(s)",
+      "score": 0.13559661862839767,
+      "true_effect": 0.2639436739176313,
+      "correct": true
+    },
+    {
+      "text": "background: moonlit_temple > throne_room by +29% [+13%, +46%] — 2 contrast(s), 1 run(s)",
+      "score": 0.1319127851096078,
+      "true_effect": 0.2799987152711121,
+      "correct": true
+    },
+    {
+      "text": "character: Rex > Kael by +27% [+9%, +49%] — 1 contrast(s), 1 run(s)",
+      "score": 0.08802191252763736,
+      "true_effect": 0.08513821457698523,
+      "correct": true
+    },
+    {
+      "text": "audio: low_drums > none by +28% [+7%, +53%] — 1 contrast(s), 1 run(s)",
+      "score": 0.07437562035768597,
+      "true_effect": 0.08580560451213182,
+      "correct": true
+    },
+    {
+      "text": "hook: Your party is waiting. > The ruins are calling by +22% [+3%, +43%] — 1 contrast(s), 1 run(s)",
+      "score": 0.03449323015353212,
+      "true_effect": 0.06255412175995345,
+      "correct": true
+    },
+    {
+      "text": "action: draws_blade > waves_to_camera by +16% [+3%, +31%] — 2 contrast(s), 1 run(s)",
+      "score": 0.03312820892790147,
+      "true_effect": 0.11723369336851608,
+      "correct": true
+    },
+    {
+      "text": "cta: Play Free > Install Now by +25% [+3%, +52%] — 1 contrast(s), 1 run(s)",
+      "score": 0.028052217164761917,
+      "true_effect": 0.17874814841708808,
+      "correct": true
+    }
+  ],
+  "note": "pct_of_optimum is scaled between the worst (0%) and best (100%) creative in the catalog. Baselines use a Poisson readout with the same users per arm per round as the agent's run."
+}

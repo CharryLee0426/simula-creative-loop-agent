@@ -1,0 +1,107 @@
+{
+  "round": 1,
+  "control_variant_id": "g0_v03",
+  "summary": "v03 champion. Test one-layer neighbours: background, character, action, hook, cta, audio.",
+  "hypotheses": [
+    {
+      "id": "h1",
+      "statement": "One-layer changes to v03 can improve ipm"
+    }
+  ],
+  "learnings": [
+    {
+      "id": "l1",
+      "kind": "effect",
+      "layer": "cta",
+      "value": "Play Free",
+      "vs": "Claim Bonus",
+      "relation": "better"
+    },
+    {
+      "id": "l2",
+      "kind": "optimum",
+      "variant_id": "g0_v03"
+    }
+  ],
+  "variants": [
+    {
+      "parent_id": "g0_v03",
+      "changes": {
+        "background": "throne_room"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "throne_room strong in rpg"
+    },
+    {
+      "parent_id": "g0_v03",
+      "changes": {
+        "character": "Rex"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "Rex rpg-strong"
+    },
+    {
+      "parent_id": "g0_v03",
+      "changes": {
+        "action": "casts_spell"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "test action"
+    },
+    {
+      "parent_id": "g0_v03",
+      "changes": {
+        "hook": "Your party is waiting."
+      },
+      "hypothesis_id": "h1",
+      "rationale": "rpg/casual hook"
+    },
+    {
+      "parent_id": "g0_v03",
+      "changes": {
+        "cta": "Install Now"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "test cta vs Play Free"
+    },
+    {
+      "parent_id": "g0_v03",
+      "changes": {
+        "audio": "low_drums"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "test audio"
+    },
+    {
+      "parent_id": "g0_v03",
+      "changes": {
+        "background": "neon_city"
+      },
+      "hypothesis_id": "h1",
+      "rationale": "neon broad"
+    }
+  ],
+  "accepted_at": "2026-11-09T07:41:46.174Z",
+  "control": "g0_v03",
+  "variant_ids": [
+    "g1_v01",
+    "g1_v02",
+    "g1_v03",
+    "g1_v04",
+    "g1_v05",
+    "g1_v06",
+    "g1_v07"
+  ],
+  "diffs": {
+    "g1_v01": "background: moonlit_temple → throne_room",
+    "g1_v02": "character: Luna → Rex",
+    "g1_v03": "action: draws_blade → casts_spell",
+    "g1_v04": "hook: She remembers everything. → Your party is waiting.",
+    "g1_v05": "cta: Play Free → Install Now",
+    "g1_v06": "audio: none → low_drums",
+    "g1_v07": "background: moonlit_temple → neon_city"
+  },
+  "warnings": [
+    "variants[1]: hook \"She remembers everything.\" is about a female companion but the character is Rex"
+  ]
+}

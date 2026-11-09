@@ -1,0 +1,44 @@
+[
+  {
+    "id": "l1",
+    "kind": "effect",
+    "layer": "cta",
+    "value": "Play Free",
+    "vs": "Claim Bonus",
+    "relation": "better",
+    "text": "cta: Play Free > Claim Bonus",
+    "status": "unverified",
+    "contrasts": [],
+    "reason": "no clean contrast yet: needs two arms in one experiment that differ only in cta (Play Free vs Claim Bonus)"
+  },
+  {
+    "id": "l2",
+    "kind": "optimum",
+    "variant_id": "g0_v03",
+    "text": "g0_v03 is a local optimum (no one-layer change beats it by more than 5%)",
+    "status": "refuted",
+    "coverage": {
+      "compared": 7,
+      "total": 22,
+      "higher": [
+        {
+          "variant_id": "g1_v07",
+          "lift": 0.14131177762828573
+        },
+        {
+          "variant_id": "g1_v02",
+          "lift": 0.09040466544553705
+        },
+        {
+          "variant_id": "g1_v04",
+          "lift": 0.22915387591880476
+        },
+        {
+          "variant_id": "g1_v06",
+          "lift": 0.28019981993465914
+        }
+      ]
+    },
+    "reason": "g1_v06 beats it by more than 5% (CI)"
+  }
+]

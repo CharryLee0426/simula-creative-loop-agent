@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1040" viewBox="0 0 1640 1040" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b6a66"/></marker><marker id="ahp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6250d6"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#eb6834"/></marker></defs>
+<rect width="1640" height="1040" fill="#ffffff"/>
+<text x="30" y="42" font-size="22" font-weight="bold" fill="#1d1d1b" text-anchor="start">Simula Creative Loop Agent — system architecture</text>
+<text x="30" y="66" font-size="13.5" font-weight="normal" fill="#52514e" text-anchor="start">One round = one Statsig experiment. Pi Durable checkpoints every phase, so a crash or Ctrl-C resumes where it stopped.</text>
+<rect x="24" y="92" width="300" height="790" rx="16" fill="#fafaf8" stroke="#c9c8c2" stroke-width="1.5"/>
+<text x="42" y="120" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Inputs &amp; offline fit</text>
+<rect x="42" y="138" width="264" height="76" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+<rect x="42" y="138" width="5" height="76" rx="2" fill="#2a78d6"/>
+<text x="58" y="162" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Campaign brief</text>
+<text x="58" y="182.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">Rune Keepers · 4 characters</text>
+<text x="58" y="199.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">3 segments · tone &amp; safety rules</text>
+<rect x="42" y="230" width="264" height="76" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+<rect x="42" y="230" width="5" height="76" rx="2" fill="#2a78d6"/>
+<text x="58" y="254" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">data/catalog.json</text>
+<text x="58" y="274.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">layer vocabulary = CSV values</text>
+<text x="58" y="291.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">6 layers · 9,600 combinations</text>
+<rect x="42" y="322" width="264" height="76" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+<rect x="42" y="322" width="5" height="76" rx="2" fill="#2a78d6"/>
+<text x="58" y="346" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">memory/playbook.json</text>
+<text x="58" y="366.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">cross-run learnings,</text>
+<text x="58" y="383.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">code-verified + ranked</text>
+<rect x="42" y="476" width="264" height="76" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+<rect x="42" y="476" width="5" height="76" rx="2" fill="#2a78d6"/>
+<text x="58" y="500" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">creative_performance.csv</text>
+<text x="58" y="520.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">120k impressions · 40 variants</text>
+<text x="58" y="537.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">2 weeks of history</text>
+<rect x="42" y="590" width="264" height="96" rx="10" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.6"/>
+<rect x="42" y="590" width="5" height="96" rx="2" fill="#1baf7a"/>
+<text x="58" y="614" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">py/audience/fit.py</text>
+<text x="58" y="634.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">two-stage ridge logistic</text>
+<text x="58" y="651.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">P(click) · P(install | click)</text>
+<text x="58" y="669.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">segment × layer, OS, fatigue</text>
+<rect x="42" y="724" width="264" height="76" rx="10" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.6"/>
+<rect x="42" y="724" width="5" height="76" rx="2" fill="#1baf7a"/>
+<text x="58" y="748" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">models/audience_model.json</text>
+<text x="58" y="768.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">hold-out AUC 0.65 / 0.65</text>
+<text x="58" y="785.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">variant-level r = 0.96 (CTR)</text>
+<path d="M174,552 L174,590" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M174,686 L174,724" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="354" y="92" width="940" height="790" rx="16" fill="#fafaf8" stroke="#c9c8c2" stroke-width="1.5"/>
+<text x="372" y="120" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Pi Durable harness  ·  app.loop → app.round (×1+3) → app.video (×8 parallel)</text>
+<text x="372" y="139" font-size="12" font-weight="normal" fill="#52514e" text-anchor="start">runs/&lt;id&gt;/harness.sqlite holds the strategist conversation; every phase is idempotent against the run directory</text>
+<rect x="380" y="168" width="262" height="132" rx="10" fill="#fdf0ea" stroke="#eb6834" stroke-width="1.6"/>
+<rect x="380" y="168" width="5" height="132" rx="2" fill="#eb6834"/>
+<text x="630" y="188" font-size="11" font-weight="bold" fill="#eb6834" text-anchor="end">LLM</text>
+<text x="396" y="192" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">① Strategist (LLM)</text>
+<text x="396" y="212.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">Claude Sonnet 5.5 via OpenRouter</text>
+<text x="396" y="229.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">one durable conversation per run</text>
+<text x="396" y="247.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">tools: submit_generation,</text>
+<text x="396" y="264.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">inspect_variant</text>
+<rect x="692" y="168" width="262" height="132" rx="10" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.6"/>
+<rect x="692" y="168" width="5" height="132" rx="2" fill="#1baf7a"/>
+<text x="942" y="188" font-size="11" font-weight="bold" fill="#1baf7a" text-anchor="end">CODE</text>
+<text x="708" y="192" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">② Validator (code)</text>
+<text x="708" y="212.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">values ∈ catalog · 1–2 layers vs parent</text>
+<text x="708" y="229.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">no re-tests (creative_key)</text>
+<text x="708" y="247.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">gen-0 varies ≥ 3 layers</text>
+<text x="708" y="264.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">cited numbers must match record</text>
+<rect x="1004" y="168" width="262" height="132" rx="10" fill="#fcedf3" stroke="#d55181" stroke-width="1.6"/>
+<rect x="1004" y="168" width="5" height="132" rx="2" fill="#d55181"/>
+<text x="1254" y="188" font-size="11" font-weight="bold" fill="#d55181" text-anchor="end">HUMAN</text>
+<text x="1020" y="192" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">③ Review gate</text>
+<text x="1020" y="212.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">auto (default) — validator is gate</text>
+<text x="1020" y="229.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">--human: approve / free-text notes</text>
+<text x="1020" y="247.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">runs/&lt;id&gt;/feedback.md → next round</text>
+<rect x="1004" y="418" width="262" height="132" rx="10" fill="#fdf6e6" stroke="#c98500" stroke-width="1.6"/>
+<rect x="1004" y="418" width="5" height="132" rx="2" fill="#c98500"/>
+<text x="1254" y="438" font-size="11" font-weight="bold" fill="#c98500" text-anchor="end">MEDIA</text>
+<text x="1020" y="442" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">④ Render (seed + final)</text>
+<text x="1020" y="462.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">plan LLM → GPT Image keyframes</text>
+<text x="1020" y="479.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">→ Python/ffmpeg renderer EN+中文</text>
+<text x="1020" y="497.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">→ ffprobe spec gate</text>
+<text x="1020" y="514.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">→ Muse Spark video review, ≤3 redos</text>
+<rect x="1004" y="668" width="262" height="132" rx="10" fill="#f0eefc" stroke="#6250d6" stroke-width="1.6"/>
+<rect x="1004" y="668" width="5" height="132" rx="2" fill="#6250d6"/>
+<text x="1254" y="688" font-size="11" font-weight="bold" fill="#6250d6" text-anchor="end">PLATFORM</text>
+<text x="1020" y="692" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">⑤ Statsig experiment</text>
+<text x="1020" y="712.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">Console API: create + start</text>
+<text x="1020" y="729.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">8 groups, param variant_id</text>
+<text x="1020" y="747.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">primary app_install; secondary</text>
+<text x="1020" y="764.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">ad_click, ad_impression</text>
+<rect x="692" y="668" width="262" height="132" rx="10" fill="#f0eefc" stroke="#6250d6" stroke-width="1.6"/>
+<rect x="692" y="668" width="5" height="132" rx="2" fill="#6250d6"/>
+<text x="942" y="688" font-size="11" font-weight="bold" fill="#6250d6" text-anchor="end">SIM</text>
+<text x="708" y="692" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">⑥ Simulated traffic</text>
+<text x="708" y="712.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">users drawn from data's segment/OS</text>
+<text x="708" y="729.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">Statsig SDK assigns → exposure</text>
+<text x="708" y="747.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">audience model samples clicks/installs</text>
+<text x="708" y="764.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">4 looks, events → Statsig</text>
+<rect x="380" y="668" width="262" height="132" rx="10" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.6"/>
+<rect x="380" y="668" width="5" height="132" rx="2" fill="#1baf7a"/>
+<text x="630" y="688" font-size="11" font-weight="bold" fill="#1baf7a" text-anchor="end">STATS</text>
+<text x="396" y="692" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">⑦ Readout (code)</text>
+<text x="396" y="712.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">IPM, delta-method CI · Holm</text>
+<text x="396" y="729.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">P(best) · O'Brien–Fleming stop</text>
+<text x="396" y="747.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">CTR guardrail · per-segment IPM</text>
+<text x="396" y="764.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">champion rule (Holm or P(best)≥0.8)</text>
+<rect x="380" y="418" width="262" height="132" rx="10" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.6"/>
+<rect x="380" y="418" width="5" height="132" rx="2" fill="#1baf7a"/>
+<text x="630" y="438" font-size="11" font-weight="bold" fill="#1baf7a" text-anchor="end">MEMORY</text>
+<text x="396" y="442" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Learning verifier (code)</text>
+<text x="396" y="462.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">agent claims → clean contrasts only</text>
+<text x="396" y="479.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">supported / refuted / open</text>
+<text x="396" y="497.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">optimum = all 22 neighbours tested</text>
+<text x="396" y="514.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">verdicts fed back to ①</text>
+<path d="M642,218 L692,218" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="667.0" y="212.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">submit</text>
+<path d="M954,218 L1004,218" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="979.0" y="212.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">accept</text>
+<path d="M732,300 L732,326 L602,326 L602,300" fill="none" stroke="#eb6834" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#aho)"/>
+<text x="667.0" y="344" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">REJECTED + every error → revise</text>
+<path d="M1135.0,300 L1135.0,418" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="1135.0" y="353.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">approved</text>
+<path d="M1135.0,550 L1135.0,668" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="1135.0" y="603.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">manifests (+ MP4s)</text>
+<path d="M1004,734 L954,734" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="979.0" y="728.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">assign</text>
+<path d="M692,734 L642,734" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="667.0" y="728.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">events</text>
+<path d="M511.0,668 L511.0,550" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="511.0" y="603.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">results.json</text>
+<path d="M511.0,418 L511.0,300" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="511.0" y="353.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">next-round context</text>
+<rect x="692" y="418" width="262" height="132" rx="10" fill="#ffffff" stroke="#d7d6d0" stroke-dasharray="4 4"/>
+<text x="823.0" y="448" font-size="14" font-weight="bold" fill="#52514e" text-anchor="middle">one round</text>
+<text x="823.0" y="470" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="middle">round 0: design generation 0</text>
+<text x="823.0" y="488" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="middle">rounds 1–3: keep champion as control,</text>
+<text x="823.0" y="506" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="middle">7 challengers, each 1–2 layer edits</text>
+<text x="823.0" y="530" font-size="12.5" font-weight="bold" fill="#52514e" text-anchor="middle">final: reflection → render champion</text>
+<path d="M306,176 L340,176 L340,198 L380,198" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M306,268 L346,268 L346,228 L380,228" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M306,360 L352,360 L352,268 L380,268" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M306,762 L340,762 L340,824 L823.0,824 L823.0,800" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="715" y="842" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">audience model → simulated users (the agent never sees it)</text>
+<rect x="1324" y="92" width="292" height="790" rx="16" fill="#fafaf8" stroke="#c9c8c2" stroke-width="1.5"/>
+<text x="1342" y="120" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Outputs</text>
+<rect x="1342" y="138" width="256" height="92" rx="10" fill="#f0eefc" stroke="#6250d6" stroke-width="1.6"/>
+<rect x="1342" y="138" width="5" height="92" rx="2" fill="#6250d6"/>
+<text x="1358" y="162" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Statsig console</text>
+<text x="1358" y="182.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">experiment per round, metrics</text>
+<text x="1358" y="199.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">attached, readout written back</text>
+<text x="1358" y="217.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">as the decision (ship winner)</text>
+<rect x="1342" y="250" width="256" height="92" rx="10" fill="#fdf6e6" stroke="#c98500" stroke-width="1.6"/>
+<rect x="1342" y="250" width="5" height="92" rx="2" fill="#c98500"/>
+<text x="1358" y="274" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">deliverables/&lt;run&gt;/</text>
+<text x="1358" y="294.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">seed + final MP4s (EN, 中文)</text>
+<text x="1358" y="311.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">immutable manifests</text>
+<text x="1358" y="329.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">per-attempt plans &amp; verdicts</text>
+<rect x="1342" y="362" width="256" height="92" rx="10" fill="#f4f4f2" stroke="#6b6a66" stroke-width="1.6"/>
+<rect x="1342" y="362" width="5" height="92" rx="2" fill="#6b6a66"/>
+<text x="1358" y="386" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">trace.html · trajectory.md</text>
+<text x="1358" y="406.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">per-round hypotheses, diffs,</text>
+<text x="1358" y="423.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">results tables, spend, videos</text>
+<text x="1358" y="441.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">EN / 中文 toggle</text>
+<rect x="1342" y="474" width="256" height="76" rx="10" fill="#f4f4f2" stroke="#6b6a66" stroke-width="1.6"/>
+<rect x="1342" y="474" width="5" height="76" rx="2" fill="#6b6a66"/>
+<text x="1358" y="498" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">ledger.jsonl</text>
+<text x="1358" y="518.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">every paid call logged</text>
+<text x="1358" y="535.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">budget guard: $25 hard cap</text>
+<rect x="1342" y="570" width="256" height="92" rx="10" fill="#f4f4f2" stroke="#6b6a66" stroke-width="1.6"/>
+<rect x="1342" y="570" width="5" height="92" rx="2" fill="#6b6a66"/>
+<text x="1358" y="594" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">eval.json (npm run eval)</text>
+<text x="1358" y="614.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">agent vs random / mutate-1 /</text>
+<text x="1358" y="631.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">history baselines vs brute-force</text>
+<text x="1358" y="649.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">optimum (ground truth)</text>
+<rect x="1342" y="682" width="256" height="76" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+<rect x="1342" y="682" width="5" height="76" rx="2" fill="#2a78d6"/>
+<text x="1358" y="706" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">memory/playbook.json</text>
+<text x="1358" y="726.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">verified learnings merged;</text>
+<text x="1358" y="743.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">refuted → archive.jsonl</text>
+<path d="M1266,708 L1310,708 L1310,184 L1342,184" fill="none" stroke="#6250d6" stroke-width="1.6" marker-end="url(#ahp)"/>
+<path d="M1266,458 L1300,458 L1300,296 L1342,296" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M402,800 L402,858 L1318,858 L1318,720 L1342,720" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="1060" y="852" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">verified learnings → cross-run playbook</text>
+<rect x="24" y="902" width="1592" height="118" rx="16" fill="#ffffff" stroke="#c9c8c2" stroke-width="1.5"/>
+<text x="42" y="930" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">External services (all paid calls go through src/llm.ts → ledger + budget guard)</text>
+<rect x="46" y="942" width="498.00000000000006" height="22.5" rx="11.25" fill="#fdf0ea" stroke="#eb6834" stroke-width="1"/>
+<text x="295.0" y="957.0" font-size="12.5" font-weight="normal" fill="#1d1d1b" text-anchor="middle">OpenRouter · anthropic/claude-sonnet-5.5 — strategist + render planner</text>
+<rect x="558.0" y="942" width="547.0" height="22.5" rx="11.25" fill="#fdf6e6" stroke="#c98500" stroke-width="1"/>
+<text x="831.5" y="957.0" font-size="12.5" font-weight="normal" fill="#1d1d1b" text-anchor="middle">OpenRouter · openai/gpt-image-2.6-sunburst — keyframes (cached by layer hash)</text>
+<rect x="1119.0" y="942" width="393.00000000000006" height="22.5" rx="11.25" fill="#fdf6e6" stroke="#c98500" stroke-width="1"/>
+<text x="1315.5" y="957.0" font-size="12.5" font-weight="normal" fill="#1d1d1b" text-anchor="middle">OpenRouter · meta/muse-spark-1.3-contributor — video QA</text>
+<rect x="46" y="978" width="456.00000000000006" height="22.5" rx="11.25" fill="#f0eefc" stroke="#6250d6" stroke-width="1"/>
+<text x="274.0" y="993.0" font-size="12.5" font-weight="normal" fill="#1d1d1b" text-anchor="middle">Statsig Console API — create / start / attach metrics / conclude</text>
+<rect x="516.0" y="978" width="554.0" height="22.5" rx="11.25" fill="#f0eefc" stroke="#6250d6" stroke-width="1"/>
+<text x="793.0" y="993.0" font-size="12.5" font-weight="normal" fill="#1d1d1b" text-anchor="middle">Statsig server SDK — getExperiment(user).get('variant_id'), exposures + events</text>
+<rect x="1084.0" y="978" width="302.0" height="22.5" rx="11.25" fill="#ffffff" stroke="#9b9a95" stroke-width="1"/>
+<text x="1235.0" y="993.0" font-size="12.5" font-weight="normal" fill="#1d1d1b" text-anchor="middle">ffmpeg · uv (Python 3.12) · Noto Serif CJK</text>
+</svg>

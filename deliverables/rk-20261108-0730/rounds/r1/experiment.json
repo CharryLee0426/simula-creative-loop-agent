@@ -1,0 +1,67 @@
+{
+  "platform": "statsig",
+  "id": "rk_rk-20261108-0730_r1",
+  "name": "rk_rk-20261108-0730_r1",
+  "status": "decision_made",
+  "created_at": "2026-11-09T07:41:47.106Z",
+  "groups": [
+    {
+      "name": "g0_v03",
+      "id": "7SGjfKOBCdPkbeRjFjyhR",
+      "variant_id": "g0_v03",
+      "is_control": true
+    },
+    {
+      "name": "g1_v01",
+      "id": "7SGjhpR3UnjDAMMUNfbAT",
+      "variant_id": "g1_v01",
+      "is_control": false
+    },
+    {
+      "name": "g1_v02",
+      "id": "7SGjj4TwcwNX0kIvVaOTV",
+      "variant_id": "g1_v02",
+      "is_control": false
+    },
+    {
+      "name": "g1_v03",
+      "id": "7SGjkJVYuGigpSE736scX",
+      "variant_id": "g1_v03",
+      "is_control": false
+    },
+    {
+      "name": "g1_v04",
+      "id": "7SGjmoYqMPMzPqzIb25vZ",
+      "variant_id": "g1_v04",
+      "is_control": false
+    },
+    {
+      "name": "g1_v05",
+      "id": "7SGjo40T4ZgTeYvjiXIP1",
+      "variant_id": "g1_v05",
+      "is_control": false
+    },
+    {
+      "name": "g1_v06",
+      "id": "7SGjpJ3ln8LcEwqUqTm83",
+      "variant_id": "g1_v06",
+      "is_control": false
+    },
+    {
+      "name": "g1_v07",
+      "id": "7SGjro5NFifw44mvyOZr5",
+      "variant_id": "g1_v07",
+      "is_control": false
+    }
+  ],
+  "metrics": [
+    "app_install::event_count"
+  ],
+  "console_url": "https://console.statsig.com/3yJFaFXqLinI6iLsBXJvO8/experiments/rk_rk-20261108-0730_r1",
+  "decision": {
+    "winner": "g1_v06",
+    "status": "decision_made",
+    "pulse_load": "HTTP 400: {\"message\":\"All groups must have a source group ID\",\"status\":400}",
+    "at": "2026-11-09T07:42:58.965Z"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g1_v01",
+  "generation": 1,
+  "parent_id": "g0_v03",
+  "created_round": 1,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "throne_room",
+    "character": "Luna",
+    "action": "draws_blade",
+    "hook": "She remembers everything.",
+    "cta": "Play Free",
+    "audio": "none"
+  },
+  "creative_key": "fcec3dd67d",
+  "hypothesis_id": "h1",
+  "rationale": "throne_room strong in rpg"
+}

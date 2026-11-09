@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v05",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "sunlit_meadow",
+    "character": "Luna",
+    "action": "opens_treasure",
+    "hook": "The ruins are calling",
+    "cta": "Install Now",
+    "audio": "none"
+  },
+  "creative_key": "17c0672ab6",
+  "rationale": "Casual-friendly mix."
+}

@@ -1,0 +1,129 @@
+{
+  "round": 3,
+  "control_variant_id": "g2_v01",
+  "summary": "g2_v01 (party hook) is the best point estimate, strong in rpg. I'm using it as control and testing its one-layer neighbours. Two arms are exploratory.",
+  "hypotheses": [
+    {
+      "id": "h3",
+      "statement": "Neighbours of g2_v01 may beat it; the weak companion segment may be lifted by background or action changes"
+    }
+  ],
+  "learnings": [
+    {
+      "id": "l1",
+      "kind": "effect",
+      "layer": "audio",
+      "value": "low_drums",
+      "vs": "none",
+      "relation": "better"
+    },
+    {
+      "id": "l2",
+      "kind": "effect",
+      "layer": "cta",
+      "value": "Play Free",
+      "vs": "Install Now",
+      "relation": "better"
+    },
+    {
+      "id": "l3",
+      "kind": "effect",
+      "layer": "hook",
+      "value": "Your party is waiting.",
+      "vs": "She remembers everything.",
+      "relation": "better"
+    },
+    {
+      "id": "l4",
+      "kind": "effect",
+      "layer": "cta",
+      "value": "Play Free",
+      "vs": "Join Luna",
+      "relation": "better"
+    },
+    {
+      "id": "l5",
+      "kind": "optimum",
+      "variant_id": "g2_v01"
+    }
+  ],
+  "variants": [
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "character": "Rex"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "Rex fits the party hook"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "action": "waves_to_camera"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "action neighbour"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "audio": "upbeat_synth"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "audio neighbour"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "background": "throne_room"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "rpg-strong background"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "action": "casts_spell"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "rpg action neighbour"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "hook": "The ruins are calling"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "exploratory hook"
+    },
+    {
+      "parent_id": "g2_v01",
+      "changes": {
+        "character": "Kael"
+      },
+      "hypothesis_id": "h3",
+      "rationale": "exploratory character"
+    }
+  ],
+  "accepted_at": "2026-11-09T07:44:35.804Z",
+  "control": "g2_v01",
+  "variant_ids": [
+    "g3_v01",
+    "g3_v02",
+    "g3_v03",
+    "g3_v04",
+    "g3_v05",
+    "g3_v06",
+    "g3_v07"
+  ],
+  "diffs": {
+    "g3_v01": "character: Luna → Rex",
+    "g3_v02": "action: draws_blade → waves_to_camera",
+    "g3_v03": "audio: low_drums → upbeat_synth",
+    "g3_v04": "background: moonlit_temple → throne_room",
+    "g3_v05": "action: draws_blade → casts_spell",
+    "g3_v06": "hook: Your party is waiting. → The ruins are calling",
+    "g3_v07": "character: Luna → Kael"
+  },
+  "warnings": []
+}

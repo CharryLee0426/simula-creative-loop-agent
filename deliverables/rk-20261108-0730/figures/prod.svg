@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="910" viewBox="0 0 1640 910" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b6a66"/></marker><marker id="ahp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6250d6"/></marker><marker id="aho" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#eb6834"/></marker></defs>
+<rect width="1640" height="910" fill="#ffffff"/>
+<text x="30" y="42" font-size="22" font-weight="bold" fill="#1d1d1b" text-anchor="start">Productionization sketch — hundreds of campaigns, real traffic</text>
+<text x="30" y="66" font-size="13.5" font-weight="normal" fill="#52514e" text-anchor="start">Same loop, same readout code. The fitted simulator is replaced by live ad-server events; each campaign is one crash-safe durable actor.</text>
+<rect x="24" y="92" width="980" height="430" rx="16" fill="#fafaf8" stroke="#c9c8c2" stroke-width="1.5"/>
+<text x="42" y="120" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Control plane (per campaign)</text>
+<text x="42" y="139" font-size="12" font-weight="normal" fill="#52514e" text-anchor="start">one durable actor per campaign — Pi Durable on Cloudflare Durable Objects / Vercel Workflow</text>
+<rect x="48" y="160" width="280" height="150" rx="10" fill="#fcedf3" stroke="#d55181" stroke-width="1.6"/>
+<rect x="48" y="160" width="5" height="150" rx="2" fill="#d55181"/>
+<text x="316" y="180" font-size="11" font-weight="bold" fill="#d55181" text-anchor="end">SCHEDULER</text>
+<text x="64" y="184" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Triggers → new round</text>
+<text x="64" y="204.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">• experiment hit sample size / OBF boundary</text>
+<text x="64" y="221.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">• champion IPM decays (fatigue monitor)</text>
+<text x="64" y="239.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">• budget / calendar events</text>
+<text x="64" y="256.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">• human request</text>
+<text x="64" y="274.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">• new brief / new asset in catalog</text>
+<rect x="368" y="160" width="290" height="150" rx="10" fill="#fdf0ea" stroke="#eb6834" stroke-width="1.6"/>
+<rect x="368" y="160" width="5" height="150" rx="2" fill="#eb6834"/>
+<text x="646" y="180" font-size="11" font-weight="bold" fill="#eb6834" text-anchor="end">AGENT</text>
+<text x="384" y="184" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Campaign actor</text>
+<text x="384" y="204.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">state: champion set, learnings,</text>
+<text x="384" y="221.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">budget, open experiment id</text>
+<text x="384" y="239.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">strategist conversation + tools</text>
+<text x="384" y="256.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">validator (catalog, diffs, numbers)</text>
+<text x="384" y="274.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">checkpoint per phase → resumable</text>
+<rect x="698" y="160" width="282" height="150" rx="10" fill="#fcedf3" stroke="#d55181" stroke-width="1.6"/>
+<rect x="698" y="160" width="5" height="150" rx="2" fill="#d55181"/>
+<text x="968" y="180" font-size="11" font-weight="bold" fill="#d55181" text-anchor="end">HUMAN</text>
+<text x="714" y="184" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Human review queue</text>
+<text x="714" y="204.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">approve / edit / send back with notes</text>
+<text x="714" y="221.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">always: brand-safety fails, best-effort</text>
+<text x="714" y="239.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">renders, new layer values</text>
+<text x="714" y="256.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">auto-approve per campaign once trust</text>
+<text x="714" y="274.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">is earned (track approval latency)</text>
+<path d="M328,235 L368,235" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M658,220 L698,220" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="678.0" y="214.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">proposal</text>
+<path d="M698,270 L658,270" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="678" y="290" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">notes / ok</text>
+<rect x="48" y="352" width="280" height="140" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+<rect x="48" y="352" width="5" height="140" rx="2" fill="#2a78d6"/>
+<text x="316" y="372" font-size="11" font-weight="bold" fill="#2a78d6" text-anchor="end">MEMORY</text>
+<text x="64" y="376" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Playbook service</text>
+<text x="64" y="396.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">cross-campaign verified learnings</text>
+<text x="64" y="413.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">(layer, value, context, segment)</text>
+<text x="64" y="431.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">ranked by CI-bound lift,</text>
+<text x="64" y="448.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">decays with staleness</text>
+<rect x="368" y="352" width="290" height="140" rx="10" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.6"/>
+<rect x="368" y="352" width="5" height="140" rx="2" fill="#1baf7a"/>
+<text x="646" y="372" font-size="11" font-weight="bold" fill="#1baf7a" text-anchor="end">STATS</text>
+<text x="384" y="376" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Readout service</text>
+<text x="384" y="396.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">same stats code as the prototype:</text>
+<text x="384" y="413.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">delta-method IPM, Holm, P(best),</text>
+<text x="384" y="431.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">guardrails (CTR, ROAS), per segment</text>
+<text x="384" y="448.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">+ fatigue-adjusted decay curves</text>
+<rect x="698" y="352" width="282" height="140" rx="10" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.6"/>
+<rect x="698" y="352" width="5" height="140" rx="2" fill="#1baf7a"/>
+<text x="968" y="372" font-size="11" font-weight="bold" fill="#1baf7a" text-anchor="end">VERSIONS</text>
+<text x="714" y="376" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Manifest registry (DB)</text>
+<text x="714" y="396.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">immutable manifests, parent_id lineage</text>
+<text x="714" y="413.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">creative_key = hash(layers)</text>
+<text x="714" y="431.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">experiment ↔ arm ↔ creative_key</text>
+<text x="714" y="448.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">campaign → champion-set pointer</text>
+<path d="M328,422 L348,422 L348,300 L368,300" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M513,352 L513,310" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="548" y="336" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">results</text>
+<path d="M839,310 L839,352" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="880" y="336" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">approved</text>
+<rect x="1034" y="92" width="582" height="430" rx="16" fill="#fafaf8" stroke="#c9c8c2" stroke-width="1.5"/>
+<text x="1052" y="120" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Media plane</text>
+<text x="1052" y="139" font-size="12" font-weight="normal" fill="#52514e" text-anchor="start">render once, serve everywhere</text>
+<rect x="1058" y="160" width="250" height="150" rx="10" fill="#fdf6e6" stroke="#c98500" stroke-width="1.6"/>
+<rect x="1058" y="160" width="5" height="150" rx="2" fill="#c98500"/>
+<text x="1296" y="180" font-size="11" font-weight="bold" fill="#c98500" text-anchor="end">QUEUE</text>
+<text x="1074" y="184" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Render workers</text>
+<text x="1074" y="204.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">GPU / image-model queue</text>
+<text x="1074" y="221.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">per-campaign budget + ledger</text>
+<text x="1074" y="239.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">spec gate + VLM review</text>
+<text x="1074" y="256.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">retries are idempotent</text>
+<rect x="1340" y="160" width="252" height="150" rx="10" fill="#fdf6e6" stroke="#c98500" stroke-width="1.6"/>
+<rect x="1340" y="160" width="5" height="150" rx="2" fill="#c98500"/>
+<text x="1356" y="184" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Asset CAS + object store</text>
+<text x="1356" y="204.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">keyframes/&lt;hash&gt;, audio/&lt;hash&gt;</text>
+<text x="1356" y="221.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">render key = hash(layers, plan,</text>
+<text x="1356" y="239.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">renderer version)</text>
+<text x="1356" y="256.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">one-layer edit = seconds</text>
+<rect x="1340" y="352" width="252" height="140" rx="10" fill="#f4f4f2" stroke="#6b6a66" stroke-width="1.6"/>
+<rect x="1340" y="352" width="5" height="140" rx="2" fill="#6b6a66"/>
+<text x="1356" y="376" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">CDN</text>
+<text x="1356" y="396.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">MP4 per (creative_key, lang,</text>
+<text x="1356" y="413.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">aspect) · signed URLs</text>
+<text x="1356" y="431.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">pre-warmed for live arms</text>
+<path d="M980,400 L1183,400 L1183,310" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="1100" y="394" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">render jobs</text>
+<path d="M1308,235 L1340,235" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M1466,310 L1466,352" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="24" y="582" width="1592" height="300" rx="16" fill="#fafaf8" stroke="#c9c8c2" stroke-width="1.5"/>
+<text x="42" y="610" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Data plane (serve time)</text>
+<text x="42" y="862" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">Statsig Layer per campaign; each round is an experiment inside the layer, so rounds never collide and the winner ships by setting the layer default.</text>
+<rect x="48" y="650" width="300" height="150" rx="10" fill="#f0eefc" stroke="#6250d6" stroke-width="1.6"/>
+<rect x="48" y="650" width="5" height="150" rx="2" fill="#6250d6"/>
+<text x="336" y="670" font-size="11" font-weight="bold" fill="#6250d6" text-anchor="end">PLATFORM</text>
+<text x="64" y="674" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Statsig</text>
+<text x="64" y="694.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">Layer = campaign, param variant_id</text>
+<text x="64" y="711.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">experiment per round (arms)</text>
+<text x="64" y="729.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">ship winner = set layer default</text>
+<text x="64" y="746.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">Pulse / warehouse-native metrics</text>
+<rect x="400" y="650" width="330" height="150" rx="10" fill="#f0eefc" stroke="#6250d6" stroke-width="1.6"/>
+<rect x="400" y="650" width="5" height="150" rx="2" fill="#6250d6"/>
+<text x="718" y="670" font-size="11" font-weight="bold" fill="#6250d6" text-anchor="end">SERVE</text>
+<text x="416" y="674" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Ad server (Simula SDK)</text>
+<text x="416" y="694.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">placement in companion / game app</text>
+<text x="416" y="711.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">getLayer(user, campaign)</text>
+<text x="416" y="729.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">  .get('variant_id') → creative_key</text>
+<text x="416" y="746.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">→ fetch MP4 from CDN, render ad</text>
+<text x="416" y="764.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">frequency caps (fatigue)</text>
+<rect x="782" y="650" width="260" height="150" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+<rect x="782" y="650" width="5" height="150" rx="2" fill="#2a78d6"/>
+<text x="798" y="674" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Users</text>
+<text x="798" y="694.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">segments: rpg / companion /</text>
+<text x="798" y="711.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">casual · OS · exposure count</text>
+<text x="798" y="729.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">→ view, click, install,</text>
+<text x="798" y="746.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">  in-game revenue (ROAS)</text>
+<rect x="1094" y="650" width="250" height="150" rx="10" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.6"/>
+<rect x="1094" y="650" width="5" height="150" rx="2" fill="#1baf7a"/>
+<text x="1110" y="674" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Event pipeline + warehouse</text>
+<text x="1110" y="694.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">exposures (from SDK)</text>
+<text x="1110" y="711.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">impression, click, install,</text>
+<text x="1110" y="729.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">revenue (MMP postbacks)</text>
+<text x="1110" y="746.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">late attribution windows</text>
+<rect x="1376" y="650" width="216" height="150" rx="10" fill="#fdf0ea" stroke="#eb6834" stroke-width="1.6"/>
+<rect x="1376" y="650" width="5" height="150" rx="2" fill="#eb6834"/>
+<text x="1392" y="674" font-size="15" font-weight="bold" fill="#1d1d1b" text-anchor="start">Later: bandit</text>
+<text x="1392" y="694.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">contextual Thompson</text>
+<text x="1392" y="711.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">sampling per segment</text>
+<text x="1392" y="729.0" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">once enough creatives</text>
+<text x="1392" y="746.5" font-size="12.5" font-weight="normal" fill="#52514e" text-anchor="start">share a layer</text>
+<path d="M348,725 L400,725" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="374.0" y="719.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">assign</text>
+<path d="M730,725 L782,725" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="756.0" y="719.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">ad</text>
+<path d="M1042,725 L1094,725" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="1068.0" y="719.0" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">events</text>
+<path d="M1344,725 L1376,725" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M839,492 L839,540 L300,540 L300,650" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="430" y="556" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">arms = creative_keys</text>
+<path d="M1219,650 L1219,562 L600,562 L600,492" fill="none" stroke="#6b6a66" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="1010" y="578" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">metrics → readout</text>
+<path d="M1466,492 L1466,518 L640,518 L640,650" fill="none" stroke="#6b6a66" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+<text x="1300" y="512" font-size="11.5" fill="#52514e" text-anchor="middle" stroke="#ffffff" stroke-width="4" paint-order="stroke">MP4 URL</text>
+</svg>

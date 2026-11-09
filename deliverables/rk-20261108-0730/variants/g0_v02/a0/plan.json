@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v02",
+  "attempt": 0,
+  "lines": {
+    "en": "Your party is waiting. Let's ride!",
+    "zh": "你的队伍在等你,走!"
+  },
+  "tagline": {
+    "en": "Recruit AI companions. Adventure together.",
+    "zh": "招募AI伙伴,并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 2.8,
+    "line_in_s": 0.4,
+    "line_out_s": 2.6,
+    "endcard_s": 4
+  },
+  "visual_notes": {},
+  "rationale": "Rex's loud, loyal voice delivers the hook with a short rallying add-on, then cuts to him drawing his blade before a warm end card inviting players to recruit companions."
+}

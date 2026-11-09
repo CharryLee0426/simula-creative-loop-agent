@@ -1,0 +1,124 @@
+{
+  "round": 2,
+  "control_variant_id": "g1_v06",
+  "summary": "g1_v06 (low_drums) is champion. Test the remaining one-layer neighbours and a combo of hook/background gains.",
+  "hypotheses": [
+    {
+      "id": "h2",
+      "statement": "Neighbours of g1_v06 may improve; the party hook and neon background looked positive in round 1"
+    }
+  ],
+  "learnings": [
+    {
+      "id": "l1",
+      "kind": "effect",
+      "layer": "audio",
+      "value": "low_drums",
+      "vs": "none",
+      "relation": "better"
+    },
+    {
+      "id": "l2",
+      "kind": "effect",
+      "layer": "cta",
+      "value": "Play Free",
+      "vs": "Install Now",
+      "relation": "better"
+    },
+    {
+      "id": "l3",
+      "kind": "effect",
+      "layer": "hook",
+      "value": "Your party is waiting.",
+      "vs": "She remembers everything.",
+      "relation": "better"
+    },
+    {
+      "id": "l4",
+      "kind": "optimum",
+      "variant_id": "g1_v06"
+    }
+  ],
+  "variants": [
+    {
+      "parent_id": "g1_v06",
+      "changes": {
+        "hook": "Your party is waiting."
+      },
+      "hypothesis_id": "h2",
+      "rationale": "party hook was +23% on v03"
+    },
+    {
+      "parent_id": "g1_v06",
+      "changes": {
+        "background": "neon_city"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "neon helped casual/companion"
+    },
+    {
+      "parent_id": "g1_v06",
+      "changes": {
+        "character": "Rex"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "Rex helps rpg"
+    },
+    {
+      "parent_id": "g1_v06",
+      "changes": {
+        "action": "waves_to_camera"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "unexplored action neighbour"
+    },
+    {
+      "parent_id": "g1_v06",
+      "changes": {
+        "audio": "upbeat_synth"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "audio neighbour"
+    },
+    {
+      "parent_id": "g1_v06",
+      "changes": {
+        "cta": "Join Luna"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "Luna-specific cta"
+    },
+    {
+      "parent_id": "g1_v06",
+      "changes": {
+        "hook": "Your party is waiting.",
+        "background": "neon_city"
+      },
+      "hypothesis_id": "h2",
+      "rationale": "combine two positives"
+    }
+  ],
+  "accepted_at": "2026-11-09T07:43:04.671Z",
+  "control": "g1_v06",
+  "variant_ids": [
+    "g2_v01",
+    "g2_v02",
+    "g2_v03",
+    "g2_v04",
+    "g2_v05",
+    "g2_v06",
+    "g2_v07"
+  ],
+  "diffs": {
+    "g2_v01": "hook: She remembers everything. → Your party is waiting.",
+    "g2_v02": "background: moonlit_temple → neon_city",
+    "g2_v03": "character: Luna → Rex",
+    "g2_v04": "action: draws_blade → waves_to_camera",
+    "g2_v05": "audio: low_drums → upbeat_synth",
+    "g2_v06": "cta: Play Free → Join Luna",
+    "g2_v07": "background: moonlit_temple → neon_city; hook: She remembers everything. → Your party is waiting."
+  },
+  "warnings": [
+    "variants[2]: hook \"She remembers everything.\" is about a female companion but the character is Rex"
+  ]
+}

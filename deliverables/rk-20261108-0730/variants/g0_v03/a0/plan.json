@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v03",
+  "attempt": 0,
+  "lines": {
+    "en": "She remembers everything. Don't test me.",
+    "zh": "她记得一切。别试探我。"
+  },
+  "tagline": {
+    "en": "Recruit AI companions. Adventure together.",
+    "zh": "招募AI伙伴,并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 2.8,
+    "line_in_s": 0.4,
+    "line_out_s": 2.6,
+    "endcard_s": 4
+  },
+  "visual_notes": {},
+  "rationale": "Luna's dry, quiet line keeps the hook verbatim and lands just before the blade-draw cut, then the warm tagline leads into the Play Free end card."
+}

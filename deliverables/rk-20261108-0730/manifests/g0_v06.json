@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v06",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Rex",
+    "action": "casts_spell",
+    "hook": "Can you beat level 3?",
+    "cta": "Play Free",
+    "audio": "low_drums"
+  },
+  "creative_key": "f36dc9e28b",
+  "rationale": "Explore the under-served hook and temple."
+}

@@ -1,0 +1,20 @@
+{
+  "variant_id": "g3_v01",
+  "attempt": 0,
+  "lines": {
+    "en": "Your party is waiting. Let's go!",
+    "zh": "你的队伍在等你,走!"
+  },
+  "tagline": {
+    "en": "Recruit AI companions. Adventure on!",
+    "zh": "招募AI伙伴,并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 2.8,
+    "line_in_s": 0.4,
+    "line_out_s": 2.6,
+    "endcard_s": 4
+  },
+  "visual_notes": {},
+  "rationale": "Rex's loud, loyal voice delivers the hook with a short rallying add-on in shot 1, then the cut to him drawing his blade lands before the warm end card with the install button."
+}

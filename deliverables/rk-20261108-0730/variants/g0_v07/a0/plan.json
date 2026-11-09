@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v07",
+  "attempt": 0,
+  "lines": {
+    "en": "Welcome back. She remembers everything.",
+    "zh": "欢迎回来,米拉记得你说过的一切。"
+  },
+  "tagline": {
+    "en": "Recruit companions who remember you.",
+    "zh": "招募记得你的伙伴"
+  },
+  "timeline": {
+    "cut_s": 2.8,
+    "line_in_s": 0.4,
+    "line_out_s": 2.6,
+    "endcard_s": 4
+  },
+  "visual_notes": {},
+  "rationale": "A warm greeting around the verbatim hook lets Mira's attentive character land before the cut to her drawing her blade, then the end card carries the recruit-companions tagline into the install button."
+}

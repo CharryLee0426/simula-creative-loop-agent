@@ -1,0 +1,23 @@
+{
+  "variant_id": "g0_v07",
+  "purpose": "seed",
+  "passed": true,
+  "best_attempt": 0,
+  "score": 100,
+  "attempts": [
+    {
+      "attempt": 0,
+      "pass": true,
+      "score": 100,
+      "issues": [],
+      "reused": [
+        false,
+        false
+      ]
+    }
+  ],
+  "videos": {
+    "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261108-0730/variants/g0_v07/g0_v07_en.mp4",
+    "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261108-0730/variants/g0_v07/g0_v07_zh.mp4"
+  }
+}

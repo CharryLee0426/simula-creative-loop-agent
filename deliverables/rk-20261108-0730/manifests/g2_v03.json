@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g2_v03",
+  "generation": 2,
+  "parent_id": "g1_v06",
+  "created_round": 2,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "moonlit_temple",
+    "character": "Rex",
+    "action": "draws_blade",
+    "hook": "She remembers everything.",
+    "cta": "Play Free",
+    "audio": "low_drums"
+  },
+  "creative_key": "bb9d48500b",
+  "hypothesis_id": "h2",
+  "rationale": "Rex helps rpg"
+}

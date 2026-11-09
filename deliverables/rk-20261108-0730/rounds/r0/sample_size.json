@@ -1,0 +1,13 @@
+{
+  "base_install_per_user": 0.005280416666666667,
+  "base_source": "historical average",
+  "target_mde": 0.3,
+  "users_needed_per_arm": 59994,
+  "users_per_arm": 20000,
+  "achievable_mde": 0.5464825237079685,
+  "arms": 8,
+  "total_users": 160000,
+  "looks": 4,
+  "alpha": 0.05,
+  "power": 0.8
+}

@@ -1,0 +1,20 @@
+{
+  "variant_id": "g0_v06",
+  "attempt": 0,
+  "lines": {
+    "en": "Can you beat level 3? I dare you!",
+    "zh": "你能通过第3关吗？我赌你不行！"
+  },
+  "tagline": {
+    "en": "Recruit AI companions. Adventure together.",
+    "zh": "招募AI伙伴，并肩冒险"
+  },
+  "timeline": {
+    "cut_s": 3,
+    "line_in_s": 0.3,
+    "line_out_s": 2.9,
+    "endcard_s": 4.2
+  },
+  "visual_notes": {},
+  "rationale": "Rex's loud, confident dare wraps the hook verbatim, lingers 2.6s over the moonlit temple, then cuts to the spell and a warm end card that invites players to recruit companions."
+}

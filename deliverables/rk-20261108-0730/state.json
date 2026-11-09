@@ -1,0 +1,312 @@
+{
+  "run_id": "rk-20261108-0730",
+  "created_at": "2026-11-09T07:28:21.127Z",
+  "rounds": [
+    {
+      "round": 0,
+      "control": "g0_v01",
+      "winner": "g0_v03",
+      "significant": true,
+      "decision": "ship g0_v03: beats control by 305% (Holm p=0.000)",
+      "champion_after": "g0_v03"
+    },
+    {
+      "round": 1,
+      "control": "g0_v03",
+      "winner": "g1_v06",
+      "significant": true,
+      "decision": "ship g1_v06: beats control by 28% (Holm p=0.039)",
+      "champion_after": "g1_v06"
+    },
+    {
+      "round": 2,
+      "control": "g1_v06",
+      "winner": "g1_v06",
+      "significant": false,
+      "decision": "keep control: best challenger g2_v01 not convincing (+11%, P(best)=0.79 < 0.8, Holm p=1.000)",
+      "champion_after": "g1_v06"
+    },
+    {
+      "round": 3,
+      "control": "g2_v01",
+      "winner": "g3_v01",
+      "significant": false,
+      "decision": "promote g3_v01 as champion (directional: P(best)=0.89 ≥ 0.8, not significant vs control)",
+      "champion_after": "g3_v01"
+    }
+  ],
+  "learnings": [
+    {
+      "id": "l1",
+      "kind": "effect",
+      "layer": "audio",
+      "value": "low_drums",
+      "vs": "none",
+      "relation": "better",
+      "text": "audio: low_drums > none",
+      "status": "supported",
+      "effect": 0.28019981993465914,
+      "ci": [
+        0.07437562035768597,
+        0.525454922753273
+      ],
+      "contrasts": [
+        {
+          "round": 1,
+          "a": "g1_v06",
+          "b": "g0_v03",
+          "log_ratio": 0.24701617507168572,
+          "se": 0.08942678597155791
+        }
+      ],
+      "reason": "+28% [+7%, +53%] from 1 clean contrast(s); CI above 0"
+    },
+    {
+      "id": "l2",
+      "kind": "effect",
+      "layer": "cta",
+      "value": "Play Free",
+      "vs": "Install Now",
+      "relation": "better",
+      "text": "cta: Play Free > Install Now",
+      "status": "supported",
+      "effect": 0.2508365068697729,
+      "ci": [
+        0.028052217164761917,
+        0.5218993167809338
+      ],
+      "contrasts": [
+        {
+          "round": 1,
+          "a": "g0_v03",
+          "b": "g1_v05",
+          "log_ratio": 0.22381253299187823,
+          "se": 0.10007478180692173
+        }
+      ],
+      "reason": "+25% [+3%, +52%] from 1 clean contrast(s); CI above 0"
+    },
+    {
+      "id": "l3",
+      "kind": "effect",
+      "layer": "cta",
+      "value": "Play Free",
+      "vs": "Join Luna",
+      "relation": "better",
+      "text": "cta: Play Free > Join Luna",
+      "status": "supported",
+      "effect": 0.4466088564574169,
+      "ci": [
+        0.20065377809935336,
+        0.7429480685879017
+      ],
+      "contrasts": [
+        {
+          "round": 2,
+          "a": "g1_v06",
+          "b": "g2_v06",
+          "log_ratio": 0.369222097671607,
+          "se": 0.09507952762893492
+        }
+      ],
+      "reason": "+45% [+20%, +74%] from 1 clean contrast(s); CI above 0"
+    },
+    {
+      "id": "l4",
+      "kind": "effect",
+      "layer": "action",
+      "value": "draws_blade",
+      "vs": "casts_spell",
+      "relation": "better",
+      "text": "action: draws_blade > casts_spell",
+      "status": "supported",
+      "effect": 0.2892513051898804,
+      "ci": [
+        0.13559661862839767,
+        0.4636966160936793
+      ],
+      "contrasts": [
+        {
+          "round": 1,
+          "a": "g0_v03",
+          "b": "g1_v03",
+          "log_ratio": 0.061879011187742,
+          "se": 0.09579636771896698
+        },
+        {
+          "round": 3,
+          "a": "g2_v01",
+          "b": "g3_v05",
+          "log_ratio": 0.41568368498689956,
+          "se": 0.08785009009702821
+        }
+      ],
+      "reason": "+29% [+14%, +46%] from 2 clean contrast(s); CI above 0"
+    },
+    {
+      "id": "l5",
+      "kind": "effect",
+      "layer": "action",
+      "value": "draws_blade",
+      "vs": "waves_to_camera",
+      "relation": "better",
+      "text": "action: draws_blade > waves_to_camera",
+      "status": "supported",
+      "effect": 0.16223097700546263,
+      "ci": [
+        0.03312820892790147,
+        0.3074668102546587
+      ],
+      "contrasts": [
+        {
+          "round": 2,
+          "a": "g1_v06",
+          "b": "g2_v04",
+          "log_ratio": 0.03950606573736052,
+          "se": 0.08605988232611918
+        },
+        {
+          "round": 3,
+          "a": "g2_v01",
+          "b": "g3_v02",
+          "log_ratio": 0.25569178487042427,
+          "se": 0.08390341486006514
+        }
+      ],
+      "reason": "+16% [+3%, +31%] from 2 clean contrast(s); CI above 0"
+    },
+    {
+      "id": "l6",
+      "kind": "effect",
+      "layer": "background",
+      "value": "moonlit_temple",
+      "vs": "throne_room",
+      "relation": "better",
+      "text": "background: moonlit_temple > throne_room",
+      "status": "supported",
+      "effect": 0.28507066881844545,
+      "ci": [
+        0.1319127851096078,
+        0.4589521786323618
+      ],
+      "contrasts": [
+        {
+          "round": 1,
+          "a": "g0_v03",
+          "b": "g1_v01",
+          "log_ratio": 0.08532577169712878,
+          "se": 0.09651444345514418
+        },
+        {
+          "round": 3,
+          "a": "g2_v01",
+          "b": "g3_v04",
+          "log_ratio": 0.38623940279185986,
+          "se": 0.08730913088062585
+        }
+      ],
+      "reason": "+29% [+13%, +46%] from 2 clean contrast(s); CI above 0"
+    },
+    {
+      "id": "l7",
+      "kind": "effect",
+      "layer": "hook",
+      "value": "Your party is waiting.",
+      "vs": "The ruins are calling",
+      "relation": "better",
+      "text": "hook: Your party is waiting. > The ruins are calling",
+      "status": "supported",
+      "effect": 0.2167758847327761,
+      "ci": [
+        0.03449323015353212,
+        0.4311776148090387
+      ],
+      "contrasts": [
+        {
+          "round": 3,
+          "a": "g2_v01",
+          "b": "g3_v06",
+          "log_ratio": 0.1962046431708747,
+          "se": 0.08280253523708042
+        }
+      ],
+      "reason": "+22% [+3%, +43%] from 1 clean contrast(s); CI above 0"
+    },
+    {
+      "id": "l8",
+      "kind": "effect",
+      "layer": "character",
+      "value": "Rex",
+      "vs": "Kael",
+      "relation": "better",
+      "text": "character: Rex > Kael",
+      "status": "supported",
+      "effect": 0.27183148530170187,
+      "ci": [
+        0.08802191252763736,
+        0.48669370384913546
+      ],
+      "contrasts": [
+        {
+          "round": 3,
+          "a": "g3_v01",
+          "b": "g3_v07",
+          "log_ratio": 0.24045797603294072,
+          "se": 0.07964116714854985
+        }
+      ],
+      "reason": "+27% [+9%, +49%] from 1 clean contrast(s); CI above 0"
+    },
+    {
+      "id": "l9",
+      "kind": "effect",
+      "layer": "hook",
+      "value": "Your party is waiting.",
+      "vs": "She remembers everything.",
+      "relation": "better",
+      "text": "hook: Your party is waiting. > She remembers everything.",
+      "status": "open",
+      "effect": 0.06850245422963908,
+      "ci": [
+        -0.03159594631320206,
+        0.17894745519519573
+      ],
+      "contrasts": [
+        {
+          "round": 1,
+          "a": "g1_v04",
+          "b": "g0_v03",
+          "log_ratio": 0.20632602691152654,
+          "se": 0.09005627229594317
+        },
+        {
+          "round": 2,
+          "a": "g2_v01",
+          "b": "g1_v06",
+          "log_ratio": 0.10198721005590564,
+          "se": 0.08326039493910202
+        },
+        {
+          "round": 2,
+          "a": "g2_v07",
+          "b": "g2_v02",
+          "log_ratio": -0.10691879426052121,
+          "se": 0.0878782111034342
+        }
+      ],
+      "reason": "+7% [-3%, +18%] from 3 clean contrast(s); CI includes 0"
+    }
+  ],
+  "strategist_conversation": 2,
+  "loop_task": 13,
+  "champion": "g3_v01",
+  "final": {
+    "variant_id": "g3_v01",
+    "videos": {
+      "en": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261108-0730/variants/g3_v01/g3_v01_en.mp4",
+      "zh": "/Users/bytedance/Desktop/charlie/simula_creative_loop_agent/runs/rk-20261108-0730/variants/g3_v01/g3_v01_zh.mp4"
+    },
+    "verified": true,
+    "score": 100
+  }
+}

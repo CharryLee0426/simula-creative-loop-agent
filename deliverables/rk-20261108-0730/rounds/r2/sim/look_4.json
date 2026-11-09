@@ -1,0 +1,736 @@
+{
+  "batch": 4,
+  "users": 40000,
+  "events": 43853,
+  "unassigned": 0,
+  "arms": {
+    "g1_v06": {
+      "variant_id": "g1_v06",
+      "users": 5008,
+      "impressions": 7295,
+      "clicks": 426,
+      "installs": 65,
+      "install": {
+        "n": 5008,
+        "x": 7295,
+        "y": 65,
+        "xx": 19451,
+        "yy": 65,
+        "xy": 94
+      },
+      "click": {
+        "n": 5008,
+        "x": 7295,
+        "y": 426,
+        "xx": 19451,
+        "yy": 446,
+        "xy": 921
+      },
+      "seg": {
+        "rpg": {
+          "users": 2242,
+          "impressions": 3271,
+          "clicks": 194,
+          "installs": 32,
+          "install": {
+            "n": 2242,
+            "x": 3271,
+            "y": 32,
+            "xx": 9123,
+            "yy": 32,
+            "xy": 40
+          },
+          "click": {
+            "n": 2242,
+            "x": 3271,
+            "y": 194,
+            "xx": 9123,
+            "yy": 206,
+            "xy": 454
+          }
+        },
+        "companion": {
+          "users": 1789,
+          "impressions": 2600,
+          "clicks": 193,
+          "installs": 31,
+          "install": {
+            "n": 1789,
+            "x": 2600,
+            "y": 31,
+            "xx": 6692,
+            "yy": 31,
+            "xy": 52
+          },
+          "click": {
+            "n": 1789,
+            "x": 2600,
+            "y": 193,
+            "xx": 6692,
+            "yy": 201,
+            "xy": 408
+          }
+        },
+        "casual": {
+          "users": 977,
+          "impressions": 1424,
+          "clicks": 39,
+          "installs": 2,
+          "install": {
+            "n": 977,
+            "x": 1424,
+            "y": 2,
+            "xx": 3636,
+            "yy": 2,
+            "xy": 2
+          },
+          "click": {
+            "n": 977,
+            "x": 1424,
+            "y": 39,
+            "xx": 3636,
+            "yy": 39,
+            "xy": 59
+          }
+        }
+      }
+    },
+    "g2_v01": {
+      "variant_id": "g2_v01",
+      "users": 4985,
+      "impressions": 7368,
+      "clicks": 474,
+      "installs": 65,
+      "install": {
+        "n": 4985,
+        "x": 7368,
+        "y": 65,
+        "xx": 19998,
+        "yy": 65,
+        "xy": 98
+      },
+      "click": {
+        "n": 4985,
+        "x": 7368,
+        "y": 474,
+        "xx": 19998,
+        "yy": 500,
+        "xy": 1043
+      },
+      "seg": {
+        "rpg": {
+          "users": 2253,
+          "impressions": 3329,
+          "clicks": 291,
+          "installs": 48,
+          "install": {
+            "n": 2253,
+            "x": 3329,
+            "y": 48,
+            "xx": 8647,
+            "yy": 48,
+            "xy": 74
+          },
+          "click": {
+            "n": 2253,
+            "x": 3329,
+            "y": 291,
+            "xx": 8647,
+            "yy": 307,
+            "xy": 600
+          }
+        },
+        "companion": {
+          "users": 1748,
+          "impressions": 2555,
+          "clicks": 113,
+          "installs": 9,
+          "install": {
+            "n": 1748,
+            "x": 2555,
+            "y": 9,
+            "xx": 6931,
+            "yy": 9,
+            "xy": 11
+          },
+          "click": {
+            "n": 1748,
+            "x": 2555,
+            "y": 113,
+            "xx": 6931,
+            "yy": 117,
+            "xy": 231
+          }
+        },
+        "casual": {
+          "users": 984,
+          "impressions": 1484,
+          "clicks": 70,
+          "installs": 8,
+          "install": {
+            "n": 984,
+            "x": 1484,
+            "y": 8,
+            "xx": 4420,
+            "yy": 8,
+            "xy": 13
+          },
+          "click": {
+            "n": 984,
+            "x": 1484,
+            "y": 70,
+            "xx": 4420,
+            "yy": 76,
+            "xy": 212
+          }
+        }
+      }
+    },
+    "g2_v02": {
+      "variant_id": "g2_v02",
+      "users": 5018,
+      "impressions": 7638,
+      "clicks": 409,
+      "installs": 63,
+      "install": {
+        "n": 5018,
+        "x": 7638,
+        "y": 63,
+        "xx": 22510,
+        "yy": 63,
+        "xy": 115
+      },
+      "click": {
+        "n": 5018,
+        "x": 7638,
+        "y": 409,
+        "xx": 22510,
+        "yy": 437,
+        "xy": 964
+      },
+      "seg": {
+        "rpg": {
+          "users": 2250,
+          "impressions": 3363,
+          "clicks": 144,
+          "installs": 20,
+          "install": {
+            "n": 2250,
+            "x": 3363,
+            "y": 20,
+            "xx": 9627,
+            "yy": 20,
+            "xy": 31
+          },
+          "click": {
+            "n": 2250,
+            "x": 3363,
+            "y": 144,
+            "xx": 9627,
+            "yy": 152,
+            "xy": 305
+          }
+        },
+        "companion": {
+          "users": 1735,
+          "impressions": 2738,
+          "clicks": 210,
+          "installs": 34,
+          "install": {
+            "n": 1735,
+            "x": 2738,
+            "y": 34,
+            "xx": 8610,
+            "yy": 34,
+            "xy": 75
+          },
+          "click": {
+            "n": 1735,
+            "x": 2738,
+            "y": 210,
+            "xx": 8610,
+            "yy": 230,
+            "xy": 560
+          }
+        },
+        "casual": {
+          "users": 1033,
+          "impressions": 1537,
+          "clicks": 55,
+          "installs": 9,
+          "install": {
+            "n": 1033,
+            "x": 1537,
+            "y": 9,
+            "xx": 4273,
+            "yy": 9,
+            "xy": 9
+          },
+          "click": {
+            "n": 1033,
+            "x": 1537,
+            "y": 55,
+            "xx": 4273,
+            "yy": 55,
+            "xy": 99
+          }
+        }
+      }
+    },
+    "g2_v03": {
+      "variant_id": "g2_v03",
+      "users": 4917,
+      "impressions": 7327,
+      "clicks": 437,
+      "installs": 59,
+      "install": {
+        "n": 4917,
+        "x": 7327,
+        "y": 59,
+        "xx": 20043,
+        "yy": 59,
+        "xy": 110
+      },
+      "click": {
+        "n": 4917,
+        "x": 7327,
+        "y": 437,
+        "xx": 20043,
+        "yy": 467,
+        "xy": 975
+      },
+      "seg": {
+        "rpg": {
+          "users": 2225,
+          "impressions": 3370,
+          "clicks": 256,
+          "installs": 41,
+          "install": {
+            "n": 2225,
+            "x": 3370,
+            "y": 41,
+            "xx": 9364,
+            "yy": 41,
+            "xy": 76
+          },
+          "click": {
+            "n": 2225,
+            "x": 3370,
+            "y": 256,
+            "xx": 9364,
+            "yy": 272,
+            "xy": 578
+          }
+        },
+        "companion": {
+          "users": 1712,
+          "impressions": 2501,
+          "clicks": 137,
+          "installs": 12,
+          "install": {
+            "n": 1712,
+            "x": 2501,
+            "y": 12,
+            "xx": 6701,
+            "yy": 12,
+            "xy": 25
+          },
+          "click": {
+            "n": 1712,
+            "x": 2501,
+            "y": 137,
+            "xx": 6701,
+            "yy": 147,
+            "xy": 295
+          }
+        },
+        "casual": {
+          "users": 980,
+          "impressions": 1456,
+          "clicks": 44,
+          "installs": 6,
+          "install": {
+            "n": 980,
+            "x": 1456,
+            "y": 6,
+            "xx": 3978,
+            "yy": 6,
+            "xy": 9
+          },
+          "click": {
+            "n": 980,
+            "x": 1456,
+            "y": 44,
+            "xx": 3978,
+            "yy": 48,
+            "xy": 102
+          }
+        }
+      }
+    },
+    "g2_v04": {
+      "variant_id": "g2_v04",
+      "users": 4987,
+      "impressions": 7412,
+      "clicks": 434,
+      "installs": 74,
+      "install": {
+        "n": 4987,
+        "x": 7412,
+        "y": 74,
+        "xx": 20718,
+        "yy": 74,
+        "xy": 128
+      },
+      "click": {
+        "n": 4987,
+        "x": 7412,
+        "y": 434,
+        "xx": 20718,
+        "yy": 458,
+        "xy": 1042
+      },
+      "seg": {
+        "rpg": {
+          "users": 2201,
+          "impressions": 3246,
+          "clicks": 165,
+          "installs": 26,
+          "install": {
+            "n": 2201,
+            "x": 3246,
+            "y": 26,
+            "xx": 8828,
+            "yy": 26,
+            "xy": 50
+          },
+          "click": {
+            "n": 2201,
+            "x": 3246,
+            "y": 165,
+            "xx": 8828,
+            "yy": 177,
+            "xy": 428
+          }
+        },
+        "companion": {
+          "users": 1770,
+          "impressions": 2673,
+          "clicks": 238,
+          "installs": 42,
+          "install": {
+            "n": 1770,
+            "x": 2673,
+            "y": 42,
+            "xx": 7773,
+            "yy": 42,
+            "xy": 69
+          },
+          "click": {
+            "n": 1770,
+            "x": 2673,
+            "y": 238,
+            "xx": 7773,
+            "yy": 250,
+            "xy": 559
+          }
+        },
+        "casual": {
+          "users": 1016,
+          "impressions": 1493,
+          "clicks": 31,
+          "installs": 6,
+          "install": {
+            "n": 1016,
+            "x": 1493,
+            "y": 6,
+            "xx": 4117,
+            "yy": 6,
+            "xy": 9
+          },
+          "click": {
+            "n": 1016,
+            "x": 1493,
+            "y": 31,
+            "xx": 4117,
+            "yy": 31,
+            "xy": 55
+          }
+        }
+      }
+    },
+    "g2_v05": {
+      "variant_id": "g2_v05",
+      "users": 5027,
+      "impressions": 7643,
+      "clicks": 407,
+      "installs": 74,
+      "install": {
+        "n": 5027,
+        "x": 7643,
+        "y": 74,
+        "xx": 22261,
+        "yy": 74,
+        "xy": 128
+      },
+      "click": {
+        "n": 5027,
+        "x": 7643,
+        "y": 407,
+        "xx": 22261,
+        "yy": 435,
+        "xy": 940
+      },
+      "seg": {
+        "rpg": {
+          "users": 2226,
+          "impressions": 3508,
+          "clicks": 204,
+          "installs": 40,
+          "install": {
+            "n": 2226,
+            "x": 3508,
+            "y": 40,
+            "xx": 11048,
+            "yy": 40,
+            "xy": 78
+          },
+          "click": {
+            "n": 2226,
+            "x": 3508,
+            "y": 204,
+            "xx": 11048,
+            "yy": 214,
+            "xy": 482
+          }
+        },
+        "companion": {
+          "users": 1794,
+          "impressions": 2630,
+          "clicks": 157,
+          "installs": 27,
+          "install": {
+            "n": 1794,
+            "x": 2630,
+            "y": 27,
+            "xx": 6886,
+            "yy": 27,
+            "xy": 36
+          },
+          "click": {
+            "n": 1794,
+            "x": 2630,
+            "y": 157,
+            "xx": 6886,
+            "yy": 167,
+            "xy": 353
+          }
+        },
+        "casual": {
+          "users": 1007,
+          "impressions": 1505,
+          "clicks": 46,
+          "installs": 7,
+          "install": {
+            "n": 1007,
+            "x": 1505,
+            "y": 7,
+            "xx": 4327,
+            "yy": 7,
+            "xy": 14
+          },
+          "click": {
+            "n": 1007,
+            "x": 1505,
+            "y": 46,
+            "xx": 4327,
+            "yy": 54,
+            "xy": 105
+          }
+        }
+      }
+    },
+    "g2_v06": {
+      "variant_id": "g2_v06",
+      "users": 4970,
+      "impressions": 7211,
+      "clicks": 410,
+      "installs": 45,
+      "install": {
+        "n": 4970,
+        "x": 7211,
+        "y": 45,
+        "xx": 18873,
+        "yy": 45,
+        "xy": 71
+      },
+      "click": {
+        "n": 4970,
+        "x": 7211,
+        "y": 410,
+        "xx": 18873,
+        "yy": 424,
+        "xy": 929
+      },
+      "seg": {
+        "rpg": {
+          "users": 2191,
+          "impressions": 3160,
+          "clicks": 201,
+          "installs": 18,
+          "install": {
+            "n": 2191,
+            "x": 3160,
+            "y": 18,
+            "xx": 8182,
+            "yy": 18,
+            "xy": 23
+          },
+          "click": {
+            "n": 2191,
+            "x": 3160,
+            "y": 201,
+            "xx": 8182,
+            "yy": 207,
+            "xy": 442
+          }
+        },
+        "companion": {
+          "users": 1789,
+          "impressions": 2559,
+          "clicks": 162,
+          "installs": 18,
+          "install": {
+            "n": 1789,
+            "x": 2559,
+            "y": 18,
+            "xx": 6523,
+            "yy": 18,
+            "xy": 35
+          },
+          "click": {
+            "n": 1789,
+            "x": 2559,
+            "y": 162,
+            "xx": 6523,
+            "yy": 168,
+            "xy": 368
+          }
+        },
+        "casual": {
+          "users": 990,
+          "impressions": 1492,
+          "clicks": 47,
+          "installs": 9,
+          "install": {
+            "n": 990,
+            "x": 1492,
+            "y": 9,
+            "xx": 4168,
+            "yy": 9,
+            "xy": 13
+          },
+          "click": {
+            "n": 990,
+            "x": 1492,
+            "y": 47,
+            "xx": 4168,
+            "yy": 49,
+            "xy": 119
+          }
+        }
+      }
+    },
+    "g2_v07": {
+      "variant_id": "g2_v07",
+      "users": 5088,
+      "impressions": 7790,
+      "clicks": 444,
+      "installs": 59,
+      "install": {
+        "n": 5088,
+        "x": 7790,
+        "y": 59,
+        "xx": 23042,
+        "yy": 59,
+        "xy": 105
+      },
+      "click": {
+        "n": 5088,
+        "x": 7790,
+        "y": 444,
+        "xx": 23042,
+        "yy": 470,
+        "xy": 1115
+      },
+      "seg": {
+        "rpg": {
+          "users": 2337,
+          "impressions": 3582,
+          "clicks": 245,
+          "installs": 35,
+          "install": {
+            "n": 2337,
+            "x": 3582,
+            "y": 35,
+            "xx": 10592,
+            "yy": 35,
+            "xy": 62
+          },
+          "click": {
+            "n": 2337,
+            "x": 3582,
+            "y": 245,
+            "xx": 10592,
+            "yy": 261,
+            "xy": 562
+          }
+        },
+        "companion": {
+          "users": 1762,
+          "impressions": 2671,
+          "clicks": 134,
+          "installs": 13,
+          "install": {
+            "n": 1762,
+            "x": 2671,
+            "y": 13,
+            "xx": 7847,
+            "yy": 13,
+            "xy": 22
+          },
+          "click": {
+            "n": 1762,
+            "x": 2671,
+            "y": 134,
+            "xx": 7847,
+            "yy": 144,
+            "xy": 377
+          }
+        },
+        "casual": {
+          "users": 989,
+          "impressions": 1537,
+          "clicks": 65,
+          "installs": 11,
+          "install": {
+            "n": 989,
+            "x": 1537,
+            "y": 11,
+            "xx": 4603,
+            "yy": 11,
+            "xy": 21
+          },
+          "click": {
+            "n": 989,
+            "x": 1537,
+            "y": 65,
+            "xx": 4603,
+            "yy": 65,
+            "xy": 176
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "lang": "en",
+  "pass": true,
+  "score": 100,
+  "checks": {
+    "background": {
+      "pass": true,
+      "observed": "Dark thunderclouds with forks of lightning, torn banners snapping on ridge, distant army silhouette in valley, no gore or bodies"
+    },
+    "character": {
+      "pass": true,
+      "observed": "Young woman with wavy auburn hair, thin gold circlet, freckles, warm smile, flowing white and gold robes, holding slender staff glowing soft gold"
+    },
+    "action": {
+      "pass": true,
+      "observed": "After cut to close-up portrait, Mira looks straight at viewer with warm inviting smile, soft rim light on face, hand extended"
+    },
+    "hook_line": {
+      "pass": true,
+      "observed": "On-screen text in first shot reads exactly 'Free gems every day, I promise.' in English"
+    },
+    "cta": {
+      "pass": true,
+      "observed": "End card shows blue install button with text exactly 'Claim Bonus'"
+    },
+    "brand_safety": {
+      "pass": true,
+      "observed": "Warm slightly dramatic tone, no gore, blood, or sexual content, ends on install CTA, no letters/logos painted inside image"
+    },
+    "endcard": {
+      "pass": true,
+      "observed": "Title 'Rune Keepers' with tagline 'Recruit AI companions. Adventure together.' over close-up"
+    }
+  },
+  "issues": [],
+  "summary": "6s vertical ad fully matches manifest g0_v01 across setting, character, action, text, and endcard with no safety issues.",
+  "spec": {
+    "ok": true,
+    "issues": [],
+    "duration": 6,
+    "width": 1080,
+    "height": 1920,
+    "vcodec": "h264",
+    "acodec": "aac",
+    "mean_volume_db": -17.5,
+    "bytes": 3216792
+  },
+  "model": "meta/muse-spark-1.3-contributor"
+}

@@ -1,0 +1,2 @@
+{"ts":"2026-11-09T07:44:30.812Z","ok":false,"errors":["variants[0]: identical to already-tested g2_v07 (set replicate: true for at most one deliberate replicate)","variants[3]: identical to already-tested g1_v04 (set replicate: true for at most one deliberate replicate)"],"warnings":[]}
+{"ts":"2026-11-09T07:44:35.799Z","ok":true,"errors":[],"warnings":[]}

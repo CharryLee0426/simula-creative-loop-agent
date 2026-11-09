@@ -1,0 +1,28 @@
+{
+ "total": 0.558937,
+ "by_kind": {
+  "strategist LLM": 0.16234500000000002,
+  "render planner LLM": 0.038782000000000004,
+  "video review (Muse Spark)": 0.009205,
+  "keyframes (GPT Image)": 0.348605
+ },
+ "by_round": {
+  "0": {
+   "strategist LLM": 0.029636,
+   "render planner LLM": 0.034512,
+   "video review (Muse Spark)": 0.007908,
+   "keyframes (GPT Image)": 0.348605
+  },
+  "1": {
+   "strategist LLM": 0.046304
+  },
+  "2": {
+   "strategist LLM": 0.02082
+  },
+  "3": {
+   "strategist LLM": 0.065585,
+   "render planner LLM": 0.00427,
+   "video review (Muse Spark)": 0.001297
+  }
+ }
+}

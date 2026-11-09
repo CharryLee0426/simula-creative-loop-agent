@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "variant_id": "g0_v08",
+  "generation": 0,
+  "parent_id": null,
+  "created_round": 0,
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6
+  },
+  "layers": {
+    "background": "throne_room",
+    "character": "Kael",
+    "action": "waves_to_camera",
+    "hook": "The ruins are calling",
+    "cta": "Play Free",
+    "audio": "upbeat_synth"
+  },
+  "creative_key": "da0571304e",
+  "rationale": "RPG-leaning explore."
+}
